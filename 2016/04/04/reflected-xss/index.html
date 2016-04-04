@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Reflected XSS | 晴 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Almond">
+    
+    
+
+    <meta name="description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
+触发原因">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reflected XSS | 晴">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/reflected-xss/index.html">
+<meta property="og:site_name" content="晴">
+<meta property="og:description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
+触发原因">
+<meta property="og:updated_time" content="2016-04-04T02:11:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reflected XSS | 晴">
+<meta name="twitter:description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
+触发原因">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">晴</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          争不过朝夕 又念着往昔
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    
+    
+      <!-- Github
+      <li class="navigation__item">
+        <a href="https://github.com/someus" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      —>
+      </li>
+    
+    
+    <!-- China social icon -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/almondq" title=“weibo” target=“_blank”>
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Reflected XSS</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-04-04" class="post-meta__date date">2016-04-04</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。</p>
+<h3 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h3><p>Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)</p>
+<h3 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h3><p>需要欺骗用户自己去点击带有特定参数的链接才能触发</p>
+<h3 id="触发原因"><a href="#触发原因" class="headerlink" title="触发原因"></a>触发原因</h3><ol>
+<li>没有对输入进行约束，没有对输出进行编码</li>
+<li>没有严格区分“数据”和“代码”</li>
+</ol>
+<h3 id="可能出现漏洞的地方"><a href="#可能出现漏洞的地方" class="headerlink" title="可能出现漏洞的地方"></a>可能出现漏洞的地方</h3><p>搜索引擎，错误页面。</p>
+<h2 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h2><p>在输入框、url链接参数中输入一些字符，然后访问，查看源代码，查找输入的字符是否原封不动的存在，如果存在可以肯定存在漏洞。然后根据输出环境构造xss代码。比如如果页面直接把相应内容输出可以直接写xss代码，如果相应内容在标签里可以先封闭标签再写xss代码也可以用onclick，onmouseover这种事件。还可以用img iframe这样的标签注入xss代码。</p>
+<h2 id="漏洞挖掘代码"><a href="#漏洞挖掘代码" class="headerlink" title="漏洞挖掘代码"></a>漏洞挖掘代码</h2><h3 id="查找漏洞-reflected-xss-py"><a href="#查找漏洞-reflected-xss-py" class="headerlink" title="查找漏洞 reflected_xss.py"></a>查找漏洞 reflected_xss.py</h3><ol>
+<li>原理<br>获取url，如果url中存在？则以？拆分url，接着看？后半部分是否存在&amp;，存在则以&amp;继续拆分，并在拆分后的每部分后加test字符串，不存在则直接加上test字符串，再把修改后的内容合并成一个完整的url。访问新修改的url，获取页面内容，查找内容中是否有添加的test字符串，如果存在说明可能存在反射型xss漏洞。</li>
+<li>代码</li>
+</ol>
+<pre><code>import urllib2
+test = &apos;woaini&apos;
+
+
+def modify_url(url):
+    new_url = &quot;&quot;
+    if &quot;?&quot; in url:
+        new_url = url.split(&quot;?&quot;)[0] + &quot;?&quot;
+        parameters = url.split(&quot;?&quot;)[1]
+        if &quot;&amp;&quot; in url:
+            parameters = parameters.split(&quot;&amp;&quot;)
+            for parameter in parameters:
+                parameter += test
+                new_url += parameter + &quot;&amp;&quot;
+        else:
+            parameters += test
+            new_url = url.split(&quot;?&quot;)[0] + &quot;?&quot; + parameters
+    return new_url
+
+
+def get_content(url):
+    try:
+        response = urllib2.urlopen(url)
+        content = response.read()
+        if test in content:
+            return True
+        else:
+            return False
+    except:
+        pass
+</code></pre><h3 id="网页爬虫"><a href="#网页爬虫" class="headerlink" title="网页爬虫"></a>网页爬虫</h3><ol>
+<li>原理<br>用两个set分别存储爬过的url和没爬过的url。用正则表达式（具体情况具体分析）匹配出一个网页中所有的链接，如果链接不在两个set之中则归入没爬过的set，否则忽略。如果存在新的url则获取一个url进行查找漏洞（reflected_xss.py）</li>
+<li>代码</li>
+</ol>
+<pre><code>import urllib2
+from bs4 import BeautifulSoup
+import re
+import reflected_xss
+
+
+url = &quot;http://bj.jumei.com/&quot;
+old_url = set()
+new_url = set()
+
+
+def add_url(newurl):
+    new_url.add(newurl)
+
+
+def delete_url(oldurl):
+    old_url.add(oldurl)
+
+
+def set_url(ourl):
+    try:
+        response = urllib2.urlopen(ourl)
+        soup = BeautifulSoup(response, &quot;html.parser&quot;, from_encoding=&quot;utf-8&quot;)
+        pattern = re.compile(r&quot;http://\w+\.jumei\.com/.+&quot;)
+        links = soup.find_all(&quot;a&quot;, href=pattern)
+        for link in links:
+             newurl = link[&quot;href&quot;]
+            if newurl not in old_url and newurl not in new_url:
+                add_url(newurl)
+        delete_url(ourl)
+    except:
+        pass
+
+
+def isnewurl():
+    if len(new_url) == 0:
+        return False
+    else:
+        return True
+
+
+def get_url():
+    return new_url.pop()
+
+
+def main():
+    set_url(url)
+    print new_url
+    count = 0
+    while True:
+        if isnewurl():
+            new = get_url()
+            set_url(new)
+            print len(new_url)
+            modified_new = reflected_xss.modify_url(new)
+            if len(modified_new):
+                if reflected_xss.get_content(modified_new):
+                    print count
+                    print modified_new
+                    print &quot;yes!!!!&quot;
+                else:
+                    pass
+
+                count += 1
+                if count == 500:
+                    break
+    print &quot;finish&quot;
+
+
+main()
+</code></pre><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>试了美团糯米韩国一个政府网站但是都没成功，只能找出师父给的聚美的漏洞= =</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
