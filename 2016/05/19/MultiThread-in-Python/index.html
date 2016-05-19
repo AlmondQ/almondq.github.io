@@ -28,7 +28,7 @@ ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，�
 ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20jw1f40q85cn27j20i205xt9m.jpg">
-<meta property="og:updated_time" content="2016-05-19T07:39:25.000Z">
+<meta property="og:updated_time" content="2016-05-19T07:40:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MultiThread in Python | 晴">
 <meta name="twitter:description" content="0x1 多线程？多线程就是多个线程并发执行，提高效率。
@@ -225,7 +225,9 @@ classes that you can use:
 <h6 id="0x2-2-1-守护线程"><a href="#0x2-2-1-守护线程" class="headerlink" title="0x2.2.1 守护线程"></a>0x2.2.1 守护线程</h6><p>threading模块支持守护线程（thread模块则不）。如果设定一个线程为守护线程则表示这个线程是不重要的，在退出进程时不用等待这个线程退出。设定线程的daemon属性可以定义一个线程为守护进程：在线程开始（调用thread.start()）之前，调用setDaemon()函数（thread.setDaemon(True)）。可以调用thread.isDaemon()函数来判断其daemon标志的值。</p>
 <h6 id="0x2-2-2-Thread类"><a href="#0x2-2-2-Thread类" class="headerlink" title="0x2.2.2 Thread类"></a>0x2.2.2 Thread类</h6><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20jw1f40q85cn27j20i205xt9m.jpg" alt="Thread"><br>用Thread类可以用多种方法来创建线程：</p>
 <ol>
-<li>创建一个Thread的实例，传给它一个函数；<br> import threading<br> from time import sleep, ctime</li>
+<li><p>创建一个Thread的实例，传给它一个函数；</p>
+<p> import threading<br> from time import sleep, ctime</p>
+</li>
 </ol>
 <pre><code>loops = [4, 2]
 
