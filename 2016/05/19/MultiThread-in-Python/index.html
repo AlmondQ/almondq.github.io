@@ -17,18 +17,21 @@
     
 
     <meta name="description" content="多线程？多线程就是多个线程并发执行，提高效率。
-进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。">
+进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。
+并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等待池，等待池是等待一个事件的发生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MultiThread in Python | 晴">
 <meta property="og:url" content="http://yoursite.com/2016/05/19/MultiThread-in-Python/index.html">
 <meta property="og:site_name" content="晴">
 <meta property="og:description" content="多线程？多线程就是多个线程并发执行，提高效率。
-进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。">
-<meta property="og:updated_time" content="2016-05-19T06:34:24.000Z">
+进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。
+并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等待池，等待池是等待一个事件的发生">
+<meta property="og:updated_time" content="2016-05-19T06:50:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MultiThread in Python | 晴">
 <meta name="twitter:description" content="多线程？多线程就是多个线程并发执行，提高效率。
-进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。">
+进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。
+并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等待池，等待池是等待一个事件的发生">
     
     
     
@@ -208,7 +211,9 @@ classes that you can use:
 
   <section id="post-content" class="article-content post">
     <h2 id="多线程？"><a href="#多线程？" class="headerlink" title="多线程？"></a>多线程？</h2><p>多线程就是多个线程并发执行，提高效率。</p>
-<h3 id="进程？线程？"><a href="#进程？线程？" class="headerlink" title="进程？线程？"></a>进程？线程？</h3><p>进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。</p>
+<h4 id="进程？线程？"><a href="#进程？线程？" class="headerlink" title="进程？线程？"></a>进程？线程？</h4><p>进程时程序的一次执行。<br>线程是CPU调度的基本单位，所有线程运行在同一个进程中。</p>
+<h4 id="并发执行时各线程间的执行顺序？"><a href="#并发执行时各线程间的执行顺序？" class="headerlink" title="并发执行时各线程间的执行顺序？"></a>并发执行时各线程间的执行顺序？</h4><p>为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等待池，等待池是等待一个事件的发生（条件变量），比如等待磁盘I/O的完成，完成后，会通知一个或全部之前等待的线程，于是这些线程进入锁定池。</p>
+<p>##在Python中使用线程<br>Python中提供了几个用语多线程编程的模块，包括thread,threading,Queue等。</p>
 
   </section>
 
