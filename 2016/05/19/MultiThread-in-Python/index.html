@@ -28,7 +28,7 @@ ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，�
 ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20jw1f40q85cn27j20i205xt9m.jpg">
-<meta property="og:updated_time" content="2016-05-19T07:42:48.000Z">
+<meta property="og:updated_time" content="2016-05-19T08:05:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MultiThread in Python | 晴">
 <meta name="twitter:description" content="0x1 多线程？多线程就是多个线程并发执行，提高效率。
@@ -260,7 +260,8 @@ def main():
 
 if __name__ == &quot;__main__&quot;:
     main()
-</code></pre>
+</code></pre><p>其中要重点标记一下join()这个方法，一开始不是很理解。join()的作用是阻塞进程直到线程执行完毕。此外，join()函数还有个特殊的功能就是设置超时:Thread.join([timeout])，也就是通过传给join一个参数超过这个指定的时间join就不再阻塞进程。</p>
+
   </section>
 
   
