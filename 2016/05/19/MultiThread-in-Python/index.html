@@ -26,12 +26,14 @@ ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，�
 <meta property="og:description" content="0x1 多线程？多线程就是多个线程并发执行，提高效率。
 0x1.1 进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。
 ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等">
-<meta property="og:updated_time" content="2016-05-19T07:15:17.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg">
+<meta property="og:updated_time" content="2016-05-19T07:23:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MultiThread in Python | 晴">
 <meta name="twitter:description" content="0x1 多线程？多线程就是多个线程并发执行，提高效率。
 0x1.1 进程？线程？进程时程序的一次执行。线程是CPU调度的基本单位，所有线程运行在同一个进程中。
 ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg">
     
     
     
@@ -218,8 +220,9 @@ classes that you can use:
 <blockquote>
 <p>出于以下几点考虑，我们不推荐您使用thread模块。首先，更高级别的threading模块更为先进，对线程的支持更为完善，而且实用thread模块里的属性可能会与threading冲突。其次，低级别的thread模块的同步原语很少（实际上只有一个），而threading模块则有很多。另外一个不要使用thread的原因是，对于你的进程什么时候应该结束完全没有控制，当主线程结束时，所有的线程都要强制结束掉，没有警告也不会有正常的清除工作，threading模块能确保重要的子线程退出后进程才退出。</p>
 </blockquote>
-<h4 id="0x2-2-threading模块"><a href="#0x2-2-threading模块" class="headerlink" title="0x2.2 threading模块"></a>0x2.2 threading模块</h4><h6 id="0x2-2-1-守护线程"><a href="#0x2-2-1-守护线程" class="headerlink" title="0x2.2.1 守护线程"></a>0x2.2.1 守护线程</h6><p>threading模块支持守护线程（thread模块则不）。如果设定一个线程为守护线程则表示这个线程是不重要的，在退出进程时不用等待这个线程退出。设定线程的daemon属性可以定义一个线程为守护进程：在线程开始（调用thread.start()）之前，调用setDaemon()函数（thread.setDaemon(True)）。可以调用thread.isDaemon()函数来判断其daemon标志的值。</p>
-
+<h4 id="0x2-2-threading模块"><a href="#0x2-2-threading模块" class="headerlink" title="0x2.2 threading模块"></a>0x2.2 threading模块</h4><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg" alt="threading"></p>
+<h6 id="0x2-2-1-守护线程"><a href="#0x2-2-1-守护线程" class="headerlink" title="0x2.2.1 守护线程"></a>0x2.2.1 守护线程</h6><p>threading模块支持守护线程（thread模块则不）。如果设定一个线程为守护线程则表示这个线程是不重要的，在退出进程时不用等待这个线程退出。设定线程的daemon属性可以定义一个线程为守护进程：在线程开始（调用thread.start()）之前，调用setDaemon()函数（thread.setDaemon(True)）。可以调用thread.isDaemon()函数来判断其daemon标志的值。</p>
+<h6 id="0x2-2-2-Thread类"><a href="#0x2-2-2-Thread类" class="headerlink" title="0x2.2.2 Thread类"></a>0x2.2.2 Thread类</h6>
   </section>
 
   
