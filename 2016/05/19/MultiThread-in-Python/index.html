@@ -28,7 +28,8 @@ ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，�
 ox1.2 并发执行时各线程间的执行顺序？为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20jw1f40q85cn27j20i205xt9m.jpg">
-<meta property="og:updated_time" content="2016-05-20T04:21:09.000Z">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20jw1f41qr034e7j20i70773zn.jpg">
+<meta property="og:updated_time" content="2016-05-20T04:53:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MultiThread in Python | 晴">
 <meta name="twitter:description" content="0x1 多线程？多线程就是多个线程并发执行，提高效率。
@@ -243,6 +244,7 @@ classes that you can use:
 <li>子类构造器一定要先调用父类的构造器</li>
 <li><strong>call</strong>()名字要改为run()</li>
 </ul>
+<h4 id="0x2-3-Queue模块"><a href="#0x2-3-Queue模块" class="headerlink" title="0x2.3 Queue模块"></a>0x2.3 Queue模块</h4><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20jw1f41qr034e7j20i70773zn.jpg" alt="Queue"><br>Queue模块可以用来进行线程间通讯，让各个线程之间共享数据。</p>
 
   </section>
 
