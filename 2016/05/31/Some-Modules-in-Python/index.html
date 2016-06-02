@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="晴">
 <meta property="og:description" content="1 optparse:提供了命令行参数的解析／处理1.1 示例代码:
 12345678910from optparse import OptionParserparser = OptionParser()parser.add_option(&amp;quot;-f&amp;quot;, &amp;quot;--file&amp;quot;, dest=&amp;quot;filename&amp;quot;, \help=&amp;quot;write">
-<meta property="og:updated_time" content="2016-06-01T01:46:09.000Z">
+<meta property="og:updated_time" content="2016-06-02T06:03:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Some Modules in Python | 晴">
 <meta name="twitter:description" content="1 optparse:提供了命令行参数的解析／处理1.1 示例代码:
@@ -258,6 +258,13 @@ classes that you can use:
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(options, args) = parser.parse_args()</span><br><span class="line">if options.a and options.b:</span><br><span class="line">    parser.error(&quot;options -a and -b are mutually exclusive&quot;)</span><br></pre></td></tr></table></figure>
 <p>如果命令行中-a -b同时存在，则显示”options…”来警告用户</p>
 <p>官方文档： <a href="https://docs.python.org/2/library/optparse.html#" target="_blank" rel="external">https://docs.python.org/2/library/optparse.html#</a></p>
+<h2 id="2-json-JavaScript-Object-Notation"><a href="#2-json-JavaScript-Object-Notation" class="headerlink" title="2 json(JavaScript Object Notation)"></a>2 json(JavaScript Object Notation)</h2><h3 id="2-1-基本用法"><a href="#2-1-基本用法" class="headerlink" title="2.1 基本用法"></a>2.1 基本用法</h3><h4 id="2-1-1-dump"><a href="#2-1-1-dump" class="headerlink" title="2.1.1 dump()"></a>2.1.1 dump()</h4><p>json.dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=”utf-8”, default=None, sort_keys=False, **kw)</p>
+<p>基于转换表，将obj序列化为json格式的流到fp(一个支持write()的类文件对象)</p>
+<h4 id="2-1-2-load"><a href="#2-1-2-load" class="headerlink" title="2.1.2 load()"></a>2.1.2 load()</h4><p>json.load(fp[, encoding[, cls[, object_hook[, parse_float[, parse_int[, parse_constant[, object_pairs_hook[, **kw]]]]]]]])</p>
+<p>根据转换表将fp(一个包含json文档的支持read()的类文件对象)反序列化成python对象</p>
+<p>example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">json_payload = json.load(open(&quot;&quot;.join([os.path.split(os.path.realpath(__file__))[0], &quot;/testjson.json&quot;])))</span><br><span class="line">print json_payload</span><br></pre></td></tr></table></figure>
+<p>Hint: os.path.split(path)将路径分为路径与文件名两部分，os.path.realpath(__file__)为当前脚本的路径</p>
 
   </section>
 
