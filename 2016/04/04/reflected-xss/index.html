@@ -16,25 +16,22 @@
     
     
 
-    <meta name="description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
-攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
-触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
-触发原因">
+    <meta name="description" content="0x0 简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+0x0.1 攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+0x0.2 触发条件需要欺骗用户自己去点击带有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reflected XSS | 晴">
 <meta property="og:url" content="http://yoursite.com/2016/04/04/reflected-xss/index.html">
 <meta property="og:site_name" content="晴">
-<meta property="og:description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
-攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
-触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
-触发原因">
-<meta property="og:updated_time" content="2016-05-31T07:33:26.000Z">
+<meta property="og:description" content="0x0 简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+0x0.1 攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+0x0.2 触发条件需要欺骗用户自己去点击带有">
+<meta property="og:updated_time" content="2016-06-03T01:56:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Reflected XSS | 晴">
-<meta name="twitter:description" content="简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
-攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
-触发条件需要欺骗用户自己去点击带有特定参数的链接才能触发
-触发原因">
+<meta name="twitter:description" content="0x0 简介HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。
+0x0.1 攻击原理Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)
+0x0.2 触发条件需要欺骗用户自己去点击带有">
     
     
     
@@ -208,124 +205,23 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。</p>
-<h3 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h3><p>Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)</p>
-<h3 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a>触发条件</h3><p>需要欺骗用户自己去点击带有特定参数的链接才能触发</p>
-<h3 id="触发原因"><a href="#触发原因" class="headerlink" title="触发原因"></a>触发原因</h3><ol>
+    <h2 id="0x0-简介"><a href="#0x0-简介" class="headerlink" title="0x0 简介"></a>0x0 简介</h2><p>HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。</p>
+<h3 id="0x0-1-攻击原理"><a href="#0x0-1-攻击原理" class="headerlink" title="0x0.1 攻击原理"></a>0x0.1 攻击原理</h3><p>Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)</p>
+<h3 id="0x0-2-触发条件"><a href="#0x0-2-触发条件" class="headerlink" title="0x0.2 触发条件"></a>0x0.2 触发条件</h3><p>需要欺骗用户自己去点击带有特定参数的链接才能触发</p>
+<h3 id="0x0-3-触发原因"><a href="#0x0-3-触发原因" class="headerlink" title="0x0.3 触发原因"></a>0x0.3 触发原因</h3><ol>
 <li>没有对输入进行约束，没有对输出进行编码</li>
 <li>没有严格区分“数据”和“代码”</li>
 </ol>
-<h3 id="可能出现漏洞的地方"><a href="#可能出现漏洞的地方" class="headerlink" title="可能出现漏洞的地方"></a>可能出现漏洞的地方</h3><p>搜索引擎，错误页面。</p>
-<h2 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h2><p>在输入框、url链接参数中输入一些字符，然后访问，查看源代码，查找输入的字符是否原封不动的存在，如果存在可以肯定存在漏洞。然后根据输出环境构造xss代码。比如如果页面直接把相应内容输出可以直接写xss代码，如果相应内容在标签里可以先封闭标签再写xss代码也可以用onclick，onmouseover这种事件。还可以用img iframe这样的标签注入xss代码。</p>
-<h2 id="漏洞挖掘代码"><a href="#漏洞挖掘代码" class="headerlink" title="漏洞挖掘代码"></a>漏洞挖掘代码</h2><h3 id="查找漏洞-reflected-xss-py"><a href="#查找漏洞-reflected-xss-py" class="headerlink" title="查找漏洞 reflected_xss.py"></a>查找漏洞 reflected_xss.py</h3><ol>
-<li>原理<br>获取url，如果url中存在？则以？拆分url，接着看？后半部分是否存在&amp;，存在则以&amp;继续拆分，并在拆分后的每部分后加test字符串，不存在则直接加上test字符串，再把修改后的内容合并成一个完整的url。访问新修改的url，获取页面内容，查找内容中是否有添加的test字符串，如果存在说明可能存在反射型xss漏洞。</li>
-<li>代码</li>
-</ol>
-<pre><code>import urllib2
-test = &apos;woaini&apos;
+<h3 id="0x0-4-可能出现漏洞的地方"><a href="#0x0-4-可能出现漏洞的地方" class="headerlink" title="0x0.4 可能出现漏洞的地方"></a>0x0.4 可能出现漏洞的地方</h3><p>搜索引擎，错误页面。</p>
+<h2 id="0x1-查找并利用"><a href="#0x1-查找并利用" class="headerlink" title="0x1 查找并利用"></a>0x1 查找并利用</h2><h3 id="0x1-1-查找漏洞"><a href="#0x1-1-查找漏洞" class="headerlink" title="0x1.1 查找漏洞"></a>0x1.1 查找漏洞</h3><p>确定应用程序所有的用户输入进入点，并遵循以下步骤：</p>
+<ul>
+<li>在每个进入点提交一个良性字母字符串</li>
+<li>确定此字符串“反射”在应用程序中的所有位置</li>
+<li>对于每个反射，确定显示反射数据地方的上下文环境</li>
+<li>提交针对上下文环境而修改的数据，尝试在响应中引入任意脚本</li>
+<li>如果反射型数据被阻止或净化，导致脚本无法执行，则尝试了解并避开应用程序的防御性过滤<br>t</li>
+</ul>
 
-
-def modify_url(url):
-    new_url = &quot;&quot;
-    if &quot;?&quot; in url:
-        new_url = url.split(&quot;?&quot;)[0] + &quot;?&quot;
-        parameters = url.split(&quot;?&quot;)[1]
-        if &quot;&amp;&quot; in url:
-            parameters = parameters.split(&quot;&amp;&quot;)
-            for parameter in parameters:
-                parameter += test
-                new_url += parameter + &quot;&amp;&quot;
-        else:
-            parameters += test
-            new_url = url.split(&quot;?&quot;)[0] + &quot;?&quot; + parameters
-    return new_url
-
-
-def get_content(url):
-    try:
-        response = urllib2.urlopen(url)
-        content = response.read()
-        if test in content:
-            return True
-        else:
-            return False
-    except:
-        pass
-</code></pre><h3 id="网页爬虫"><a href="#网页爬虫" class="headerlink" title="网页爬虫"></a>网页爬虫</h3><ol>
-<li>原理<br>用两个set分别存储爬过的url和没爬过的url。用正则表达式（具体情况具体分析，此代码的正则匹配 <a href="http://xxxxxx.jumei.com/xxxx" target="_blank" rel="external">http://xxxxxx.jumei.com/xxxx</a> 形式的url）匹配出一个网页中所有的链接，如果链接不在两个set之中则归入没爬过的set，否则忽略。如果存在新的url则获取一个url进行查找漏洞（reflected_xss.py）</li>
-<li>代码</li>
-</ol>
-<pre><code>import urllib2
-from bs4 import BeautifulSoup
-import re
-import reflected_xss
-
-
-url = &quot;http://bj.jumei.com/&quot;
-old_url = set()
-new_url = set()
-
-
-def add_url(newurl):
-    new_url.add(newurl)
-
-
-def delete_url(oldurl):
-    old_url.add(oldurl)
-
-
-def set_url(ourl):
-    try:
-        response = urllib2.urlopen(ourl)
-        soup = BeautifulSoup(response, &quot;html.parser&quot;, from_encoding=&quot;utf-8&quot;)
-        pattern = re.compile(r&quot;http://\w+\.jumei\.com/.+&quot;)
-        links = soup.find_all(&quot;a&quot;, href=pattern)
-        for link in links:
-             newurl = link[&quot;href&quot;]
-            if newurl not in old_url and newurl not in new_url:
-                add_url(newurl)
-        delete_url(ourl)
-    except:
-        pass
-
-
-def isnewurl():
-    if len(new_url) == 0:
-        return False
-    else:
-        return True
-
-
-def get_url():
-    return new_url.pop()
-
-
-def main():
-    set_url(url)
-    print new_url
-    count = 0
-    while True:
-        if isnewurl():
-            new = get_url()
-            set_url(new)
-            print len(new_url)
-            modified_new = reflected_xss.modify_url(new)
-            if len(modified_new):
-                if reflected_xss.get_content(modified_new):
-                    print count
-                    print modified_new
-                    print &quot;yes!!!!&quot;
-                else:
-                    pass
-
-                count += 1
-                if count == 500:
-                    break
-    print &quot;finish&quot;
-
-
-main()
-</code></pre>
   </section>
 
   
