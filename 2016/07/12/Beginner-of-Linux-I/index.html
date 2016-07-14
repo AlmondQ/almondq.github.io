@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Beginner of Linux | 晴 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Almond">
+    
+    
+
+    <meta name="description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下
+Linux终端Terminal通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beginner of Linux | 晴">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/Beginner-of-Linux-I/index.html">
+<meta property="og:site_name" content="晴">
+<meta property="og:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下
+Linux终端Terminal通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r735mmrvj20bl04ejrv.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7igmuc8j20dg09675i.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7k997udj207501iq34.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r7pn3x95j20fe00xaab.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8181cctj2085076t94.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r83fnhxyj20cl013weo.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8axm9dtj20az01idg2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8cv5nv2j20cb0320t6.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8gndqcuj20jy0by40m.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5t5qwdb1vj20o704kaad.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t5v73t6kj20eo0a3wes.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t6lz4r7aj20ag01kaaa.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5t6ur485dj210j0bz3zm.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5scaleb32j20yn12kwlq.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5scco4gftj20sx061tb4.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20jw1f5tex45za6j20ej031mxl.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5tf0uv2uwj20gi05zgmk.jpg">
+<meta property="og:updated_time" content="2016-07-14T08:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Beginner of Linux | 晴">
+<meta name="twitter:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下
+Linux终端Terminal通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r735mmrvj20bl04ejrv.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">晴</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          一切都是最好的安排
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+    <!-- Github -->
+    <li class="navigation__item">
+      <a href="https://github.com/AlmondQ" title="GitHub" target=“_blank”>
+        <i class='icon icon-social-github'></i>
+        <span class="label">GitHub</span>
+      </a>
+    </li>
+    
+    <!-- China social icon -->
+      <li class="navigation__item">
+        <a href="http://weibo.com/almondq" title=“weibo” target=“_blank”>
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Beginner of Linux</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-12" class="post-meta__date date">2016-07-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下</p>
+<h2 id="Linux终端"><a href="#Linux终端" class="headerlink" title="Linux终端"></a>Linux终端</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是通过不同的/dev/tty设备完成的，Linux默认提供了6个纯命令行界面的”termimnal”(准确的说这里应该是6个virtual consoles)来让用户登录，在物理机系统上可以通过使用[Ctrl]+[Alt]+[F1]~[F6]进行切换。可以使用Ctrl]+[Alt]+[F7]来切换回图形界面</p>
+<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>通常在图形界面中对实际体验带来差异的不是终端模拟器，而大都是这个Shell，有壳就有核，这里的核就是指的UNIX/Linux内核，Shell是指“提供给使用者使用界面”的软件(命令解析器)，类似于DOS下的command(命令行)和后来的cmd.exe。普通意义上的Shell就是可以接受用户输入命令的程序。</p>
+<p>Unix/Linux操作系统下的Shell既是用户交互的界面，也是控制系统的脚本语言。常见的Shell有bash,zsh,ksh,csh等</p>
+<h3 id="一些重要的快捷键"><a href="#一些重要的快捷键" class="headerlink" title="一些重要的快捷键"></a>一些重要的快捷键</h3><ul>
+<li>[Tab] 使用Tab键来进行命令补全</li>
+<li>[Ctrl+c] 强行终止当前程序</li>
+<li>[Ctrl+d] 键盘输入结束或退出终端</li>
+<li>[Ctrl+a/e] 将光标移至输入行头/尾</li>
+<li>[Ctrl+k] 删除从光标所在位置到行末</li>
+<li>[Alt+Backspace] 向前删除一个单词</li>
+</ul>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><ul>
+<li>* 匹配0或多个字符</li>
+<li>? 匹配任意一个字符</li>
+<li>[list] 匹配list中的任意单一字符</li>
+<li>[!list] 匹配除list中的任意单字符以外的字符</li>
+<li>[c1-c2] 匹配c1-c2中的任意单字符，如[0-9][a-z]</li>
+<li>{string1,string2,…} 匹配string1或string2或更多其一字符</li>
+<li>{c1..c2} 匹配c1-c2中全部字符，如{1-10}</li>
+</ul>
+<h2 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h2><h3 id="Linux用户管理"><a href="#Linux用户管理" class="headerlink" title="Linux用户管理"></a>Linux用户管理</h3><p>Linux是一个可以实现多用户登录的操作系统，这些用户共享一些主机的资源，但也分别有自己的用户空间用于存放各自的文件。但实际上他们的文件都是放在同一个物理磁盘上的甚至同一个逻辑分区或者目录里，但是由于Linux的用户管理和权限机制，不同用户不可以轻易的查看和修改他人的文件</p>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r735mmrvj20bl04ejrv.jpg" alt="whoami"></p>
+<p>pts代表当前为伪终端，伪是相对于/dev/tty设备而言的，后边的/0,/1代表着伪终端序号，时间为启动时间</p>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p>在Linux系统里，root账户拥有整个系统至高无上的权力，比如新建／添加用户。</p>
+<p>root权限，系统权限的一种，与SYSTEM权限可以理解成一个概念，但高于Administrator权限，root时Linux和Unix系统中的超级管理员用户账户，该账户拥有整个系统至高无上的权力，所有对象都可以操作。</p>
+<p>我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要root权限，需要用到sudo这个命令。使用sudo命令的两大前提，一是要知道当前登录用户的密码，二是当前用户必须在sudo用户组。</p>
+<ul>
+<li>su <user> 可以切换到用户user</user></li>
+<li>sudo <cmd> 可以以特权级别运行cmd命令</cmd></li>
+<li>su- <user>  切换用户，同时环境变量也会跟着改变成目标用户的环境变量</user></li>
+</ul>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7igmuc8j20dg09675i.jpg" alt="adduser"></p>
+<p>新建好用户后，即可使用上述命令登录，想退出当前用户可以使用[Ctrl+d]</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7k997udj207501iq34.jpg" alt=""></p>
+<h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>在Linux里面每个用户都属于一个用户组，用户组简单的理解就是一组用户的集合，它们共享一些资源和权限，同时拥有私有资源。一个用户可以属于多个用户组。查看用户属于哪个用户组有两个方法</p>
+<h5 id="使用groups命令"><a href="#使用groups命令" class="headerlink" title="使用groups命令"></a>使用groups命令</h5><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r7pn3x95j20fe00xaab.jpg" alt="groups"><br>创建用户时如果不指定用户组的话，默认会自动创建一个与用户名相同的用户组。有的用户没有显示属于sudo用户组但却可以使用sudo命令获取root权限，这是因为/etc/sudoers.d的目录下创建了该用户的文件。</p>
+<h5 id="查看-etc-group文件"><a href="#查看-etc-group文件" class="headerlink" title="查看/etc/group文件"></a>查看/etc/group文件</h5><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8181cctj2085076t94.jpg" alt="etcgroup"><br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r83fnhxyj20cl013weo.jpg" alt="etcgroup2"></p>
+<p>/etc/group文件格式说明<br>group_name:password:GID:user_list</p>
+<h5 id="将其他用户加入sudo用户组"><a href="#将其他用户加入sudo用户组" class="headerlink" title="将其他用户加入sudo用户组"></a>将其他用户加入sudo用户组</h5><p>使用usermod命令可以为用户添加用户组<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8axm9dtj20az01idg2.jpg" alt="usermod"></p>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8cv5nv2j20cb0320t6.jpg" alt="deluser"></p>
+<h3 id="Linux文件权限"><a href="#Linux文件权限" class="headerlink" title="Linux文件权限"></a>Linux文件权限</h3><h4 id="查看文件权限"><a href="#查看文件权限" class="headerlink" title="查看文件权限"></a>查看文件权限</h4><p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8gndqcuj20jy0by40m.jpg" alt="right"><br><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5t5qwdb1vj20o704kaad.jpg" alt="right_explain1"><br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t5v73t6kj20eo0a3wes.jpg" alt="right_explain2"></p>
+<h4 id="变更文件所有者"><a href="#变更文件所有者" class="headerlink" title="变更文件所有者"></a>变更文件所有者</h4><p>在当前文件所有者的角色下在该文件的目录中执行</p>
+<pre><code>sudo chown [即将拥有权限的用户名] [文件名]
+</code></pre><p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t6lz4r7aj20ag01kaaa.jpg" alt="chown"></p>
+<h4 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h4><ul>
+<li>方式一：二进制数字表示</li>
+</ul>
+<p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5t6ur485dj210j0bz3zm.jpg" alt="right_binary"><br>每个文件的三组权限（拥有者，用户组，其他用户）分别对应一组”rwx”，也就是一个7，如果当前文件只想当前用户可用，就可以</p>
+<pre><code>chmod 700 [文件名]
+</code></pre><ul>
+<li>方式二：加减赋值操作</li>
+</ul>
+<p>完成上述相同的效果，可以</p>
+<pre><code>chmod go-rw [文件名]
+</code></pre><p>“g”代表group “o”代表others “u”代表user “＋”“－”就分表表示增加和去掉相应的权限</p>
+<h2 id="Linux目录结构及文件基本操作"><a href="#Linux目录结构及文件基本操作" class="headerlink" title="Linux目录结构及文件基本操作"></a>Linux目录结构及文件基本操作</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>UNIX 是以目录为主的，Linux 也继承了这一优良特性。 Linux 是以树形目录结构的形式来构建整个系统的，可以理解为一个用户可操作系统的骨架。虽然本质上无论是目录结构还是操作系统内核都是存储在磁盘上的，但从逻辑上来说 Linux 的磁盘是“挂在”（挂载在）目录上的，每一个目录不仅能使用本地磁盘分区的文件系统，也可以使用网络上的文件系统。举例来说，可以利用网络文件系统（Network File System，NFS）服务器载入某特定目录等。</p>
+<p>FHS标准</p>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。FHS 定义了两层规范: 第一层是/ 下面的各个目录应该要放什么文件数据，例如 /etc 应该要放置设置文件，/bin 与 /sbin 则应该要放置可执行文件等等。<br>第二层则是针对 /usr 及 /var 这两个目录的子目录来定义。例如 /var/log 放置系统登录文件、/usr/share 放置共享数据等等。<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5scaleb32j20yn12kwlq.jpg" alt="FHS_standard"></p>
+<p>FHS 依据文件系统使用的频繁与否以及是否允许用户随意改动（注意，不是不能，学习过程中，不要怕这些），将目录定义为四种交互作用的形态，如下表所示：<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5scco4gftj20sx061tb4.jpg" alt="fourtype"></p>
+<h3 id="文件基本操作"><a href="#文件基本操作" class="headerlink" title="文件基本操作"></a>文件基本操作</h3><h4 id="新建空白文件"><a href="#新建空白文件" class="headerlink" title="新建空白文件"></a>新建空白文件</h4><p>使用touch命令新建空白文件，使用mkdir新建目录(-p参数代表如果父目录不存在则创建父级目录)<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg" alt="touchmkdir"></p>
+<h4 id="复制和删除"><a href="#复制和删除" class="headerlink" title="复制和删除"></a>复制和删除</h4><p>使用cp复制文件，使用rm删除文件，-r代表操作目录，-f代表强制删除<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg" alt="cp"><br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20jw1f5tex45za6j20ej031mxl.jpg" alt="rm"></p>
+<h4 id="移动和重命名"><a href="#移动和重命名" class="headerlink" title="移动和重命名"></a>移动和重命名</h4><p>使用mv移动文件和为单一文件重命名，使用rename为多个文件重命名<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5tf0uv2uwj20gi05zgmk.jpg" alt="mv"></p>
+<h4 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h4><p>使用cat正序查看文件，使用tac倒序查看文件，nl命令添加行号并打印，比 cat -n更专业<br>more和less是更专业的用来查看文件的命令，file命令用来查看文件类型</p>
+<h2 id="文件打包与压缩"><a href="#文件打包与压缩" class="headerlink" title="文件打包与压缩"></a>文件打包与压缩</h2><p>只记录最常用的tar解压缩</p>
+<pre><code>tar -xf [filename] -c [要解压到的路径]
+</code></pre>
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'almondq'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
