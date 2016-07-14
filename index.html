@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
     
-
-    <title>
-      晴 
-    </title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    
-      <meta name="author" content="Almond">
-    
-    
-
+    <title>晴</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="晴">
@@ -26,388 +15,1909 @@
 <meta name="twitter:title" content="晴">
 <meta name="twitter:description">
     
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
     
     
-      <link rel="icon" type="image/x-icon" href="/favicon.png">
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
     
-    <link rel="stylesheet" href="/css/uno.css">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" href="/css/archive.css">
-    <link rel="stylesheet" href="/css/china-social-icon.css">
+    
+    
+    
 
 </head>
 <body>
-
-    <span class="mobile btn-mobile-menu">
-        <i class="icon icon-list btn-mobile-menu__icon"></i>
-        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
-    </span>
-
-    
- 
-<header class="panel-cover">
-
-
-  <div class="panel-main">
-
-  
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-
-        
-
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">晴</a></h1>
-        <hr class="panel-cover__divider" />
-
-        
-        <p class="panel-cover__description">
-          一切都是最好的安排
-        </p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
-        
-
-        <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-
-              
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">晴</span>
+            </a>
+            <nav id="main-nav">
                 
-                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
-              
+                    <a class="main-nav-link" href="/.">Home</a>
                 
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
-              
+                    <a class="main-nav-link" href="/archives">Archives</a>
                 
-                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
-              
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
 
-            </ul>
-          </nav>
-
-          <!-- ----------------------------
-To add a new social icon simply duplicate one of the list items from below
-and change the class in the <i> tag to match the desired social network
-and then add your link to the <a>. Here is a full list of social network
-classes that you can use:
-
-    icon-social-500px
-    icon-social-behance
-    icon-social-delicious
-    icon-social-designer-news
-    icon-social-deviant-art
-    icon-social-digg
-    icon-social-dribbble
-    icon-social-facebook
-    icon-social-flickr
-    icon-social-forrst
-    icon-social-foursquare
-    icon-social-github
-    icon-social-google-plus
-    icon-social-hi5
-    icon-social-instagram
-    icon-social-lastfm
-    icon-social-linkedin
-    icon-social-medium
-    icon-social-myspace
-    icon-social-path
-    icon-social-pinterest
-    icon-social-rdio
-    icon-social-reddit
-    icon-social-skype
-    icon-social-spotify
-    icon-social-stack-overflow
-    icon-social-steam
-    icon-social-stumbleupon
-    icon-social-treehouse
-    icon-social-tumblr
-    icon-social-twitter
-    icon-social-vimeo
-    icon-social-xbox
-    icon-social-yelp
-    icon-social-youtube
-    icon-social-zerply
-    icon-mail
-
--------------------------------->
-
-<!-- add social info here -->
-
-
-<nav class="cover-navigation navigation--social">
-  <ul class="navigation">
-    <!-- Github -->
-    <li class="navigation__item">
-      <a href="https://github.com/AlmondQ" title="GitHub" target=“_blank”>
-        <i class='icon icon-social-github'></i>
-        <span class="label">GitHub</span>
-      </a>
-    </li>
-    
-    <!-- China social icon -->
-      <li class="navigation__item">
-        <a href="http://weibo.com/almondq" title=“weibo” target=“_blank”>
-          <i class='icon cs-icon-weibo'></i>
-          <span class="label">Weibo</span>
-        </a>
-      </li>
-
-
-
-  </ul>
-</nav>
-
-
-
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
 
-      </div>
-
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
-    <div class="panel-cover--overlay"></div>
-  </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </header>
 
-    <div class="content-wrapper">
-        <div class="content-wrapper__inner entry">
+        <div class="outer">
             
+                
 
-
-   <!-- do nothing -->
-
-
-<div class="main-post-list">
-    <ol class="post-list">
-    
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/14/Beginner-of-Linux-II/" title="link to Beginner of Linux II">Beginner of Linux II</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-14" class="post-list__meta--date date">2016-07-14</time> 
-      </div>
-
-      <div class="excerpt">
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">PPOffice</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Harbin, China</span>
+            <a id="follow" target="_blank" href="https://github.com/ppoffice/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                10
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                2
+                <span>标签</span>
+            </div>
+        </div>
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/12/Beginner-of-Linux-I/" title="link to Beginner of Linux I">Beginner of Linux I</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-12" class="post-list__meta--date date">2016-07-12</time> 
-      </div>
-
-      <div class="excerpt">
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
         
-      </div>
+    </div>
+</aside>
 
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/12/Go-Django/" title="link to Go Django">Go Django</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-12" class="post-list__meta--date date">2016-07-12</time> 
-      </div>
-
-      <div class="excerpt">
+            
+            <section id="main">
+    <article id="post-Beginner-of-Linux-II" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/07/05/Web-For-Pentester/" title="link to Web For Pentester">Web For Pentester</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-07-05" class="post-list__meta--date date">2016-07-05</time> 
-      </div>
-
-      <div class="excerpt">
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/06/15/OOP-in-Python/" title="link to OOP in Python">OOP in Python</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-06-15" class="post-list__meta--date date">2016-06-15</time> 
-      </div>
-
-      <div class="excerpt">
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
+            <header class="article-header">
+                
     
-    <li>
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/14/Beginner-of-Linux-II/">Beginner of Linux II</a>
+        </h1>
+    
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/06/13/Functions-and-Functional-Programming/" title="link to Functions and Functional Programming">Functions and Functional Programming</a>
-      </h2>
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/14/Beginner-of-Linux-II/">
+            <time datetime="2016-07-14T08:49:04.000Z" itemprop="datePublished">2016-07-14</time>
+        </a>
+    </div>
 
-      <div class="post-list__meta">
 
-        <time datetime="2016-06-13" class="post-list__meta--date date">2016-06-13</time> 
-      </div>
-
-      <div class="excerpt">
+                        
+                        
+                    </div>
+                
+            </header>
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/31/Some-Modules-in-Python/" title="link to Some Modules in Python">Some Modules in Python</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-31" class="post-list__meta--date date">2016-05-31</time> 
-      </div>
-
-      <div class="excerpt">
+        <div class="article-entry" itemprop="articleBody">
         
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/05/19/MultiThread-in-Python/" title="link to MultiThread in Python">MultiThread in Python</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-05-19" class="post-list__meta--date date">2016-05-19</time> 
-      </div>
-
-      <div class="excerpt">
+            
+            
         
-      </div>
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/04/04/reflected-xss/" title="link to Reflected XSS">Reflected XSS</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-04-04" class="post-list__meta--date date">2016-04-04</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-    <li>
-
-      <h2 class="post-list__post-title post-title">
-        <a href="/2016/03/21/hello-world/" title="link to Hello World">Hello World</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2016-03-21" class="post-list__meta--date date">2016-03-21</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
-    
-
-    <span class="pagination__page-number"> 1 / 1</span>
-    
-    
-</nav>
 
 
 </div>
-            <footer class="footer">
 
-    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    <a data-url="http://yoursite.com/2016/07/14/Beginner-of-Linux-II/" data-id="ciqm56se20001qix9pz7wzffh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
     
-</footer>
+        <a href="http://yoursite.com/2016/07/14/Beginner-of-Linux-II/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/07/14/Beginner-of-Linux-II/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Beginner-of-Linux-I" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/12/Beginner-of-Linux-I/">Beginner of Linux I</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/12/Beginner-of-Linux-I/">
+            <time datetime="2016-07-12T06:59:48.000Z" itemprop="datePublished">2016-07-12</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下</p>
+<h2 id="Linux终端"><a href="#Linux终端" class="headerlink" title="Linux终端"></a>Linux终端</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是通过不同的/dev/tty设备完成的，Linux默认提供了6个纯命令行界面的”termimnal”(准确的说这里应该是6个virtual consoles)来让用户登录，在物理机系统上可以通过使用[Ctrl]+[Alt]+[F1]~[F6]进行切换。可以使用Ctrl]+[Alt]+[F7]来切换回图形界面</p>
+<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>通常在图形界面中对实际体验带来差异的不是终端模拟器，而大都是这个Shell，有壳就有核，这里的核就是指的UNIX/Linux内核，Shell是指“提供给使用者使用界面”的软件(命令解析器)，类似于DOS下的command(命令行)和后来的cmd.exe。普通意义上的Shell就是可以接受用户输入命令的程序。</p>
+<p>Unix/Linux操作系统下的Shell既是用户交互的界面，也是控制系统的脚本语言。常见的Shell有bash,zsh,ksh,csh等</p>
+<h3 id="一些重要的快捷键"><a href="#一些重要的快捷键" class="headerlink" title="一些重要的快捷键"></a>一些重要的快捷键</h3><ul>
+<li>[Tab] 使用Tab键来进行命令补全</li>
+<li>[Ctrl+c] 强行终止当前程序</li>
+<li>[Ctrl+d] 键盘输入结束或退出终端</li>
+<li>[Ctrl+a/e] 将光标移至输入行头/尾</li>
+<li>[Ctrl+k] 删除从光标所在位置到行末</li>
+<li>[Alt+Backspace] 向前删除一个单词</li>
+</ul>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><ul>
+<li>* 匹配0或多个字符</li>
+<li>? 匹配任意一个字符</li>
+<li>[list] 匹配list中的任意单一字符</li>
+<li>[!list] 匹配除list中的任意单字符以外的字符</li>
+<li>[c1-c2] 匹配c1-c2中的任意单字符，如[0-9][a-z]</li>
+<li>{string1,string2,…} 匹配string1或string2或更多其一字符</li>
+<li>{c1..c2} 匹配c1-c2中全部字符，如{1-10}</li>
+</ul>
+<h2 id="用户及文件权限管理"><a href="#用户及文件权限管理" class="headerlink" title="用户及文件权限管理"></a>用户及文件权限管理</h2><h3 id="Linux用户管理"><a href="#Linux用户管理" class="headerlink" title="Linux用户管理"></a>Linux用户管理</h3><p>Linux是一个可以实现多用户登录的操作系统，这些用户共享一些主机的资源，但也分别有自己的用户空间用于存放各自的文件。但实际上他们的文件都是放在同一个物理磁盘上的甚至同一个逻辑分区或者目录里，但是由于Linux的用户管理和权限机制，不同用户不可以轻易的查看和修改他人的文件</p>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r735mmrvj20bl04ejrv.jpg" alt="whoami"></p>
+<p>pts代表当前为伪终端，伪是相对于/dev/tty设备而言的，后边的/0,/1代表着伪终端序号，时间为启动时间</p>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p>在Linux系统里，root账户拥有整个系统至高无上的权力，比如新建／添加用户。</p>
+<p>root权限，系统权限的一种，与SYSTEM权限可以理解成一个概念，但高于Administrator权限，root时Linux和Unix系统中的超级管理员用户账户，该账户拥有整个系统至高无上的权力，所有对象都可以操作。</p>
+<p>我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要root权限，需要用到sudo这个命令。使用sudo命令的两大前提，一是要知道当前登录用户的密码，二是当前用户必须在sudo用户组。</p>
+<ul>
+<li>su <user> 可以切换到用户user</user></li>
+<li>sudo <cmd> 可以以特权级别运行cmd命令</cmd></li>
+<li>su- <user>  切换用户，同时环境变量也会跟着改变成目标用户的环境变量</user></li>
+</ul>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7igmuc8j20dg09675i.jpg" alt="adduser"></p>
+<p>新建好用户后，即可使用上述命令登录，想退出当前用户可以使用[Ctrl+d]</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r7k997udj207501iq34.jpg" alt=""></p>
+<h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>在Linux里面每个用户都属于一个用户组，用户组简单的理解就是一组用户的集合，它们共享一些资源和权限，同时拥有私有资源。一个用户可以属于多个用户组。查看用户属于哪个用户组有两个方法</p>
+<h5 id="使用groups命令"><a href="#使用groups命令" class="headerlink" title="使用groups命令"></a>使用groups命令</h5><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r7pn3x95j20fe00xaab.jpg" alt="groups"><br>创建用户时如果不指定用户组的话，默认会自动创建一个与用户名相同的用户组。有的用户没有显示属于sudo用户组但却可以使用sudo命令获取root权限，这是因为/etc/sudoers.d的目录下创建了该用户的文件。</p>
+<h5 id="查看-etc-group文件"><a href="#查看-etc-group文件" class="headerlink" title="查看/etc/group文件"></a>查看/etc/group文件</h5><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8181cctj2085076t94.jpg" alt="etcgroup"><br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5r83fnhxyj20cl013weo.jpg" alt="etcgroup2"></p>
+<p>/etc/group文件格式说明<br>group_name:password:GID:user_list</p>
+<h5 id="将其他用户加入sudo用户组"><a href="#将其他用户加入sudo用户组" class="headerlink" title="将其他用户加入sudo用户组"></a>将其他用户加入sudo用户组</h5><p>使用usermod命令可以为用户添加用户组<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8axm9dtj20az01idg2.jpg" alt="usermod"></p>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5r8cv5nv2j20cb0320t6.jpg" alt="deluser"></p>
+<h3 id="Linux文件权限"><a href="#Linux文件权限" class="headerlink" title="Linux文件权限"></a>Linux文件权限</h3><h4 id="查看文件权限"><a href="#查看文件权限" class="headerlink" title="查看文件权限"></a>查看文件权限</h4><p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r8gndqcuj20jy0by40m.jpg" alt="right"><br><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5t5qwdb1vj20o704kaad.jpg" alt="right_explain1"><br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t5v73t6kj20eo0a3wes.jpg" alt="right_explain2"></p>
+<h4 id="变更文件所有者"><a href="#变更文件所有者" class="headerlink" title="变更文件所有者"></a>变更文件所有者</h4><p>在当前文件所有者的角色下在该文件的目录中执行</p>
+<pre><code>sudo chown [即将拥有权限的用户名] [文件名]
+</code></pre><p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5t6lz4r7aj20ag01kaaa.jpg" alt="chown"></p>
+<h4 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h4><ul>
+<li>方式一：二进制数字表示</li>
+</ul>
+<p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5t6ur485dj210j0bz3zm.jpg" alt="right_binary"><br>每个文件的三组权限（拥有者，用户组，其他用户）分别对应一组”rwx”，也就是一个7，如果当前文件只想当前用户可用，就可以</p>
+<pre><code>chmod 700 [文件名]
+</code></pre><ul>
+<li>方式二：加减赋值操作</li>
+</ul>
+<p>完成上述相同的效果，可以</p>
+<pre><code>chmod go-rw [文件名]
+</code></pre><p>“g”代表group “o”代表others “u”代表user “＋”“－”就分表表示增加和去掉相应的权限</p>
+<h2 id="Linux目录结构及文件基本操作"><a href="#Linux目录结构及文件基本操作" class="headerlink" title="Linux目录结构及文件基本操作"></a>Linux目录结构及文件基本操作</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p>UNIX 是以目录为主的，Linux 也继承了这一优良特性。 Linux 是以树形目录结构的形式来构建整个系统的，可以理解为一个用户可操作系统的骨架。虽然本质上无论是目录结构还是操作系统内核都是存储在磁盘上的，但从逻辑上来说 Linux 的磁盘是“挂在”（挂载在）目录上的，每一个目录不仅能使用本地磁盘分区的文件系统，也可以使用网络上的文件系统。举例来说，可以利用网络文件系统（Network File System，NFS）服务器载入某特定目录等。</p>
+<p>FHS标准</p>
+<p>FHS（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数 Linux 版本采用这种文件组织形式，FHS 定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。FHS 定义了两层规范: 第一层是/ 下面的各个目录应该要放什么文件数据，例如 /etc 应该要放置设置文件，/bin 与 /sbin 则应该要放置可执行文件等等。<br>第二层则是针对 /usr 及 /var 这两个目录的子目录来定义。例如 /var/log 放置系统登录文件、/usr/share 放置共享数据等等。<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5scaleb32j20yn12kwlq.jpg" alt="FHS_standard"></p>
+<p>FHS 依据文件系统使用的频繁与否以及是否允许用户随意改动（注意，不是不能，学习过程中，不要怕这些），将目录定义为四种交互作用的形态，如下表所示：<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5scco4gftj20sx061tb4.jpg" alt="fourtype"></p>
+<h3 id="文件基本操作"><a href="#文件基本操作" class="headerlink" title="文件基本操作"></a>文件基本操作</h3><h4 id="新建空白文件"><a href="#新建空白文件" class="headerlink" title="新建空白文件"></a>新建空白文件</h4><p>使用touch命令新建空白文件，使用mkdir新建目录(-p参数代表如果父目录不存在则创建父级目录)<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg" alt="touchmkdir"></p>
+<h4 id="复制和删除"><a href="#复制和删除" class="headerlink" title="复制和删除"></a>复制和删除</h4><p>使用cp复制文件，使用rm删除文件，-r代表操作目录，-f代表强制删除<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5teqeenoyj20ih0313z0.jpg" alt="cp"><br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20jw1f5tex45za6j20ej031mxl.jpg" alt="rm"></p>
+<h4 id="移动和重命名"><a href="#移动和重命名" class="headerlink" title="移动和重命名"></a>移动和重命名</h4><p>使用mv移动文件和为单一文件重命名，使用rename为多个文件重命名<br><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5tf0uv2uwj20gi05zgmk.jpg" alt="mv"></p>
+<h4 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h4><p>使用cat正序查看文件，使用tac倒序查看文件，nl命令添加行号并打印，比 cat -n更专业<br>more和less是更专业的用来查看文件的命令，file命令用来查看文件类型</p>
+<h2 id="文件打包与压缩"><a href="#文件打包与压缩" class="headerlink" title="文件打包与压缩"></a>文件打包与压缩</h2><p>只记录最常用的tar解压缩</p>
+<pre><code>tar -xf [filename] -c [要解压到的路径]
+</code></pre>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/07/12/Beginner-of-Linux-I/" data-id="ciqm56sdx0000qix9qdqtq5b9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/07/12/Beginner-of-Linux-I/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/07/12/Beginner-of-Linux-I/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Go-Django" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/12/Go-Django/">Go Django</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/12/Go-Django/">
+            <time datetime="2016-07-12T06:03:54.000Z" itemprop="datePublished">2016-07-12</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="0x1-介绍Django"><a href="#0x1-介绍Django" class="headerlink" title="0x1 介绍Django"></a>0x1 介绍Django</h1><p>Django是一个高效的Web开发框架，提供了通用Web开发模式的高度抽象，提供了频繁进行的编程作业的快速解决方法，以及为“如何解决问题”提供了清晰明了的约定。同时，Django尝试留下了一些方法，可以根据需要在framework之外来开发</p>
+<p>主页 <a href="https://www.djangoproject.com/" target="_blank" rel="external">https://www.djangoproject.com/</a></p>
+<h2 id="0x1-1-安装"><a href="#0x1-1-安装" class="headerlink" title="0x1.1 安装"></a>0x1.1 安装</h2><pre><code>pip install Django==1.9.7
+</code></pre><p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r42av725j208i02q3yt.jpg" alt="install"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/07/12/Go-Django/" data-id="ciqm56se60003qix91wl1ac13" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/07/12/Go-Django/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/07/12/Go-Django/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Web-For-Pentester" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/05/Web-For-Pentester/">Web For Pentester</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/05/Web-For-Pentester/">
+            <time datetime="2016-07-05T05:01:47.000Z" itemprop="datePublished">2016-07-05</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/pentest/">pentest</a>, <a class="tag-link" href="/tags/web/">web</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="LDAP-attacks"><a href="#LDAP-attacks" class="headerlink" title="LDAP attacks"></a>LDAP attacks</h2><p>LDAP(lightweight directory access protocol)用于访问网络中的目录服务</p>
+<p>每个LDAP查询使用一个或多个搜索过滤器，它们决定了请求返回的目录项。搜索过滤器可以使用各种逻辑运算符来表示复杂的搜索条件，最常用的过滤器如下：</p>
+<ul>
+<li>简单匹配条件：对每个属性的值进行匹配，例如：(username=almond)</li>
+<li>析取查询： 指定多个条件，返回的目录项只需要满足其中一个条件即可，例如：(|(cn=XXX)(sn=sss)(on=sss)</li>
+<li>合取查询： 指定多个条件，返回的目录项必须满足所有条件，例如：(&amp;(username=almondq)(password=123))</li>
+</ul>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h3><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f5iys4cjgfj20cl06g74u.jpg" alt="ldap1_problem"></p>
+<p>一些LDAP服务器授权NULL bind：如果null值被提交给服务器，服务器会绑定连接，php code会认为这个凭据是正确的</p>
+<p>为了绑定两个null值，需要把参数全部删除，但是不能以username=&amp;password=这种方式，一定要全部删除，如下图</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5j0u1hclgj207o06edga.jpg" alt="ldap1_solve"></p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5j3coxozlj20c006cmxr.jpg" alt="ldap2_problem"></p>
+<ul>
+<li>username=hac*&amp;password=hacker 也可以获取授权，在LDAP中用*匹配任意值</li>
+</ul>
+<p>But,</p>
+<ul>
+<li>username=hacker&amp;password=hack* 无法获取，因为密码可能被hashed</li>
+</ul>
+<p>所以可以推测过滤器如下：</p>
+<pre><code>(&amp;(username=[INPUT1])(userPassword=HASH[INPUT2]))
+</code></pre><p>所以可以构造如下输入：</p>
+<pre><code>hacker))%00(&amp;(username=hacker
+</code></pre><p>NULL BYTE%00用来get rid of the end of the filter，此时可以以任何密码授权为hacker，同理：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/d4008a20gw1f5j3nct9x7j20et06dq3j.jpg" alt="ldap2_solve"></p>
+<p>获得admin授权</p>
+<h2 id="File-Upload"><a href="#File-Upload" class="headerlink" title="File Upload"></a>File Upload</h2><p>大部分网络应用都有上传功能，如用户头像上传，图片上传，文档上传等，一些实现文件上传功能的代码没有严格限制用户上传的文件后缀以及文件类型，导致允许攻击者上传任意web脚本语言，并能够将这些文件传递给脚本解释器，就可以在远程服务器上执行任意脚本</p>
+<p>大多数的文件上传漏洞都会被利用来留下webshell以方便后续进入系统，webshell是以asp，php，jsp活着cgi等网页文件形式存在的一种命令执行环境，也可以称其为一种网页后门，攻击者在入侵了一个网站后，通常会将这些文件与服务器web目录下正常的网页混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，以达到控制网站服务器的目的</p>
+<ul>
+<li>一句话木马</li>
+</ul>
+<h3 id="webshell-tool-b374k"><a href="#webshell-tool-b374k" class="headerlink" title="webshell tool: b374k"></a>webshell tool: b374k</h3><p>项目地址： <a href="https://github.com/b374k/b374k" target="_blank" rel="external">https://github.com/b374k/b374k</a></p>
+<p>使用命令下载到电脑中 </p>
+<pre><code>git clone https://github.com/b374k/b374k
+</code></pre><p>生成webshell的命令：</p>
+<pre><code>php index.php -o [shellName].php -p [password] -s -b -z gzcompress -c 9
+
+php index.php -o [shellName].php -p [password] -t garuda -s
+</code></pre><p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5k4t3z7hxj20jk0hz0vl.jpg" alt="b374k"></p>
+<h3 id="Example-1-1"><a href="#Example-1-1" class="headerlink" title="Example 1"></a>Example 1</h3><p>这个例子没有任何检查，可以随意上传php文件，此处上传上一节生成的webshell文件</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/d4008a20gw1f5k4w8uf2jj208q06o74p.jpg" alt="fileupload1_problem"></p>
+<p>可得到下图<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5k4xrtkcjj20ov0cpjsw.jpg" alt="fileupload1_solve"></p>
+<h3 id="Example-2-1"><a href="#Example-2-1" class="headerlink" title="Example 2"></a>Example 2</h3><p>这个例子进行了后缀检查，无法上传php文件，但是可以通过更改后缀为php3来绕过检查，在其他系统中php4，php5可能也可以成功。也可以在php后缀后面加上服务器(此练习中为apache)无法处理的后缀，比如.php.blah</p>
+<p><img src="http://ww4.sinaimg.cn/mw690/d4008a20gw1f5k6cd09nnj208c06pq3c.jpg" alt="fileupload2_problem"></p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5k6d2hrapj20p40c8ta5.jpg" alt="fileupload2_solve"></p>
+<h2 id="File-Include"><a href="#File-Include" class="headerlink" title="File Include"></a>File Include</h2><p>服务器通过php的特性函数去包含任意文件时，由于要包含的这个文件来源过滤不严，从而可以去包含一个恶意文件。文件包含漏洞可分为远程文件包含(RFI)和本地文件包含(LFI)。涉及到的危险函数：</p>
+<ul>
+<li>include(): 包含并运行指定文件，当包含外部文件发生错误时，系统给出警告，但整个php文件继续执行</li>
+<li>require(): 跟include唯一的不同是，当产生错误时，停止执行</li>
+<li>include_once(): 与include几乎相同，只是会在导入之前先检测该文件是否已经导入</li>
+<li>require_once(): 同上</li>
+</ul>
+<p>文件包含漏洞也可以被用作目录遍历来读取任意文件</p>
+<h3 id="Example-1-2"><a href="#Example-1-2" class="headerlink" title="Example 1"></a>Example 1</h3><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f5mso5eyjtj20aa06ejrv.jpg" alt="fileinclude1_problem"></p>
+<p>尝试将<a href="https://pentesterlab.com/test_include.txt包含在此例中，此txt文件包含phpinfo(" target="_blank" rel="external">https://pentesterlab.com/test_include.txt包含在此例中，此txt文件包含phpinfo(</a>)</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f5msvdnycbj20e10emgmq.jpg" alt="fileinclude1_solve"></p>
+<p>成功出现服务器配置信息</p>
+<h3 id="Example-2-2"><a href="#Example-2-2" class="headerlink" title="Example 2"></a>Example 2</h3><p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5mt0to58ij209o06jaaj.jpg" alt="fileinclude2_problem"></p>
+<p>此例与1相比，对文件后缀进行了控制，include($_GET(“page”).”.php”)，这种情况下，可以使用%00进行截断，但是这种截断方法只在php5.3.4版本之前有效</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5mt1hc4foj20bi0aeab9.jpg" alt="fileinclude2_solve"></p>
+<p>上例演示的是本地文件包含，可以用来包含本地敏感文件，或者结合文件上传漏洞</p>
+<p>远程文件包含的话，可以在包含的url后边添加?或者&amp;来截断</p>
+<h2 id="Command-Injection"><a href="#Command-Injection" class="headerlink" title="Command Injection"></a>Command Injection</h2><p>命令注入是因为用作命令一部分的信息缺少过滤或者编码。这些信息可能是用户提交的数据，包括每个url，请求主体参数及cookie，所以要检查每项功能中的所有这些项</p>
+<p>不同的命令解释器处理shell元字符的方式各不相同</p>
+<p>有两种类型的元字符可以用于在一个现有命令中注入一个独立的命令</p>
+<ul>
+<li>字符; | &amp;和换行符用于将几个命令逐个连在一起</li>
+<li>反引号(`)用于将一个独立的命令包含在最初的命令处理的数据中（即反引号里面的命令先执行）</li>
+</ul>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5q3ksm4urj21ci0eoafy.jpg" alt="commandinjection_explain"></p>
+<h3 id="Example-1-3"><a href="#Example-1-3" class="headerlink" title="Example 1"></a>Example 1</h3><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5q0om3u8aj20eq0argmo.jpg" alt="commandinjection1_problem"></p>
+<p>第一个例子没有进行任何过滤，可直接进行命令注入，在参数后边加上 &amp;&amp;(编码为%26) cat /etc/passwd</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5q3q7z6uhj20fh0ezjt0.jpg" alt="commandinjection1_solve"></p>
+<h3 id="Example-2-3"><a href="#Example-2-3" class="headerlink" title="Example 2"></a>Example 2</h3><p>第二个例子对参数进行了确认，如果在参数后面添加内容会显示无效地址</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5q40cyk23j20dh06gaam.jpg" alt="commandinjection2_problem"></p>
+<p>但是确认机制出现了疏漏，可以通过添加换行符/n（编码为%0a）来截断</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20jw1f5q42ne0cpj20e60dlgn1.jpg" alt="commandinjection2_solve"></p>
+<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><p>此例进行了跳转。在php中，如果参数的值不符合某些安全限制的话，最简单的方式是用header方法重定向。然而，虽然浏览器进行了跳转，但是这个方法并没有停止执行流程，脚本仍然会以危险的参数完成执行。开发者需要在header方法之后调用die方法来避免这个漏洞</p>
+<p>既然浏览器会跳转，所以此例不能用浏览器进行，我选择用telnet</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f5qvt2yvvkj20i703574s.jpg" alt="commandinjection3_solve1"></p>
+<p>得到的响应文件头会发现状态码为302</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5qvtvko28j209005eq3i.jpg" alt="commandinjection3_solve2"></p>
+<p>但是仍然可以在响应内容中看到cat /etc/passwd的内容</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f5qvufrq0xj20i00fytbk.jpg" alt="commandinjection3_solve3"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/07/05/Web-For-Pentester/" data-id="ciqm56see0007qix95mfmc4qo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/07/05/Web-For-Pentester/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/07/05/Web-For-Pentester/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-OOP-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/15/OOP-in-Python/">OOP in Python</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/15/OOP-in-Python/">
+            <time datetime="2016-06-15T01:58:14.000Z" itemprop="datePublished">2016-06-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>类是现实世界的抽象，是对象的定义，实例是真正的实物</p>
+<h3 id="创建类"><a href="#创建类" class="headerlink" title="创建类"></a>创建类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class className(bases):</span><br><span class="line">    &apos;class documentation string&apos; #&apos;类文档字符串&apos;</span><br><span class="line">    class_suite #类体</span><br></pre></td></tr></table></figure>
+<h3 id="类属性与方法"><a href="#类属性与方法" class="headerlink" title="类属性与方法"></a>类属性与方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class MyClass(object):</span><br><span class="line">    foo = 100</span><br><span class="line">    </span><br><span class="line">    def myNoActionMethod(self):</span><br><span class="line">        pass</span><br></pre></td></tr></table></figure>
+<p>要知道一个类有哪些属性，有两种方法，第一种是使用dir()内建函数，另外时通过访问类的字典属性<strong>dict</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print dir(MyClass)</span><br><span class="line">[&apos;__class__&apos;, &apos;__delattr__&apos;, &apos;__dict__&apos;, &apos;__doc__&apos;, &apos;__format__&apos;, &apos;__getattribute__&apos;, &apos;__hash__&apos;, &apos;__init__&apos;, &apos;__module__&apos;, &apos;__new__&apos;, &apos;__reduce__&apos;, &apos;__reduce_ex__&apos;, &apos;__repr__&apos;, &apos;__setattr__&apos;, &apos;__sizeof__&apos;, &apos;__str__&apos;, &apos;__subclasshook__&apos;, &apos;__weakref__&apos;, &apos;foo&apos;, &apos;myNoActionMethod&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print MyClass.__dict__</span><br><span class="line">&#123;&apos;__module__&apos;: &apos;__main__&apos;, &apos;__dict__&apos;: &lt;attribute &apos;__dict__&apos; of &apos;MyClass&apos; objects&gt;, &apos;foo&apos;: 100, &apos;__weakref__&apos;: &lt;attribute &apos;__weakref__&apos; of &apos;MyClass&apos; objects&gt;, &apos;__doc__&apos;: None, &apos;myNoActionMethod&apos;: &lt;function myNoActionMethod at 0x1004cf5f0&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，dir()返回的仅是对象的属性的一个名字列表，而<strong>dict</strong>返回的是一个字典，它的键是属性名，键值时相对应的属性对象的数据值</p>
+<h3 id="特殊的类属性"><a href="#特殊的类属性" class="headerlink" title="特殊的类属性"></a>特殊的类属性</h3><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5lbmr2bnsj20hk05aq3k.jpg" alt="special_attribute"></p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>类被初始化得到实例</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>mc = MyClass()
+</code></pre><h3 id="init-构造器方法"><a href="#init-构造器方法" class="headerlink" title="__init__()构造器方法"></a>__init__()构造器方法</h3><p>当类被调用，实例化的第一步是创建实例对象，一旦对象创建了，Python检查是否实现了__init__()方法。默认情况下，如果没有定义（或覆盖）特殊方法__init__()，对实例不会施加任何特别的操作。任何所需的特定操作，都需要程序员实现__init__()，覆盖它的默认行为</p>
+<p>然而，如果__init__()已被实现，那么它将被调用，实例对象作为第一个参数self被传递进去，像标准方法调用一样，调用类时，传递的任何参数都交给了__init__()</p>
+<h3 id="new-构造器方法"><a href="#new-构造器方法" class="headerlink" title="__new__()构造器方法"></a>__new__()构造器方法</h3><p>与__init__()相比，__new__()方法更像一个真正的构造器。Python用户可以对内建类型进行派生，因此，需要一种途径来实例化不可变对象，比如派生字符串，数字等。在这种情况下，解释器则调用类的__new__ ()方法，一个静态方法，并且传入的参数是在类实例化操作时生成的。__new__ ()会调用父类的__new__ ()来创建对象</p>
+<h3 id="del-析构函数"><a href="#del-析构函数" class="headerlink" title="__del__()析构函数"></a>__del__()析构函数</h3><p>只有当一个实例的全部引用都删除之后这个实例的析构函数才会被调用</p>
+<h2 id="实例属性-vs-类属性"><a href="#实例属性-vs-类属性" class="headerlink" title="实例属性 vs 类属性"></a>实例属性 vs 类属性</h2><p>当实例没有和类重名的属性时，可以通过实例访问类属性，但是无法通过实例改变类属性（可变属性：列表，字典除外）</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/06/15/OOP-in-Python/" data-id="ciqm56se90005qix99zz9zo4h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/06/15/OOP-in-Python/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/06/15/OOP-in-Python/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Functions-and-Functional-Programming" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/13/Functions-and-Functional-Programming/">Functions and Functional Programming</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/13/Functions-and-Functional-Programming/">
+            <time datetime="2016-06-13T02:02:40.000Z" itemprop="datePublished">2016-06-13</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器实际就是函数，接受函数对象，对该对象进行包装。当包装一个函数的时候，最终会调用它。比如在执行函数之前运行些预备代码，或者在执行之后做些清理工作。例如：</p>
+<ul>
+<li>引入日志</li>
+<li>增加计时逻辑来检测性能</li>
+<li>给函数加入事务的能力</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime, sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def deco(func):</span><br><span class="line">    def tsfun():</span><br><span class="line">        print &quot;[%s] %s called&quot; % (ctime(), func.__name__)</span><br><span class="line">        return func()</span><br><span class="line">    return tsfun</span><br><span class="line"></span><br><span class="line">@deco</span><br><span class="line">def foo():</span><br><span class="line">    print &quot;foo self&quot;</span><br><span class="line"></span><br><span class="line">foo()</span><br><span class="line">sleep(4)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    sleep(1)</span><br><span class="line">    foo()</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Tue Jun 14 13:25:43 2016] foo called</span><br><span class="line">foo self</span><br><span class="line">[Tue Jun 14 13:25:48 2016] foo called</span><br><span class="line">foo self</span><br><span class="line">[Tue Jun 14 13:25:49 2016] foo called</span><br><span class="line">foo self</span><br></pre></td></tr></table></figure>
+<p>deco函数返回一个装饰了func函数的函数</p>
+<h2 id="可变长度参数"><a href="#可变长度参数" class="headerlink" title="可变长度参数"></a>可变长度参数</h2><h4 id="非关键字可变长参数（元祖）"><a href="#非关键字可变长参数（元祖）" class="headerlink" title="非关键字可变长参数（元祖）"></a>非关键字可变长参数（元祖）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def tupleVarArgs(arg1, arg2=&apos;default&apos;, *theRest):</span><br><span class="line">    code</span><br></pre></td></tr></table></figure>
+<h4 id="关键字变量参数（字典）"><a href="#关键字变量参数（字典）" class="headerlink" title="关键字变量参数（字典）"></a>关键字变量参数（字典）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def dictVarArgs(arg1, arg2=&apos;default&apos;, *tuples, **theRest):</span><br><span class="line">    code</span><br></pre></td></tr></table></figure>
+<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><h4 id="匿名函数与lambda"><a href="#匿名函数与lambda" class="headerlink" title="匿名函数与lambda"></a>匿名函数与lambda</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test = lambda x, y =2: x + y</span><br><span class="line"></span><br><span class="line">print test(3)</span><br></pre></td></tr></table></figure>
+<p>结果为5</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>如果一个内部函数对外部函数的变量进行了引用那么就称为闭包</p>
+<p>闭包对于安装计算、隐藏状态和在函数对象和作用域中随意地切换是很有用的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def func():</span><br><span class="line">    fs = []</span><br><span class="line">    for i in range(1, 4):</span><br><span class="line">        def g(j):</span><br><span class="line">            def k():</span><br><span class="line">                return j * j</span><br><span class="line">            return k</span><br><span class="line">        fs.append(g(i))</span><br><span class="line">    return fs</span><br><span class="line"></span><br><span class="line">g1, g2, g3 = func()</span><br><span class="line"></span><br><span class="line">print g1(), g2(), g3()</span><br></pre></td></tr></table></figure>
+<p>结果：1，4，9</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/06/13/Functions-and-Functional-Programming/" data-id="ciqm56se40002qix9swflo6w6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/06/13/Functions-and-Functional-Programming/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/06/13/Functions-and-Functional-Programming/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Some-Modules-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/31/Some-Modules-in-Python/">Some Modules in Python</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/31/Some-Modules-in-Python/">
+            <time datetime="2016-05-31T02:29:29.000Z" itemprop="datePublished">2016-05-31</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="1-optparse-提供了命令行参数的解析／处理"><a href="#1-optparse-提供了命令行参数的解析／处理" class="headerlink" title="1 optparse:提供了命令行参数的解析／处理"></a>1 optparse:提供了命令行参数的解析／处理</h2><h3 id="1-1-示例"><a href="#1-1-示例" class="headerlink" title="1.1 示例"></a>1.1 示例</h3><p>代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from optparse import OptionParser</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">parser = OptionParser()</span><br><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, dest=&quot;filename&quot;, \</span><br><span class="line">help=&quot;write report to FILE&quot;, metavar=&quot;FILE&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, &quot;--quiet&quot;, dest=&quot;verbose&quot;, \</span><br><span class="line">default=True, help=&quot;do not print status messages to stdout&quot;)</span><br><span class="line"></span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<p>命令行输入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">optp.py -h/--help</span><br></pre></td></tr></table></figure>
+<p>输出:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Usage: optp.py [options]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -h, --help            show this help message and exit</span><br><span class="line">  -f FILE, --file=FILE  write report to FILE</span><br><span class="line">  -q, --quiet           do not print status messages to stdout</span><br></pre></td></tr></table></figure>
+<p>命令行输入:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;yourscript&gt; --file=outfile -q</span><br><span class="line">&lt;yourscript&gt; -f outfile --quiet</span><br><span class="line">&lt;yourscript&gt; --quiet --file outfile</span><br><span class="line">&lt;yourscript&gt; -q -foutfile</span><br><span class="line">&lt;yourscript&gt; -qfoutfile</span><br></pre></td></tr></table></figure>
+<p>optparse支持长选项和短选项，允许短选项混合在一起，允许选项和参数以各种各样的方式联系在一起，所以上面的格式都是正确的</p>
+<h3 id="1-2-使用方法"><a href="#1-2-使用方法" class="headerlink" title="1.2 使用方法"></a>1.2 使用方法</h3><p>首先导入OptionParser类，然后创建一个实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from optparser import OptionParser</span><br><span class="line">parser = OptionParser()</span><br></pre></td></tr></table></figure>
+<p>接着定义选项，基本语法为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(opt_str, ..., arrt=value, ...)</span><br></pre></td></tr></table></figure>
+<p>每个选项有一个或者一个以上的选项字符串，例如-f or –file， 和一些告诉optparse what to expect and 当在命令行遇到该选项应该做什么的选项属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, ...)</span><br></pre></td></tr></table></figure>
+<p>最后，一旦定义好了所有的命令行参数，调用parse_args()来解析程序的命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<p>注：也可以传递一个命令行参数列表到parse_args()(但是基本是没有必要的)，否则默认用sys.argv[1:]</p>
+<p>parse_args()返回两个值：</p>
+<ul>
+<li>options，一个对象包含所有命令行参数的值</li>
+<li>args，由positional arguments组成的列表</li>
+</ul>
+<p>这个使用方法cover了四个最重要的选项属性：action，type，dest(destination)，help，其中action是最基础的</p>
+<h4 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h4><p>Action告诉optparse当在命令行碰到选项是时要做什么。Most actions告诉optparse在一个变量中储存一个值(例如在options的属性中存储命令行中的字符串)，如果不指定选项的action，默认为store<br>最普遍的action是store，告诉optparse取下一个参数(或者现在参数的剩余部分)，确保它是正确的类型，然后把它储存到选择的destination<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, action=&quot;store&quot;, type=&quot;string&quot;,\</span><br><span class="line">dest=&quot;filename&quot;)</span><br></pre></td></tr></table></figure>
+<p>现在创造一个假的命令行并要求optparse解析它</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">args = [&quot;-f&quot;, &quot;foo.txt&quot;]</span><br><span class="line">(options, args) = parser.parse_args(args)</span><br></pre></td></tr></table></figure>
+<p>foo.txt会被存储在options.filename中(that is options.filename=”foo.txt”)<br>optparse支持一些其他的option type：int和float，如果不指定，默认为string</p>
+<p>再加上action默认为store，示例可以缩短为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-f&quot;, &quot;--file&quot;, dest=&quot;filename&quot;)</span><br></pre></td></tr></table></figure>
+<p>如果不提供desttination，optparse将选项字符串中figure out一个默认：如果第一个长选项为–foo-bar，则默认destination为foo_bar，如果没有长选项，optparse将看短选项：-f的默认destination是f</p>
+<p>optparse支持两个分离的action：store_ture和store_false来应对需要把一个变量置为true或者false的情况。这两个值用于处理命令行参数后面不带值的情况，如-v，-q等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-v&quot;, action=&quot;store_true&quot;, dest=&quot;verbose&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, action=&quot;store_false&quot;, dest=&quot;verbose&quot;)</span><br></pre></td></tr></table></figure>
+<p>这样的话，当解析到-v，options.verbose=Ture, 解析到-q, options.verbose=False</p>
+<p>其它action的值还有：</p>
+<ul>
+<li>store_const: store a constant value</li>
+<li>append: append this option’s argument to a list</li>
+<li>count: increment a counter by one</li>
+<li>callback: call a specified function</li>
+</ul>
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><p>当有些期待的命令行参数没有出现的时候，需要给destination设定一个默认值</p>
+<p>例：我们想把verbose设定为True除非命令行参数出现-q，可以这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-v&quot;, action=&quot;store_true&quot;, dest=&quot;verbose&quot;, default=&quot;True&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, action=&quot;store_false&quot;, dest=&quot;verbose&quot;)</span><br></pre></td></tr></table></figure>
+<p>因为都是作用于同一个destination，下面这种写法与上面等效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parser.add_option(&quot;-v&quot;, action=&quot;store_true&quot;, dest=&quot;verbose&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, action=&quot;store_false&quot;, dest=&quot;verbose&quot;, default=&quot;True&quot;)</span><br></pre></td></tr></table></figure>
+<p>当上例中的两条语句中都有default时，以最后一个default为准</p>
+<p>一个更清楚的方式是在调用parse_args()方法之前的任意时间调用set_default()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parser.set_default(verbose=True)</span><br><span class="line">parser.add_option(...)</span><br><span class="line">(options, args) = parser.parse_args()</span><br></pre></td></tr></table></figure>
+<h4 id="生成程序帮助和程序版本"><a href="#生成程序帮助和程序版本" class="headerlink" title="生成程序帮助和程序版本"></a>生成程序帮助和程序版本</h4><p>optparse的另一个实用功能是生成帮助文档，只需要为add_option()方法的help参数制定帮助信息文本。程序版本需要在创建OptionParser对象时指定version参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># %prog会被自动替换为当前脚本的名称</span><br><span class="line">usage = &quot;usage: %prog [options] arg1 arg2&quot;</span><br><span class="line">parser = OptionParser(usage=usage, version=&quot;%prog 1.0&quot;)</span><br><span class="line">parser.add_option(&quot;-v&quot;, &quot;--verbose&quot;,</span><br><span class="line">                  action=&quot;store_true&quot;, dest=&quot;verbose&quot;, default=True,</span><br><span class="line">                  help=&quot;make lots of noise [default]&quot;)</span><br><span class="line">parser.add_option(&quot;-q&quot;, &quot;--quiet&quot;,</span><br><span class="line">                  action=&quot;store_false&quot;, dest=&quot;verbose&quot;,</span><br><span class="line">                  help=&quot;be vewwy quiet (I&apos;m hunting wabbits)&quot;)</span><br><span class="line">parser.add_option(&quot;-f&quot;, &quot;--filename&quot;,</span><br><span class="line">                  metavar=&quot;FILE&quot;, help=&quot;write output to FILE&quot;)</span><br><span class="line">parser.add_option(&quot;-m&quot;, &quot;--mode&quot;,</span><br><span class="line">                  default=&quot;intermediate&quot;,</span><br><span class="line">                  help=&quot;interaction mode: novice, intermediate, &quot;</span><br><span class="line">                       &quot;or expert [default: %default]&quot;)</span><br></pre></td></tr></table></figure>
+<h4 id="处理异常"><a href="#处理异常" class="headerlink" title="处理异常"></a>处理异常</h4><p>optparse可以自动探测应处理一些用户异常，用户也可以使用parser.error()方法来自定义一些异常处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(options, args) = parser.parse_args()</span><br><span class="line">if options.a and options.b:</span><br><span class="line">    parser.error(&quot;options -a and -b are mutually exclusive&quot;)</span><br></pre></td></tr></table></figure>
+<p>如果命令行中-a -b同时存在，则显示”options…”来警告用户</p>
+<p>官方文档： <a href="https://docs.python.org/2/library/optparse.html#" target="_blank" rel="external">https://docs.python.org/2/library/optparse.html#</a></p>
+<h2 id="2-json-JavaScript-Object-Notation"><a href="#2-json-JavaScript-Object-Notation" class="headerlink" title="2 json(JavaScript Object Notation)"></a>2 json(JavaScript Object Notation)</h2><h3 id="2-1-基本用法"><a href="#2-1-基本用法" class="headerlink" title="2.1 基本用法"></a>2.1 基本用法</h3><h4 id="2-1-1-dump"><a href="#2-1-1-dump" class="headerlink" title="2.1.1 dump()"></a>2.1.1 dump()</h4><p>json.dump(obj, fp, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, encoding=”utf-8”, default=None, sort_keys=False, **kw)</p>
+<p>基于转换表，将obj序列化为json格式的流到fp(一个支持write()的类文件对象)</p>
+<h4 id="2-1-2-load"><a href="#2-1-2-load" class="headerlink" title="2.1.2 load()"></a>2.1.2 load()</h4><p>json.load(fp[, encoding[, cls[, object_hook[, parse_float[, parse_int[, parse_constant[, object_pairs_hook[, **kw]]]]]]]])</p>
+<p>根据转换表将fp(一个包含json文档的支持read()的类文件对象)反序列化成python对象</p>
+<p>example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">import os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">json_payload = json.load(open(&quot;&quot;.join([os.path.split(os.path.realpath(__file__))[0], &quot;/testjson.json&quot;])))</span><br><span class="line">print json_payload</span><br></pre></td></tr></table></figure>
+<p>Hint: os.path.split(path)将路径分为路径与文件名两部分，os.path.realpath(__file__)为当前脚本的路径</p>
+<h2 id="3-hashlib"><a href="#3-hashlib" class="headerlink" title="3 hashlib"></a>3 hashlib</h2><p>提供不同的secure hash algorithm，包括SHA1，SHA224，SHA256，SHA384，SHA512，MD5</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import hashlib</span><br><span class="line"></span><br><span class="line">h = hashlib.new(&quot;md5&quot;, &quot;md5canbeinsteadedbyotheralgorithms&quot;)</span><br><span class="line">print h.hexdigest()</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/05/31/Some-Modules-in-Python/" data-id="ciqm56seb0006qix9qcb2wph5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/05/31/Some-Modules-in-Python/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/05/31/Some-Modules-in-Python/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-MultiThread-in-Python" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/05/19/MultiThread-in-Python/">MultiThread in Python</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/05/19/MultiThread-in-Python/">
+            <time datetime="2016-05-19T06:24:40.000Z" itemprop="datePublished">2016-05-19</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="0x1-多线程？"><a href="#0x1-多线程？" class="headerlink" title="0x1 多线程？"></a>0x1 多线程？</h2><p>多线程就是多个线程并发执行，提高效率。</p>
+<h4 id="0x1-1-进程？线程？"><a href="#0x1-1-进程？线程？" class="headerlink" title="0x1.1 进程？线程？"></a>0x1.1 进程？线程？</h4><p>进程时程序的一次执行。<br>线程是CPU调度的基本单位，所有线程运行在同一个进程中。</p>
+<h4 id="0x1-2-并发执行时各线程间的执行顺序？"><a href="#0x1-2-并发执行时各线程间的执行顺序？" class="headerlink" title="0x1.2 并发执行时各线程间的执行顺序？"></a>0x1.2 并发执行时各线程间的执行顺序？</h4><p>为了解决这个问题，引入了锁。当某个线程拥有了这个锁它才能够得到执行。这里要提一下线程的生命周期：新建，就绪，运行，堵塞，死亡。当线程不拥有锁的时候，它就处于阻塞状态，在锁定池等待。除锁定池外，还有等待池，等待池是等待一个事件的发生（条件变量），比如等待磁盘I/O的完成，完成后，会通知一个或全部之前等待的线程，于是这些线程进入锁定池。</p>
+<h2 id="0x2-在Python中使用线程"><a href="#0x2-在Python中使用线程" class="headerlink" title="0x2 在Python中使用线程"></a>0x2 在Python中使用线程</h2><p>Python中提供了几个用语多线程编程的模块，包括thread,threading,Queue等。</p>
+<h4 id="0x2-1-thread模块"><a href="#0x2-1-thread模块" class="headerlink" title="0x2.1 thread模块"></a>0x2.1 thread模块</h4><p>python核心编程的作者这样说：</p>
+<blockquote>
+<p>出于以下几点考虑，我们不推荐您使用thread模块。首先，更高级别的threading模块更为先进，对线程的支持更为完善，而且实用thread模块里的属性可能会与threading冲突。其次，低级别的thread模块的同步原语很少（实际上只有一个），而threading模块则有很多。另外一个不要使用thread的原因是，对于你的进程什么时候应该结束完全没有控制，当主线程结束时，所有的线程都要强制结束掉，没有警告也不会有正常的清除工作，threading模块能确保重要的子线程退出后进程才退出。</p>
+</blockquote>
+<h4 id="0x2-2-threading模块"><a href="#0x2-2-threading模块" class="headerlink" title="0x2.2 threading模块"></a>0x2.2 threading模块</h4><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f40pz0xok6j20i206gmya.jpg" alt="threading"></p>
+<h6 id="0x2-2-1-守护线程"><a href="#0x2-2-1-守护线程" class="headerlink" title="0x2.2.1 守护线程"></a>0x2.2.1 守护线程</h6><p>threading模块支持守护线程（thread模块则不）。如果设定一个线程为守护线程则表示这个线程是不重要的，在退出进程时不用等待这个线程退出。设定线程的daemon属性可以定义一个线程为守护进程：在线程开始（调用thread.start()）之前，调用setDaemon()函数（thread.setDaemon(True)）。可以调用thread.isDaemon()函数来判断其daemon标志的值。</p>
+<h6 id="0x2-2-2-Thread类"><a href="#0x2-2-2-Thread类" class="headerlink" title="0x2.2.2 Thread类"></a>0x2.2.2 Thread类</h6><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20jw1f40q85cn27j20i205xt9m.jpg" alt="Thread"><br>用Thread类可以用多种方法来创建线程：</p>
+<ol>
+<li>创建一个Thread的实例，传给它一个函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from time import sleep, ctime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">loops = [4, 2]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def loop(nloop, nsec):</span><br><span class="line">    print &quot;start&quot;, nloop, &quot;at&quot;, ctime()</span><br><span class="line">    sleep(nsec)</span><br><span class="line">    print &quot;end&quot;, nloop, &quot;at&quot;, ctime()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print &quot;start at&quot;, ctime()</span><br><span class="line">    nloop = range(len(loops))</span><br><span class="line">    threads = []</span><br><span class="line"></span><br><span class="line">    for i in nloop:</span><br><span class="line">        t = threading.Thread(target=loop, args=(i, loops[i]))</span><br><span class="line">        threads.append(t)</span><br><span class="line"></span><br><span class="line">    for i in nloop:</span><br><span class="line">        threads[i].start()</span><br><span class="line"></span><br><span class="line">    for i in nloop:</span><br><span class="line">        threads[i].join()</span><br><span class="line"></span><br><span class="line">    print &quot;end at&quot;, ctime()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中要重点标记一下join()这个方法，一开始不是很理解。join()的作用是阻塞进程直到线程执行完毕。此外，join()函数还有个特殊的功能就是设置超时:Thread.join([timeout])，也就是通过传给join一个参数超过这个指定的时间join就不再阻塞进程。只有在要等待线程结束的时候才要调用join()。</p>
+<ol>
+<li>创建一个Thread的实例，传给它一个可调用的类对象(更符合面向对象思想)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from time import sleep, ctime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">loops = [4, 2]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class ThreadFunc(object):</span><br><span class="line">    def __init__(self, func, args, name=&apos;&apos;):</span><br><span class="line">        self.func = func</span><br><span class="line">        self.args = args</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    def __call__(self):</span><br><span class="line">        apply(self.func, self.args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def loop(nloop, nsec):</span><br><span class="line">    print &quot;start&quot;, nloop, &quot;at&quot;, ctime()</span><br><span class="line">    sleep(nsec)</span><br><span class="line">    print &quot;end&quot;, nloop, &quot;at&quot;, ctime()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print &quot;start at&quot;, ctime()</span><br><span class="line">    threads = []</span><br><span class="line">    nloops = range(len(loops))</span><br><span class="line"></span><br><span class="line">    for i in nloops:</span><br><span class="line">        t = threading.Thread(target=ThreadFunc(loop, (i, loops[i]), loop.__name__))</span><br><span class="line">        threads.append(t)</span><br><span class="line"></span><br><span class="line">    for t in threads:</span><br><span class="line">        t.start()</span><br><span class="line"></span><br><span class="line">    for t in threads:</span><br><span class="line">        t.join()</span><br><span class="line"></span><br><span class="line">    print &quot;end at&quot;, ctime()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>一个对象可能有很多种方法，将对象传递给Thread类时，调用的是<strong>call</strong>方法，此方法为线程专门设计。</p>
+<ol>
+<li>从Thread派生出一个子类，创建一个这个子类的实例<br>这样做可以更灵活的定制线程对象，而且创建线程的时候也更简单。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">from time import sleep, ctime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">loops = [4, 2]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class MyThread(threading.Thread):</span><br><span class="line">    def __init__(self, func, args, name=&apos;&apos;):</span><br><span class="line">        threading.Thread.__init__(self)</span><br><span class="line">        self.func = func</span><br><span class="line">        self.args = args</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    def run(self):</span><br><span class="line">        apply(self.func, self.args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def loop(nloop, nsec):</span><br><span class="line">    print &quot;start %d at %s&quot; % (nloop, ctime())</span><br><span class="line">    sleep(nsec)</span><br><span class="line">    print &quot;end %d at %s&quot; % (nloop, ctime())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    print &quot;START AT %s&quot; % ctime()</span><br><span class="line">    threads = []</span><br><span class="line">    nloops = range(len(loops))</span><br><span class="line"></span><br><span class="line">    for i in nloops:</span><br><span class="line">        t = MyThread(loop, (i, loops[i]), loop.__name__)</span><br><span class="line">        threads.append(t)</span><br><span class="line"></span><br><span class="line">    for i in threads:</span><br><span class="line">        i.start()</span><br><span class="line"></span><br><span class="line">    for i in threads:</span><br><span class="line">        i.join()</span><br><span class="line"></span><br><span class="line">    print &quot;END AT %s&quot; % ctime()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>与2相比两点改变：</p>
+<ul>
+<li>子类构造器一定要先调用父类的构造器</li>
+<li><strong>call</strong>()名字要改为run()</li>
+</ul>
+<h4 id="0x2-3-Queue模块"><a href="#0x2-3-Queue模块" class="headerlink" title="0x2.3 Queue模块"></a>0x2.3 Queue模块</h4><p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20jw1f41qr034e7j20i70773zn.jpg" alt="Queue"><br>Queue模块可以用来进行线程间通讯，让各个线程之间共享数据。</p>
+<h4 id="0x2-4-Lock"><a href="#0x2-4-Lock" class="headerlink" title="0x2.4 Lock"></a>0x2.4 Lock</h4><p>MUTEX = threading.Lock()创建一个锁对象</p>
+<p>MUTEX.acquire([timeout])获得锁，可选参数timeout表示超过该时间后通过返回值可以判断是否得到了锁，从而进行一些其他处理</p>
+<p>MUTEX.release()释放锁</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/05/19/MultiThread-in-Python/" data-id="ciqm56se80004qix9huz876km" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/05/19/MultiThread-in-Python/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/05/19/MultiThread-in-Python/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-reflected-xss" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/04/04/reflected-xss/">Reflected XSS</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/04/04/reflected-xss/">
+            <time datetime="2016-04-04T01:12:03.000Z" itemprop="datePublished">2016-04-04</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="0x0-简介"><a href="#0x0-简介" class="headerlink" title="0x0 简介"></a>0x0 简介</h2><p>HTTP请求中带了攻击脚本，立马就能在HTTP响应中（后台处理的漏洞）有体现。</p>
+<h3 id="0x0-1-攻击原理"><a href="#0x0-1-攻击原理" class="headerlink" title="0x0.1 攻击原理"></a>0x0.1 攻击原理</h3><p>Hacker—发现存在反射XSS的URL—根据输出点的环境构造XSS代码—进行编码、缩短(可有可无，是为了增加迷惑性)—发送给受害人—受害打开后，执行XSS代码—完成hacker想要的功能(获取cookies、url、浏览器信息、IP等等)</p>
+<h3 id="0x0-2-触发条件"><a href="#0x0-2-触发条件" class="headerlink" title="0x0.2 触发条件"></a>0x0.2 触发条件</h3><p>需要欺骗用户自己去点击带有特定参数的链接才能触发</p>
+<h3 id="0x0-3-触发原因"><a href="#0x0-3-触发原因" class="headerlink" title="0x0.3 触发原因"></a>0x0.3 触发原因</h3><ol>
+<li>没有对输入进行约束，没有对输出进行编码</li>
+<li>没有严格区分“数据”和“代码”</li>
+</ol>
+<h3 id="0x0-4-可能出现漏洞的地方"><a href="#0x0-4-可能出现漏洞的地方" class="headerlink" title="0x0.4 可能出现漏洞的地方"></a>0x0.4 可能出现漏洞的地方</h3><p>搜索引擎，错误页面。</p>
+<h2 id="0x1-查找并利用"><a href="#0x1-查找并利用" class="headerlink" title="0x1 查找并利用"></a>0x1 查找并利用</h2><h3 id="0x1-1-查找漏洞"><a href="#0x1-1-查找漏洞" class="headerlink" title="0x1.1 查找漏洞"></a>0x1.1 查找漏洞</h3><p>确定应用程序所有的用户输入进入点，并遵循以下步骤：</p>
+<ul>
+<li>在每个进入点提交一个良性字母字符串</li>
+<li>确定此字符串“反射”在应用程序中的所有位置</li>
+<li>对于每个反射，确定显示反射数据地方的上下文环境</li>
+<li>提交针对上下文环境而修改的数据，尝试在响应中引入任意脚本</li>
+<li>如果反射型数据被阻止或净化，导致脚本无法执行，则尝试了解并避开应用程序的防御性过滤 </li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/04/04/reflected-xss/" data-id="ciqm56sep000aqix947vbou3a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/04/04/reflected-xss/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/04/04/reflected-xss/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/03/21/hello-world/">Hello World</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/03/21/hello-world/">
+            <time datetime="2016-03-21T00:57:03.000Z" itemprop="datePublished">2016-03-21</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/03/21/hello-world/" data-id="ciqm56seg0008qix9z8wp6m93" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/03/21/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/03/21/hello-world/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/14/Beginner-of-Linux-II/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/14/Beginner-of-Linux-II/" class="title">Beginner of Linux II</a></p>
+                            <p class="item-date"><time datetime="2016-07-14T08:49:04.000Z" itemprop="datePublished">2016-07-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/12/Beginner-of-Linux-I/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/12/Beginner-of-Linux-I/" class="title">Beginner of Linux I</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T06:59:48.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/12/Go-Django/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/12/Go-Django/" class="title">Go Django</a></p>
+                            <p class="item-date"><time datetime="2016-07-12T06:03:54.000Z" itemprop="datePublished">2016-07-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/05/Web-For-Pentester/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/05/Web-For-Pentester/" class="title">Web For Pentester</a></p>
+                            <p class="item-date"><time datetime="2016-07-05T05:01:47.000Z" itemprop="datePublished">2016-07-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/15/OOP-in-Python/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/06/15/OOP-in-Python/" class="title">OOP in Python</a></p>
+                            <p class="item-date"><time datetime="2016-06-15T01:58:14.000Z" itemprop="datePublished">2016-06-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
         </div>
     </div>
 
-    <!-- js files -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/scale.fix.js"></script>
     
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
 
     
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
 
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript"> 
-        $(document).ready(function(){
-            MathJax.Hub.Config({ 
-                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
-            });
-        });
-    </script>
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/pentest/" style="font-size: 10px;">pentest</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
 
 
     
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Almond<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
     
-    
-    <!--kill ie6 -->
-<!--[if IE 6]>
-  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
-<![endif]-->
+    <script>
+    var disqus_config = function () {
+        
+        this.page.identifier = 'undefined';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/count.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
 
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
 </body>
 </html>
