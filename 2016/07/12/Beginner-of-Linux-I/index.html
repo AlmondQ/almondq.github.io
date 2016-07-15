@@ -5,17 +5,17 @@
     
     <title>Beginner of Linux I | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构和文件基本操作">
+    <meta name="description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构文件基本操作，管道，简单文本处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Beginner of Linux I">
 <meta property="og:url" content="http://yoursite.com/2016/07/12/Beginner-of-Linux-I/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构和文件基本操作">
+<meta property="og:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构文件基本操作，管道，简单文本处理">
 <meta property="og:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/niagara.jpg">
-<meta property="og:updated_time" content="2016-07-15T02:16:13.000Z">
+<meta property="og:updated_time" content="2016-07-15T06:39:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Beginner of Linux I">
-<meta name="twitter:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构和文件基本操作">
+<meta name="twitter:description" content="一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构文件基本操作，管道，简单文本处理">
 <meta name="twitter:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/niagara.jpg">
     
 
@@ -152,7 +152,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                10
+                9
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -255,7 +255,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构和文件基本操作<br><a id="more"></a></p>
+            <p>一直以来都是零零散散的学了一些linux的命令，现在要系统的学习一下。本篇为系列一，主要学习了一些快捷键，用户和文件权限管理，目录结构文件基本操作，管道，简单文本处理<br><a id="more"></a></p>
 <h2 id="Linux终端"><a href="#Linux终端" class="headerlink" title="Linux终端"></a>Linux终端</h2><h3 id="Terminal"><a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h3><p>通常在使用Linux时，我们并不是直接与系统打交道，而是通过一个叫做Shell的中间程序来完成，在图形界面下为了实现在一个窗口中完成接受用户输入和显示输出，Linux系统提供了一个叫做终端模拟器的程序(Terminal)。终端本质上对应着Linux上的/dev/tty设备，Linux的多用户登录就是通过不同的/dev/tty设备完成的，Linux默认提供了6个纯命令行界面的”termimnal”(准确的说这里应该是6个virtual consoles)来让用户登录，在物理机系统上可以通过使用[Ctrl]+[Alt]+[F1]~[F6]进行切换。可以使用Ctrl]+[Alt]+[F7]来切换回图形界面</p>
 <h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>通常在图形界面中对实际体验带来差异的不是终端模拟器，而大都是这个Shell，有壳就有核，这里的核就是指的UNIX/Linux内核，Shell是指“提供给使用者使用界面”的软件(命令解析器)，类似于DOS下的command(命令行)和后来的cmd.exe。普通意义上的Shell就是可以接受用户输入命令的程序。</p>
 <p>Unix/Linux操作系统下的Shell既是用户交互的界面，也是控制系统的脚本语言。常见的Shell有bash,zsh,ksh,csh等</p>
@@ -321,7 +321,48 @@
 <h4 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h4><p>使用cat正序查看文件，使用tac倒序查看文件，nl命令添加行号并打印，比 cat -n更专业<br>more和less是更专业的用来查看文件的命令，file命令用来查看文件类型</p>
 <h2 id="文件打包与压缩"><a href="#文件打包与压缩" class="headerlink" title="文件打包与压缩"></a>文件打包与压缩</h2><p>只记录最常用的tar解压缩</p>
 <pre><code>tar -xf [filename] -c [要解压到的路径]
-</code></pre>
+</code></pre><h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><p>管道是一种通信机制，通常用于进程间的通信（也可通过socket进行网络通信），它表现出来的形式就是将前面每一个进程的输出(stdout)直接作为下一个进程的输入(stdin)。我们在使用一些过滤程序时经常会用到的就是匿名管道，在命令行中由 | 分隔符表示，例：</p>
+<pre><code>ls -al /etc | less
+</code></pre><h3 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h3><p>打印每一行的某一字段，例：打印/etc/passwd文件中以:为分隔符的第一个字段和第六个字段分别表示用户名和其家目录</p>
+<pre><code>cut /etc/passwd -d &apos;:&apos; -f 1,6
+</code></pre><h3 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h3><p>在文本中或stdin中查找匹配字符串，grep命令的一般形势为：</p>
+<pre><code>grep [命令选项]... 用于匹配的表达式 [文件]...
+</code></pre><h3 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h3><p>简单小巧的计数工具，用于统计并输出一个文件中行，单词和字节的数目</p>
+<pre><code>wc /etc/passwd
+</code></pre><h3 id="sort排序命令"><a href="#sort排序命令" class="headerlink" title="sort排序命令"></a>sort排序命令</h3><pre><code>cat /etc/passwd | sort
+cat /etc/passwd | sort -r 反序
+cat /etc/passwd | sort -t&apos;:&apos; -k 3 -n
+</code></pre><h3 id="uniq去重命令"><a href="#uniq去重命令" class="headerlink" title="uniq去重命令"></a>uniq去重命令</h3><h2 id="简单的文本处理"><a href="#简单的文本处理" class="headerlink" title="简单的文本处理"></a>简单的文本处理</h2><h3 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h3><p>可以用来删除一段文本信息中的某些文字或者将其进行转换</p>
+<pre><code>tr [option]...SET1 [SET2]
+</code></pre><p> 常用选项有</p>
+<ul>
+<li>-d 删除和set1匹配的字符，注意不是全词匹配也不是按字符顺序匹配</li>
+<li>-s 去除set1注定的在输入文本中连续并重复的字符</li>
+</ul>
+<h3 id="col命令"><a href="#col命令" class="headerlink" title="col命令"></a>col命令</h3><p>可以将Tab换成对等数量的空格键或者反转这个操作</p>
+<pre><code>col [option]
+</code></pre><p>常用选项有</p>
+<ul>
+<li>-x 将Tab转换为空格</li>
+<li>-h 将空格转换为Tab(默认选项)</li>
+</ul>
+<h3 id="join命令"><a href="#join命令" class="headerlink" title="join命令"></a>join命令</h3><p>用于将两个文件中包含相同内容的那一行合并在一起</p>
+<pre><code>join [option]... file1 file2
+</code></pre><p>常用选项有</p>
+<ul>
+<li>-t 指定分隔符，默认为空格</li>
+<li>-i 忽略大小写差异</li>
+<li>-1 指明第一个文件要用哪个字段来对比，默认对比第一个字段</li>
+<li>-2 指明第二个文件要用哪个字段来对比，默认对比第一个字段</li>
+</ul>
+<h3 id="paste命令"><a href="#paste命令" class="headerlink" title="paste命令"></a>paste命令</h3><p>与join命令类似，在不对比数据的情况下，简单地将多个文件合并在一起，以Tab隔开</p>
+<pre><code>paste [option] file...
+</code></pre><p>常用选项有</p>
+<ul>
+<li>-d 指定合并的分隔符，默为认为Tab</li>
+<li>-s 不合并到一行，每个文件为一行</li>
+</ul>
+
         
         </div>
         <footer class="article-footer">
@@ -393,15 +434,6 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/07/14/Beginner-of-Linux-II/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Beginner of Linux II
-                
-            </div>
-        </a>
-    
     
         <a href="/2016/07/12/Go-Django/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
@@ -435,25 +467,6 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/07/14/Beginner-of-Linux-II/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/shoes.jpg)" alt="Beginner of Linux II" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
-                            <p class="item-title"><a href="/2016/07/14/Beginner-of-Linux-II/" class="title">Beginner of Linux II</a></p>
-                            <p class="item-date"><time datetime="2016-07-14T08:49:04.000Z" itemprop="datePublished">2016-07-14</time></p>
-                        </div>
-                    </li>
                 
                     <li>
                         
@@ -531,6 +544,25 @@
                         </div>
                     </li>
                 
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/06/13/Functions-and-Functional-Programming/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://t11.baidu.com/it/u=1093933381,2803769818&amp;fm=58)" alt="Functions and Functional Programming" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/06/13/Functions-and-Functional-Programming/" class="title">Functions and Functional Programming</a></p>
+                            <p class="item-date"><time datetime="2016-06-13T02:02:40.000Z" itemprop="datePublished">2016-06-13</time></p>
+                        </div>
+                    </li>
+                
             </ul>
         </div>
     </div>
@@ -540,7 +572,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Journey-of-Study/">Journey of Study</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Journey-of-Study/">Journey of Study</a><span class="category-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -549,7 +581,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -558,7 +590,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -567,7 +599,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/pentest/" style="font-size: 10px;">pentest</a>
+            <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/pentest/" style="font-size: 10px;">pentest</a>
         </div>
     </div>
 
