@@ -2099,12 +2099,12 @@ ol.toc {
   height: 1.6em;
 }
 .highlight {
-  color: #68615e;
-  background: #f1efee;
+  color: #516d7b;
+  background: #ebf8ff;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #766e6b;
+  color: #5a7b8c;
 }
 .highlight .code .variable,
 .highlight .code .template-variable,
@@ -2115,7 +2115,7 @@ ol.toc {
 .highlight .code .link,
 .highlight .code .selector-id,
 .highlight .code .selector-class {
-  color: #f22c40;
+  color: #d22d72;
 }
 .highlight .code .number,
 .highlight .code .meta,
@@ -2124,20 +2124,20 @@ ol.toc {
 .highlight .code .literal,
 .highlight .code .type,
 .highlight .code .params {
-  color: #df5320;
+  color: #935c25;
 }
 .highlight .code .string,
 .highlight .code .symbol,
 .highlight .code .bullet {
-  color: #7b9726;
+  color: #568c3b;
 }
 .highlight .code .title,
 .highlight .code .section {
-  color: #407ee7;
+  color: #257fad;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag {
-  color: #6666ea;
+  color: #6b6bb8;
 }
 .highlight .code .emphasis {
   font-style: italic;
