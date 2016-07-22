@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2016/3 | 加油！少年</title>
+    <title>Buffer Overflow | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="加油！少年">
-<meta property="og:url" content="/archives/2016/03/index.html">
+    <meta name="description" content="缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Buffer Overflow">
+<meta property="og:url" content="/2016/07/21/Buffer-Overflow/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description">
+<meta property="og:description" content="缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。">
+<meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f62qlp6ml0j21es0jwn9r.jpg">
+<meta property="og:updated_time" content="2016-07-22T07:56:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加油！少年">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Buffer Overflow">
+<meta name="twitter:description" content="缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f62qlp6ml0j21es0jwn9r.jpg">
     
 
     
@@ -201,40 +204,149 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-Buffer-Overflow" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            
+	
+		<img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f62qlp6ml0j21es0jwn9r.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/03/21/hello-world/">Hello World</a>
+        <h1 class="article-title" itemprop="name">
+            Buffer Overflow
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/03/21/hello-world/">
-            <time datetime="2016-03-21T00:57:03.000Z" itemprop="datePublished">2016-03-21</time>
+        <a href="/2016/07/21/Buffer-Overflow/">
+            <time datetime="2016-07-21T01:25:18.000Z" itemprop="datePublished">2016-07-21</time>
         </a>
     </div>
 
 
-                    
-                    
-                </div>
-            </div>
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/computersecurity/">computersecurity</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。<br><a id="more"></a></p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="/2016/07/21/Buffer-Overflow/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/07/21/Buffer-Overflow/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/07/19/Cross-Site-Request-Forgery/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Cross Site Request Forgery</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -414,11 +526,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = '/2016/07/21/Buffer-Overflow/';
+        
+        this.page.identifier = 'Buffer-Overflow';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'almondq' + '.disqus.com/count.js';
+        s.src = '//' + 'almondq' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
