@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Go Django I | 加油！少年</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的安装以及视图和URL的配置。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go Django I">
+<meta property="og:url" content="/2016/07/12/Go-Django-I/index.html">
+<meta property="og:site_name" content="加油！少年">
+<meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的安装以及视图和URL的配置。">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
+<meta property="og:updated_time" content="2016-07-23T10:35:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go Django I">
+<meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的安装以及视图和URL的配置。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
+</head>
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                
+                <span class="site-title">加油！少年</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">AlmondQ</h2>
+            <h3 id="title">从每一个现在开始</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>earth</span>
+            <a id="follow" target="_blank" href="http://weibo.com/almondq">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                14
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                6
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/AlmondQ" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/almondq93" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/almondq" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Go-Django-I" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5uda8g5z7j20ke03ojrn.jpg" class="article-banner" />
+	
+
+
+
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Go Django I
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/12/Go-Django-I/">
+            <time datetime="2016-07-12T06:03:54.000Z" itemprop="datePublished">2016-07-12</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Django/">Django</a>, <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x1-介绍Django"><span class="toc-number">1.</span> <span class="toc-text">0x1 介绍Django</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">0x1.1 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-2-安装数据库"><span class="toc-number">1.2.</span> <span class="toc-text">0x1.2 安装数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-3-开始一个项目"><span class="toc-number">1.3.</span> <span class="toc-text">0x1.3 开始一个项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x1-4-运行开发服务器"><span class="toc-number">1.4.</span> <span class="toc-text">0x1.4 运行开发服务器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x2-视图和URL配置"><span class="toc-number">2.</span> <span class="toc-text">0x2 视图和URL配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一份视图"><span class="toc-number">2.1.</span> <span class="toc-text">第一份视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个URLconf"><span class="toc-number">2.2.</span> <span class="toc-text">第一个URLconf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网站根目录以及404"><span class="toc-number">2.3.</span> <span class="toc-text">网站根目录以及404</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二个视图：动态内容"><span class="toc-number">2.4.</span> <span class="toc-text">第二个视图：动态内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三个视图：动态URL"><span class="toc-number">2.5.</span> <span class="toc-text">第三个视图：动态URL</span></a></li></ol></li></ol>
+                </div>
+            
+            <p>Python中Web开发框架Django的学习记录。本篇主要学习了Django的安装以及视图和URL的配置。<br><a id="more"></a></p>
+<h1 id="0x1-介绍Django"><a href="#0x1-介绍Django" class="headerlink" title="0x1 介绍Django"></a>0x1 介绍Django</h1><p>Django是一个高效的Web开发框架，提供了通用Web开发模式的高度抽象，提供了频繁进行的编程作业的快速解决方法，以及为“如何解决问题”提供了清晰明了的约定。同时，Django尝试留下了一些方法，可以根据需要在framework之外来开发</p>
+<p>主页 <a href="https://www.djangoproject.com/" target="_blank" rel="external">https://www.djangoproject.com/</a></p>
+<h2 id="0x1-1-安装"><a href="#0x1-1-安装" class="headerlink" title="0x1.1 安装"></a>0x1.1 安装</h2><pre><code>pip install Django==1.9.7
+</code></pre><p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5r42av725j208i02q3yt.jpg" alt="install"></p>
+<h2 id="0x1-2-安装数据库"><a href="#0x1-2-安装数据库" class="headerlink" title="0x1.2 安装数据库"></a>0x1.2 安装数据库</h2><p>Django支持四种数据库：</p>
+<ul>
+<li><p>PostgreSQL (<a href="http://www.postgresql.org/" target="_blank" rel="external">http://www.postgresql.org/</a>)</p>
+</li>
+<li><p>SQLite 3 (<a href="http://www.sqlite.org/" target="_blank" rel="external">http://www.sqlite.org/</a>)</p>
+</li>
+<li><p>MySQL (<a href="http://www.mysql.com/" target="_blank" rel="external">http://www.mysql.com/</a>)</p>
+</li>
+<li><p>Oracle (<a href="http://www.oracle.com/" target="_blank" rel="external">http://www.oracle.com/</a>)</p>
+</li>
+</ul>
+<p>djangobook推荐安装postgresql，安装完postgresql还需要安装psycopg2这个开发包，在pip install psycopg2时遇到了问题，解决方法参照<a href="http://blog.csdn.net/muzilanlan/article/details/50421693" target="_blank" rel="external">http://blog.csdn.net/muzilanlan/article/details/50421693</a></p>
+<h2 id="0x1-3-开始一个项目"><a href="#0x1-3-开始一个项目" class="headerlink" title="0x1.3 开始一个项目"></a>0x1.3 开始一个项目</h2><p>第一次使用Django，必须进行一些初始化设置工作。新建一个工作目录，然后进入该目录，运行命令django-admin.py startproject mysite，这样会在当前目录下创建一个目录：mysite，包含四个文件</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f5y4r23t7zj20wa046mxs.jpg" alt="mysite"></p>
+<ul>
+<li><p>__init__.py ：让 Python 把该目录当成一个开发包 (即一组模块)所需的文件。 这是一个空文件，一般不需要修改它。</p>
+</li>
+<li><p>manage.py ：一种命令行工具，允许以多种方式与该 Django 项目进行交互。键入python manage.py help，看一下它能做什么。应当不需要编辑这个文件；在这个目录下生成它纯是为了方便。</p>
+</li>
+<li><p>settings.py ：该 Django 项目的设置或配置。查看并理解这个文件中可用的设置类型及其默认值。</p>
+</li>
+<li><p>urls.py：Django项目的URL设置。可视其为你的django网站的目录。目前，它是空的。</p>
+</li>
+</ul>
+<h2 id="0x1-4-运行开发服务器"><a href="#0x1-4-运行开发服务器" class="headerlink" title="0x1.4 运行开发服务器"></a>0x1.4 运行开发服务器</h2><p>django开发服务是可用在开发期间的，一个内建的，轻量的web服务。 我们提供这个服务器是为了让你快速开发站点，也就是说在准备发布产品之前，无需进行产品级 Web 服务器（比如 Apache）的配置工作。 开发服务器监测你的代码并自动加载它，这样你会很容易修改代码而不用重启动服务。</p>
+<p>切换到项目目录里（cd mysite），运行下面的命令：</p>
+<pre><code>python manage.py runserver
+</code></pre><p>默认情况下， runserver 命令在 8000 端口启动开发服务器，且仅监听本地连接。 要想要更改服务器端口的话，可将端口作为命令行参数传入：</p>
+<pre><code>python manage.py runserver 8080
+</code></pre><p>通过指定一个 IP 地址，你可以告诉服务器–允许非本地连接访问。 如果想和其他开发人员共享同一开发站点的话，该功能特别有用。 <code>0.0.0.0</code> 这个 IP 地址，告诉服务器去侦听任意的网络接口。</p>
+<pre><code>python manage.py runserver 0.0.0.0:8000
+</code></pre><p>完成这些设置后，你本地网络中的其它计算机就可以在浏览器中访问你的 IP 地址了。比如： <a href="http://192.168.1.103:8000/" target="_blank" rel="external">http://192.168.1.103:8000/</a></p>
+<h1 id="0x2-视图和URL配置"><a href="#0x2-视图和URL配置" class="headerlink" title="0x2 视图和URL配置"></a>0x2 视图和URL配置</h1><p>页面的内容是靠<em>view function（视图函数）</em> 来产生，URL定义在 URLconf 中。首先，我们先写一个Hello World视图函数。</p>
+<h2 id="第一份视图"><a href="#第一份视图" class="headerlink" title="第一份视图"></a>第一份视图</h2><p>在mysite文件夹中创建一个叫做views.py的空文件（对此文件的文件名并没有特别的要求，只是把它命名成views.py是个好主意），这个模块将包含这一章的视图。以下代码为views.py的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse</span><br><span class="line"></span><br><span class="line">def hello(request):</span><br><span class="line">    return HttpResponse(&quot;Hello World&quot;)</span><br></pre></td></tr></table></figure>
+<p>首先导入django.http中的HttpResponse类，接下来定义一个叫做hello的视图函数，每个视图函数至少要有一个参数，通常被叫做request。</p>
+<p>这里主要讲的是：一个视图就是Python的一个函数，这个函数第一个参数的类型是HttpRequest，这个函数返回一个HttpResponse实例。为了使一个Python的函数成为一个Django可识别的视图，它必须满足这两个条件。</p>
+<h2 id="第一个URLconf"><a href="#第一个URLconf" class="headerlink" title="第一个URLconf"></a>第一个URLconf</h2><p>定义完一个视图之后，还需要通过一个详细描述的URL来显式的告诉服务器并且激活这个视图。为了绑定视图函数和URL，需要使用URLconf</p>
+<p><em>URLconf</em>就像是Django所支撑网站的目录。它本质是一个URL模式以及要为该URL模式调用的视图函数之间的映射表。Django就是以这种方式知道哪个URL调用哪段代码</p>
+<p>前一章中执行 django-admin.py startproject 时，该脚本会自动建了一份 URLconf（即 urls.py 文件）。 默认的urls.py会像下面这个样子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;mysite URL Configuration</span><br><span class="line"></span><br><span class="line">The `urlpatterns` list routes URLs to views. For more information please see:</span><br><span class="line">    https://docs.djangoproject.com/en/1.9/topics/http/urls/</span><br><span class="line">Examples:</span><br><span class="line">Function views</span><br><span class="line">    1. Add an import:  from my_app import views</span><br><span class="line">    2. Add a URL to urlpatterns:  url(r&apos;^$&apos;, views.home, name=&apos;home&apos;)</span><br><span class="line">Class-based views</span><br><span class="line">    1. Add an import:  from other_app.views import Home</span><br><span class="line">    2. Add a URL to urlpatterns:  url(r&apos;^$&apos;, Home.as_view(), name=&apos;home&apos;)</span><br><span class="line">Including another URLconf</span><br><span class="line">    1. Import the include() function: from django.conf.urls import url, include</span><br><span class="line">    2. Add a URL to urlpatterns:  url(r&apos;^blog/&apos;, include(&apos;blog.urls&apos;))</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">from django.conf.urls import url</span><br><span class="line">from django.contrib import admin</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><em>注</em>: 上面的代码是我自己项目中生成的代码，与书中的代码有差别</p>
+<p>现在可以将上面写的视图函数与url对应起来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url</span><br><span class="line">from django.contrib import admin</span><br><span class="line">from views import hello</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^hello/$&apos;, hello)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>然后访问localhost:8000/hello/</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f63xkfkq2oj20ic08swev.jpg" alt="first_django"></p>
+<h2 id="网站根目录以及404"><a href="#网站根目录以及404" class="headerlink" title="网站根目录以及404"></a>网站根目录以及404</h2><p>当试图访问网站根目录localhost:8000/时，会出现404错误，因为根目录跟任何其它目录一样，需要被映射给相应的视图<br><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f63ydd4c59j21ii0dwwi3.jpg" alt="404"></p>
+<p>Django的404错误信息比原404错误更加实用，它精确的告诉开发者Django调用那个URLconf及其包含的每个模式。这些敏感信息应该只呈现给开发者，出于这个考虑，这个页面只会在调试模式下显示</p>
+<p>这时需要添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url</span><br><span class="line">from django.contrib import admin</span><br><span class="line">from views import hello, home_page</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(r&apos;^admin/&apos;, admin.site.urls),</span><br><span class="line">    url(r&apos;^hello/$&apos;, hello),</span><br><span class="line">    url(r&apos;^$&apos;, home_page)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="第二个视图：动态内容"><a href="#第二个视图：动态内容" class="headerlink" title="第二个视图：动态内容"></a>第二个视图：动态内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">views.py</span><br><span class="line">def current_datatime(request):</span><br><span class="line">    now = datetime.datetime.now()</span><br><span class="line">    html = &quot;&lt;html&gt;&lt;body&gt;It is %s now&lt;/body&gt;&lt;/html&gt;&quot; % now</span><br><span class="line">    return HttpResponse(html)</span><br><span class="line">urls.py</span><br><span class="line">url(r&apos;^time/$&apos;, current_datatime)</span><br></pre></td></tr></table></figure>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f63yuo7qunj20hi06g0t9.jpg" alt="dynamic"><br>Django是有时区意识的，默认时区为America/Chicago，可以在settings.py文件中更改这个值</p>
+<h2 id="第三个视图：动态URL"><a href="#第三个视图：动态URL" class="headerlink" title="第三个视图：动态URL"></a>第三个视图：动态URL</h2><p>在大多数Web应用程序中，URL通常都包含有相关的参数。举个例子，一家在线书店会为每一本书提供一个URL，如/books/243/,/books/3312/</p>
+<p>试想这样一种情况，不同的页面显示不同时差的时间，显然为每个页面写一个视图函数并对应一个url不是一个好办法。那么如何设计程序来处理任意数量的时差？答案是：使用通配符</p>
+<pre><code>url(r&apos;^time/plus/(\d{1,2})/$&apos;, hours_ahead)
+</code></pre><p>\d{1,2}是需要匹配的时差，我们想要把这个数字作为参数，所以用圆括号把它扩起来</p>
+<p>接下来写视图函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from django.http import HttpResponse, Http404</span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line">def hours_ahead(request, offset):</span><br><span class="line">    try:</span><br><span class="line">        offset = int(offset)</span><br><span class="line">    except ValueError:</span><br><span class="line">        raise Http404()</span><br><span class="line">    dt = datetime.datetime.now() + datetime.timedelta(hours=offset)</span><br><span class="line">    html = &quot;&lt;html&gt;&lt;body&gt;In %s hour(s), it is %s now&lt;/body&gt;&lt;/html&gt;&quot; % (offset, dt)</span><br><span class="line">    return HttpResponse(html)</span><br></pre></td></tr></table></figure>
+<p>offset是从URL中提取出来的(圆括号扩起来的内容)</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f640gij1a3j20lm05cq3l.jpg" alt="dynamic_url"></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="/2016/07/12/Go-Django-I/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/07/12/Go-Django-I/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/07/12/Beginner-of-Linux/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Beginner of Linux
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/07/05/Web-For-Pentester/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Web For Pentester</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/23/Go-Django-II/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg)" alt="Go Django II" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/07/23/Go-Django-II/" class="title">Go Django II</a></p>
+                            <p class="item-date"><time datetime="2016-07-23T10:36:26.000Z" itemprop="datePublished">2016-07-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/22/Bypass-XSS-protection/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pixabay.com/static/uploads/photo/2016/03/27/18/52/flower-1283602_960_720.jpg)" alt="Bypass XSS protection" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/07/22/Bypass-XSS-protection/" class="title">Bypass XSS protection</a></p>
+                            <p class="item-date"><time datetime="2016-07-22T08:01:41.000Z" itemprop="datePublished">2016-07-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/21/Buffer-Overflow/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww4.sinaimg.cn/mw1024/d4008a20gw1f62qlp6ml0j21es0jwn9r.jpg)" alt="Buffer Overflow" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/07/21/Buffer-Overflow/" class="title">Buffer Overflow</a></p>
+                            <p class="item-date"><time datetime="2016-07-21T01:25:18.000Z" itemprop="datePublished">2016-07-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/19/Cross-Site-Request-Forgery/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5yzk8p2krj20h407kwfe.jpg)" alt="Cross Site Request Forgery" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/07/19/Cross-Site-Request-Forgery/" class="title">Cross Site Request Forgery</a></p>
+                            <p class="item-date"><time datetime="2016-07-19T01:39:42.000Z" itemprop="datePublished">2016-07-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/15/Same-Origin-Policy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/shoes.jpg)" alt="Same Origin Policy" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
+                            <p class="item-title"><a href="/2016/07/15/Same-Origin-Policy/" class="title">Same Origin Policy</a></p>
+                            <p class="item-date"><time datetime="2016-07-15T07:07:10.000Z" itemprop="datePublished">2016-07-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Journey-of-Study/">Journey of Study</a><span class="category-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computersecurity/">computersecurity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Django/" style="font-size: 13.33px;">Django</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Web/" style="font-size: 16.67px;">Web</a> <a href="/tags/computersecurity/" style="font-size: 10px;">computersecurity</a> <a href="/tags/pentest/" style="font-size: 10px;">pentest</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://github.com/AlmondQ">Github</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 Almond<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = '/2016/07/12/Go-Django-I/';
+        
+        this.page.identifier = 'Go-Django-I';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'almondq' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
