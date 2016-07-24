@@ -5,20 +5,22 @@
     
     <title>Go Django II | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模板和模型。">
+    <meta name="description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Go Django II">
 <meta property="og:url" content="/2016/07/23/Go-Django-II/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模板和模型。">
+<meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
-<meta property="og:updated_time" content="2016-07-23T10:38:04.000Z">
+<meta property="og:updated_time" content="2016-07-24T12:55:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go Django II">
-<meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模板和模型。">
+<meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
     
 
+    
+        <link rel="alternate" href="/" title="加油！少年" type="application/atom+xml" />
     
 
     
@@ -39,6 +41,7 @@
     
 
 </head>
+
 <body>
     <div id="container">
         <header id="header">
@@ -257,11 +260,46 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模版"><span class="toc-number">1.</span> <span class="toc-text">模版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用模板系统"><span class="toc-number">1.2.</span> <span class="toc-text">如何使用模板系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度变量的查找"><span class="toc-number">1.3.</span> <span class="toc-text">深度变量的查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法调用行为"><span class="toc-number">1.3.1.</span> <span class="toc-text">方法调用行为</span></a></li></ol></li></ol></li></ol>
                 </div>
             
-            <p>Python中Web开发框架Django的学习记录。本篇主要学习了Django的模板和模型。<br><a id="more"></a></p>
-
+            <p>Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。<br><a id="more"></a></p>
+<h1 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h1><p>直接将HTML硬编码到视图里不是一个好主意，所以使用Django的<em>模板系统(Template System)</em>来实现页面设计和python代码的分离。</p>
+<h2 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h2><p>模版是一个文本，用于分离文档的表现形式和内容。模版定义了占位符以及各种用于规范文档该如何显示的各部分基本逻辑（模版标签）。模版通常用于产生HTML，但是Django的模版也能产生任何基于文本格式的文档</p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;&lt;title&gt;Ordering notice&lt;/title&gt;&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;Ordering notice&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Dear &#123;&#123; person_name &#125;&#125;,&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Thanks for placing an order from &#123;&#123; company &#125;&#125;. It&apos;s scheduled to</span><br><span class="line">ship on &#123;&#123; ship_date|date:&quot;F j, Y&quot; &#125;&#125;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Here are the items you&apos;ve ordered:&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">&#123;% for item in item_list %&#125;</span><br><span class="line">    &lt;li&gt;&#123;&#123; item &#125;&#125;&lt;/li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&#123;% if ordered_warranty %&#125;</span><br><span class="line">    &lt;p&gt;Your warranty information will be included in the packaging.&lt;/p&gt;</span><br><span class="line">&#123;% else %&#125;</span><br><span class="line">    &lt;p&gt;You didn&apos;t order a warranty, so you&apos;re on your own when</span><br><span class="line">    the products inevitably stop working.&lt;/p&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;Sincerely,&lt;br /&gt;&#123;&#123; company &#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>用两个大括号括起来的文字称为变量，这意味着在此处插入指定变量的值</p>
+<p>被大括号和百分号包围的文本是模版标签，标签定义为仅通知模板系统完成某些工作的标签</p>
+<pre><code>{{ ship_date|date:"F j, Y" }}
+</code></pre><p>是一个过滤器的例子，过滤器是一种最便捷的转换变量输出格式的方式。如这个例子中，将变量ship_data传递给date过滤器，同时制定参数”F j, Y”。过滤器将根据参数进行格式输出</p>
+<h2 id="如何使用模板系统"><a href="#如何使用模板系统" class="headerlink" title="如何使用模板系统"></a>如何使用模板系统</h2><p>在python代码中使用Django模板的最基本方式如下：</p>
+<ol>
+<li>可以使用原始的模版代码字符串创建一个Template对象，Django同样支持用指定模版文件路径的方式来创建Template对象</li>
+<li>调用模版对象的render方法，并传入一套变量context，它将返回一个代表完全渲染的模版的字符串，模版中的变量和标签会被context值替换</li>
+</ol>
+<p>代码演示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from django import template</span><br><span class="line"></span><br><span class="line">t = template.Template(&quot;my name is &#123;&#123; name &#125;&#125;.&quot;) #创建模版对象</span><br><span class="line">c = template.Context(&#123;&quot;name&quot;: &quot;Adrian&quot;&#125;)</span><br><span class="line">print t.render(c) #传递context来填充模版，返回值是一个Unicode对象</span><br><span class="line">my name is Adrian.</span><br><span class="line">c = template.Context(&#123;&quot;name&quot;: &quot;Fred&quot;&#125;)</span><br><span class="line">print t.render(c)</span><br><span class="line">my name is Fred.</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from django.template import Template, Context</span><br><span class="line">&gt;&gt;&gt; raw_template = &quot;&quot;&quot;&lt;p&gt;Dear &#123;&#123; person_name &#125;&#125;,&lt;/p&gt;</span><br><span class="line">...</span><br><span class="line">... &lt;p&gt;Thanks for placing an order from &#123;&#123; company &#125;&#125;. It&apos;s scheduled to</span><br><span class="line">... ship on &#123;&#123; ship_date|date:&quot;F j, Y&quot; &#125;&#125;.&lt;/p&gt;</span><br><span class="line">...</span><br><span class="line">... &#123;% if ordered_warranty %&#125;</span><br><span class="line">... &lt;p&gt;Your warranty information will be included in the packaging.&lt;/p&gt;</span><br><span class="line">... &#123;% else %&#125;</span><br><span class="line">... &lt;p&gt;You didn&apos;t order a warranty, so you&apos;re on your own when</span><br><span class="line">... the products inevitably stop working.&lt;/p&gt;</span><br><span class="line">... &#123;% endif %&#125;</span><br><span class="line">...</span><br><span class="line">... &lt;p&gt;Sincerely,&lt;br /&gt;&#123;&#123; company &#125;&#125;&lt;/p&gt;&quot;&quot;&quot;</span><br><span class="line">&gt;&gt;&gt; t = Template(raw_template)</span><br><span class="line">&gt;&gt;&gt; import datetime</span><br><span class="line">&gt;&gt;&gt; c = Context(&#123;&apos;person_name&apos;: &apos;John Smith&apos;,</span><br><span class="line">...     &apos;company&apos;: &apos;Outdoor Equipment&apos;,</span><br><span class="line">...     &apos;ship_date&apos;: datetime.date(2009, 4, 2),</span><br><span class="line">...     &apos;ordered_warranty&apos;: False&#125;)</span><br><span class="line">&gt;&gt;&gt; t.render(c)</span><br><span class="line">u&quot;&lt;p&gt;Dear John Smith,&lt;/p&gt;\n\n&lt;p&gt;Thanks for placing an order from Outdoor</span><br><span class="line">Equipment. It&apos;s scheduled to\nship on April 2, 2009.&lt;/p&gt;\n\n\n&lt;p&gt;You</span><br><span class="line">didn&apos;t order a warranty, so you&apos;re on your own when\nthe products</span><br><span class="line">inevitably stop working.&lt;/p&gt;\n\n\n&lt;p&gt;Sincerely,&lt;br /&gt;Outdoor Equipment</span><br><span class="line">&lt;/p&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f656vmrwvvj20vg0den51.jpg" alt="template_example"></p>
+<p>实际自己操作的时候，发现如果过滤器ship_date|date:”F j, Y”中添加了多余的空格的话，会导致创建模版对象出错</p>
+<p>可以使用一个模版渲染多个context，非常高效</p>
+<h2 id="深度变量的查找"><a href="#深度变量的查找" class="headerlink" title="深度变量的查找"></a>深度变量的查找</h2><p>模版系统能够非常简洁地处理更加复杂的数据结构，例如list，dictionary和自定义的对象</p>
+<p>在Django模版中遍历复杂数据结构的关键是句点字符(.)</p>
+<p>例如，向模板系统传递一个python字典，要通过字典键访问该字典的值，可使用一个句点</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f657ep6fhyj20pq04qtae.jpg" alt="dic"></p>
+<p>同样，也可以通过句点来访问对象的属性，比如说python的datetime.date对象有year，month，day几个属性（同样适用于自定义的类，总之，适用于任何对象）</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f657lv8rufj20v205ignc.jpg" alt="attr"></p>
+<p>点语法也可以用来引用对象的方法，例如python字符串都有upper()和isdigit()方法</p>
+<p><img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f657r1yohcj20rq04i75y.jpg" alt="method"></p>
+<p>注意，这里调用方法时并没有使用圆括号，而且也无法给该方法传递参数，只能调用不需要参数的方法</p>
+<p>最后，句点也可用于访问列表索引，不允许使用负数列表索引</p>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f657zj7igyj20nq02u0tq.jpg" alt="list"></p>
+<p>当模版系统在变量名中遇到点时，按照下面顺序尝试进行查找：字典类型，属性查找，方法调用，列表类型索引查找。系统使用第一个找到的有效类型，这是一种短路逻辑</p>
+<p>句点查找可以多级深度嵌套，例如在下面这个例子中会转换成字典类型查找，然后是方法调用</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f658g06gvvj20t00b878k.jpg" alt=""></p>
+<p>注意，上图中出现的错误已经出现过很多次，要引以为戒！！</p>
+<h3 id="方法调用行为"><a href="#方法调用行为" class="headerlink" title="方法调用行为"></a>方法调用行为</h3>
         
         </div>
         <footer class="article-footer">
