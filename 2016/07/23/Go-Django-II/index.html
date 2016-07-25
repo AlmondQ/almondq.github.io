@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
-<meta property="og:updated_time" content="2016-07-25T13:47:21.000Z">
+<meta property="og:updated_time" content="2016-07-25T13:51:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go Django II">
 <meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
@@ -301,11 +301,7 @@
 <p>注意，上图中出现的错误已经出现过很多次，要引以为戒！！</p>
 <h3 id="方法调用行为"><a href="#方法调用行为" class="headerlink" title="方法调用行为"></a>方法调用行为</h3><p>方法调用比其它类型的查找略为复杂一点，以下是一些注意事项：</p>
 <blockquote>
-<blockquote>
-<blockquote>
 <p>在方法查找过程中，如果某方法抛出一个异常，这个异常将被传播，除非这个异常有一个silent_variable_failure属性并且值为True。如果这个异常有silent_variable_failure属性，则模版里的指定变量会被置为空字符串</p>
-</blockquote>
-</blockquote>
 </blockquote>
 <p>例如：</p>
 <p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f66dnbptngj21kw0w0tm8.jpg" alt=""></p>
@@ -314,11 +310,7 @@
 <p>此时异常有silent_variable_failure属性且为True，所以异常没被抛出，且指定变量被置为空字符串</p>
 <p>这里我有个疑问，原文写的是</p>
 <blockquote>
-<blockquote>
-<blockquote>
 <p>If the exception does have a silent_variable_failure attribute, the variable will render as an empty string</p>
-</blockquote>
-</blockquote>
 </blockquote>
 <p>我理解的是只要有这个属性就会被置为空，于是实验了一下</p>
 <p><img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f66e68t6eij21jm0tikbc.jpg" alt=""></p>
@@ -335,17 +327,19 @@ delete.alters_data = True
 <h2 id="Context对象"><a href="#Context对象" class="headerlink" title="Context对象"></a>Context对象</h2><p>多数时间，可以通过传递一个完全填充的字典给Context()来初始化Context，但是初始化之后也可以使用标准的python字典语法向Context对象添加或删除条目</p>
 <p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f66g5uwqiaj20rg0e2jvh.jpg" alt=""></p>
 <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if/else"></a>if/else</h3><pre><code>{% if %}
+
 标签检查(evaluate)一个变量，如果这个变量为真（即，变量存在，非空，不是布尔值假），系统会显示在
 
     {% if %}和\{% endif %}
 </code></pre><p>之间的任何内容</p>
 <pre><code>{% else %\}和\{% elif %\}
+
 标签是可选的。if标签不允许在同一个标签中同时使用and和or，因为逻辑上是模糊的。系统不支持用圆括号来组合比较操作。如果需要用到圆括号来组合逻辑式，将它移到模版之外处理，然后以模板变量的形式传入结果。或者仅仅用嵌套的if标签替换。一定要用
 
     {% endif %}来关闭每一个{% if %}标签
 
 ### for
->>>{% for %}允许在一个序列上迭代。与python中for语句的情形类似。每一次循环中，模板系统会渲染在{% for %}与\{% endfor %}之间的所有内容。可以给标签增加一个reversed使得该列表被反向迭代：
+>{% for %}允许在一个序列上迭代。与python中for语句的情形类似。每一次循环中，模板系统会渲染在{% for %}与\{% endfor %}之间的所有内容。可以给标签增加一个reversed使得该列表被反向迭代：
 
     {% for athlete in athlete_list reversed %}
     ...
@@ -354,6 +348,7 @@ delete.alters_data = True
 在迭代一个列表之前先检查列表的大小是一个常用的做法，因为这种做法非常常见，所以for标签支持一个可选的
 
     {% empty %}
+
 分句：
 
     {% for athlete in athlete_list reversed %}
@@ -361,6 +356,7 @@ delete.alters_data = True
     {% empty %}
         <p>there are no athletes</p>
     {% endfor %}} 
+
 Django不支持退出循环操作，同理，也不支持continue语句。
 
 在每个for标签里有一个称为forloop的模版变量，这个变量有一些提示循环进度信息的属性
@@ -370,6 +366,7 @@ forloop.counter 总是一个表示当前循环的执行次数的整数计数器�
     {% for item in todo_list %}
     <p>{{ forloop.counter }}: {{ item }}</p>
     {% endfor %}
+
 forloop.counter0 类似于 forloop.counter ，但是它是从0计数的。 第一次执行循环时这个变量会被设置为0
 
 forloop.revcounter 是表示循环中剩余项的整型变量。 在循环初次执行时
@@ -386,9 +383,11 @@ forloop.first 是一个布尔值，如果该迭代是第一次执行，那么它
 {% endfor %}
 </li></code></pre><p>forloop.last 是一个布尔值；在最后一次执行循环时被置为True。 一个常见的用法是在一系列的链接之间放置管道符（|）：</p>
 <pre><code>{% for link in links %}{{ link }}{% if not forloop.last %} | {% endif %}{% endfor %}
+
 上面的模板可能会产生如下的结果：
     
     Link1 | Link2 | Link3 | Link4
+
 另一个常见的用途是为列表的每个单词的加上逗号：
 
     {% for p in places %}{{ p }}{% if not forloop.last %}, {% endif %}{% endfor %}
