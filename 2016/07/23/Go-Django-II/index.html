@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
-<meta property="og:updated_time" content="2016-07-25T14:19:04.000Z">
+<meta property="og:updated_time" content="2016-07-25T14:21:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go Django II">
 <meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
@@ -334,13 +334,31 @@ delete.alters_data = True
 <p>允许在一个序列上迭代。与python中for语句的情形类似。每一次循环中，模板系统会渲染在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for %&#125;与&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 <p>之间的所有内容。可以给标签增加一个reversed使得该列表被反向迭代：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for athlete in athlete_list reversed %&#125;</span><br><span class="line">...</span><br><span class="line">&#123;% endfor %&#125;&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">在迭代一个列表之前先检查列表的大小是一个常用的做法，因为这种做法非常常见，所以for标签支持一个可选的empty分句：</span><br><span class="line"></span><br><span class="line">![](http://ww1.sinaimg.cn/mw1024/d4008a20gw1f66ifrfyl1j20qs058q3v.jpg)</span><br><span class="line">Django不支持退出循环操作，同理，也不支持continue语句。</span><br><span class="line"></span><br><span class="line">在每个for标签里有一个称为forloop的模版变量，这个变量有一些提示循环进度信息的属性</span><br><span class="line"></span><br><span class="line">* forloop.counter 总是一个表示当前循环的执行次数的整数计数器。 这个计数器是从1开始的，所以在第一次循环时 forloop.counter 将会被设置为1</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* forloop.counter0 类似于 forloop.counter ，但是它是从0计数的。 第一次执行循环时这个变量会被设置为0</span><br><span class="line"></span><br><span class="line">* forloop.revcounter 是表示循环中剩余项的整型变量。 在循环初次执行时</span><br><span class="line">forloop.revcounter 将被设置为序列中项的总数。 最后一次循环执行中，这个变量将被置1</span><br><span class="line"></span><br><span class="line">* forloop.revcounter0 类似于 forloop.revcounter ，但它以0做为结束索引。 在第一次执行循环时，该变量会被置为序列的项的个数减1</span><br><span class="line"></span><br><span class="line">* forloop.first 是一个布尔值，如果该迭代是第一次执行，那么它被置为True，在下面的情形中这个变量是很有用的：</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* forloop.last 是一个布尔值；在最后一次执行循环时被置为True。 一个常见的用法是在一系列的链接之间放置管道符（|）：</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">上面的模板可能会产生如下的结果：</span><br><span class="line"></span><br><span class="line">```    </span><br><span class="line">Link1 | Link2 | Link3 | Link4</span><br></pre></td></tr></table></figure>
+<p><img src="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f66ing9xk1j20kc03a3yp.jpg" alt=""> </p>
+<p>在迭代一个列表之前先检查列表的大小是一个常用的做法，因为这种做法非常常见，所以for标签支持一个可选的empty分句：</p>
+<p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f66ifrfyl1j20qs058q3v.jpg" alt=""><br>Django不支持退出循环操作，同理，也不支持continue语句。</p>
+<p>在每个for标签里有一个称为forloop的模版变量，这个变量有一些提示循环进度信息的属性</p>
+<ul>
+<li>forloop.counter 总是一个表示当前循环的执行次数的整数计数器。 这个计数器是从1开始的，所以在第一次循环时 forloop.counter 将会被设置为1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for item in todo_list %&#125;</span><br><span class="line">&lt;p&gt;&#123;&#123; forloop.counter &#125;&#125;: &#123;&#123; item &#125;&#125;&lt;/p&gt;</span><br><span class="line"> &#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>forloop.counter0 类似于 forloop.counter ，但是它是从0计数的。 第一次执行循环时这个变量会被设置为0</p>
+</li>
+<li><p>forloop.revcounter 是表示循环中剩余项的整型变量。 在循环初次执行时<br>forloop.revcounter 将被设置为序列中项的总数。 最后一次循环执行中，这个变量将被置1</p>
+</li>
+<li><p>forloop.revcounter0 类似于 forloop.revcounter ，但它以0做为结束索引。 在第一次执行循环时，该变量会被置为序列的项的个数减1</p>
+</li>
+<li><p>forloop.first 是一个布尔值，如果该迭代是第一次执行，那么它被置为True，在下面的情形中这个变量是很有用的：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for object in objects %&#125;</span><br><span class="line">&#123;% if forloop.first %&#125;&lt;li class=&quot;first&quot;&gt;&#123;% else %&#125;&lt;li&gt;&#123;% endif %&#125;</span><br><span class="line">&#123;&#123; object &#125;&#125;</span><br><span class="line">&lt;/li&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>forloop.last 是一个布尔值；在最后一次执行循环时被置为True。 一个常见的用法是在一系列的链接之间放置管道符（|）：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for link in links %&#125;&#123;&#123; link &#125;&#125;&#123;% if not forloop.last %&#125; | &#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的模板可能会产生如下的结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Link1 | Link2 | Link3 | Link4</span><br></pre></td></tr></table></figure>
 <p>另一个常见的用途是为列表的每个单词的加上逗号：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for p in places %&#125;&#123;&#123; p &#125;&#125;&#123;% if not forloop.last %&#125;, &#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 <ul>
