@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
-<meta property="og:updated_time" content="2016-07-25T13:51:32.000Z">
+<meta property="og:updated_time" content="2016-07-25T14:17:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Go Django II">
 <meta name="twitter:description" content="Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。">
@@ -260,7 +260,7 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模版"><span class="toc-number">1.</span> <span class="toc-text">模版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用模板系统"><span class="toc-number">1.2.</span> <span class="toc-text">如何使用模板系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度变量的查找"><span class="toc-number">1.3.</span> <span class="toc-text">深度变量的查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法调用行为"><span class="toc-number">1.3.1.</span> <span class="toc-text">方法调用行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何处理无效变量"><span class="toc-number">1.3.2.</span> <span class="toc-text">如何处理无效变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context对象"><span class="toc-number">1.4.</span> <span class="toc-text">Context对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-number">1.5.</span> <span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-else"><span class="toc-number">1.5.1.</span> <span class="toc-text">if/else</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ifequal-ifnotequal"><span class="toc-number">1.5.2.</span> <span class="toc-text">ifequal/ifnotequal</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模版"><span class="toc-number">1.</span> <span class="toc-text">模版</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本知识"><span class="toc-number">1.1.</span> <span class="toc-text">基本知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何使用模板系统"><span class="toc-number">1.2.</span> <span class="toc-text">如何使用模板系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度变量的查找"><span class="toc-number">1.3.</span> <span class="toc-text">深度变量的查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法调用行为"><span class="toc-number">1.3.1.</span> <span class="toc-text">方法调用行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何处理无效变量"><span class="toc-number">1.3.2.</span> <span class="toc-text">如何处理无效变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context对象"><span class="toc-number">1.4.</span> <span class="toc-text">Context对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签"><span class="toc-number">1.5.</span> <span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if-else"><span class="toc-number">1.5.1.</span> <span class="toc-text">if/else</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for"><span class="toc-number">1.5.2.</span> <span class="toc-text">for</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ifequal-ifnotequal"><span class="toc-number">1.5.3.</span> <span class="toc-text">ifequal/ifnotequal</span></a></li></ol></li></ol></li></ol>
                 </div>
             
             <p>Python中Web开发框架Django的学习记录。本篇主要学习了Django的模版和模型。<br><a id="more"></a></p>
@@ -326,72 +326,26 @@ delete.alters_data = True
 <h3 id="如何处理无效变量"><a href="#如何处理无效变量" class="headerlink" title="如何处理无效变量"></a>如何处理无效变量</h3><p>默认情况下，如果一个变量不存在，模板系统会把它展示为空字符串。这个不存在的意思是：通过context传入的参数中没有模板中需要的字符串。如果context传入了一个模版中不存在的变量，模板系统将不理会</p>
 <h2 id="Context对象"><a href="#Context对象" class="headerlink" title="Context对象"></a>Context对象</h2><p>多数时间，可以通过传递一个完全填充的字典给Context()来初始化Context，但是初始化之后也可以使用标准的python字典语法向Context对象添加或删除条目</p>
 <p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f66g5uwqiaj20rg0e2jvh.jpg" alt=""></p>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if/else"></a>if/else</h3><pre><code>{% if %}
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><h3 id="if-else"><a href="#if-else" class="headerlink" title="if/else"></a>if/else</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if %&#125;</span><br></pre></td></tr></table></figure>
+<p>标签检查(evaluate)一个变量，如果这个变量为真（即，变量存在，非空，不是布尔值假），系统会显示在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if %&#125;和&#123;% endif %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>之间的任何内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% else %&#125;和&#123;% elif %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>标签是可选的。if标签不允许在同一个标签中同时使用and和or，因为逻辑上是模糊的。系统不支持用圆括号来组合比较操作。如果需要用到圆括号来组合逻辑式，将它移到模版之外处理，然后以模板变量的形式传入结果。或者仅仅用嵌套的if标签替换。一定要用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% endif %&#125;来关闭每一个&#123;% if %&#125;标签</span><br></pre></td></tr></table></figure></p>
+<h3 id="for"><a href="#for" class="headerlink" title="for"></a>for</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for %&#125;</span><br></pre></td></tr></table></figure>
+<p>允许在一个序列上迭代。与python中for语句的情形类似。每一次循环中，模板系统会渲染在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for %&#125;与&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<p>之间的所有内容。可以给标签增加一个reversed使得该列表被反向迭代：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for athlete in athlete_list reversed %&#125;</span><br><span class="line">...</span><br><span class="line">&#123;% endfor %&#125;&#125;</span><br><span class="line">``` </span><br><span class="line">在迭代一个列表之前先检查列表的大小是一个常用的做法，因为这种做法非常常见，所以for标签支持一个可选的empty分句：</span><br><span class="line"></span><br><span class="line">![](http://ww1.sinaimg.cn/mw1024/d4008a20gw1f66ifrfyl1j20qs058q3v.jpg)</span><br><span class="line">Django不支持退出循环操作，同理，也不支持continue语句。</span><br><span class="line"></span><br><span class="line">在每个for标签里有一个称为forloop的模版变量，这个变量有一些提示循环进度信息的属性</span><br><span class="line"></span><br><span class="line">* forloop.counter 总是一个表示当前循环的执行次数的整数计数器。 这个计数器是从1开始的，所以在第一次循环时 forloop.counter 将会被设置为1</span><br></pre></td></tr></table></figure>
 
-标签检查(evaluate)一个变量，如果这个变量为真（即，变量存在，非空，不是布尔值假），系统会显示在
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* forloop.counter0 类似于 forloop.counter ，但是它是从0计数的。 第一次执行循环时这个变量会被设置为0</span><br><span class="line"></span><br><span class="line">* forloop.revcounter 是表示循环中剩余项的整型变量。 在循环初次执行时</span><br><span class="line">forloop.revcounter 将被设置为序列中项的总数。 最后一次循环执行中，这个变量将被置1</span><br><span class="line"></span><br><span class="line">* forloop.revcounter0 类似于 forloop.revcounter ，但它以0做为结束索引。 在第一次执行循环时，该变量会被置为序列的项的个数减1</span><br><span class="line"></span><br><span class="line">* forloop.first 是一个布尔值，如果该迭代是第一次执行，那么它被置为True，在下面的情形中这个变量是很有用的：</span><br></pre></td></tr></table></figure>
 
-    {% if %}和\{% endif %}
-</code></pre><p>之间的任何内容</p>
-<pre><code>{% else %\}和\{% elif %\}
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* forloop.last 是一个布尔值；在最后一次执行循环时被置为True。 一个常见的用法是在一系列的链接之间放置管道符（|）：</span><br></pre></td></tr></table></figure>
 
-标签是可选的。if标签不允许在同一个标签中同时使用and和or，因为逻辑上是模糊的。系统不支持用圆括号来组合比较操作。如果需要用到圆括号来组合逻辑式，将它移到模版之外处理，然后以模板变量的形式传入结果。或者仅仅用嵌套的if标签替换。一定要用
-
-    {% endif %}来关闭每一个{% if %}标签
-
-### for
->{% for %}允许在一个序列上迭代。与python中for语句的情形类似。每一次循环中，模板系统会渲染在{% for %}与\{% endfor %}之间的所有内容。可以给标签增加一个reversed使得该列表被反向迭代：
-
-    {% for athlete in athlete_list reversed %}
-    ...
-    {% endfor %}}
-    
-在迭代一个列表之前先检查列表的大小是一个常用的做法，因为这种做法非常常见，所以for标签支持一个可选的
-
-    {% empty %}
-
-分句：
-
-    {% for athlete in athlete_list reversed %}
-        <p>{{ athlete.name }}</p>
-    {% empty %}
-        <p>there are no athletes</p>
-    {% endfor %}} 
-
-Django不支持退出循环操作，同理，也不支持continue语句。
-
-在每个for标签里有一个称为forloop的模版变量，这个变量有一些提示循环进度信息的属性
-
-forloop.counter 总是一个表示当前循环的执行次数的整数计数器。 这个计数器是从1开始的，所以在第一次循环时 forloop.counter 将会被设置为1
-
-    {% for item in todo_list %}
-    <p>{{ forloop.counter }}: {{ item }}</p>
-    {% endfor %}
-
-forloop.counter0 类似于 forloop.counter ，但是它是从0计数的。 第一次执行循环时这个变量会被设置为0
-
-forloop.revcounter 是表示循环中剩余项的整型变量。 在循环初次执行时
-forloop.revcounter 将被设置为序列中项的总数。 最后一次循环执行中，这个变量将被置1
-
-forloop.revcounter0 类似于 forloop.revcounter ，但它以0做为结束索引。 在第一次执行循环时，该变量会被置为序列的项的个数减1
-
-forloop.first 是一个布尔值，如果该迭代是第一次执行，那么它被置为True，在下面的情形中这个变量是很有用的：
-
-    {% for object in objects %}
-    {% if forloop.first %}<li class="first">{% else %}</li><li>{% endif %}
-{{ object }}
-&lt;/li&gt;
-{% endfor %}
-</li></code></pre><p>forloop.last 是一个布尔值；在最后一次执行循环时被置为True。 一个常见的用法是在一系列的链接之间放置管道符（|）：</p>
-<pre><code>{% for link in links %}{{ link }}{% if not forloop.last %} | {% endif %}{% endfor %}
-
-上面的模板可能会产生如下的结果：
-    
-    Link1 | Link2 | Link3 | Link4
-
-另一个常见的用途是为列表的每个单词的加上逗号：
-
-    {% for p in places %}{{ p }}{% if not forloop.last %}, {% endif %}{% endfor %}
-</code></pre><p>forloop.parentloop 是一个指向当前循环的上一级循环的 forloop 对象的引用（在嵌套循环的情况下），例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">上面的模板可能会产生如下的结果：</span><br><span class="line"></span><br><span class="line">```    </span><br><span class="line">Link1 | Link2 | Link3 | Link4</span><br></pre></td></tr></table></figure>
+<p>另一个常见的用途是为列表的每个单词的加上逗号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for p in places %&#125;&#123;&#123; p &#125;&#125;&#123;% if not forloop.last %&#125;, &#123;% endif %&#125;&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>forloop.parentloop 是一个指向当前循环的上一级循环的 forloop 对象的引用（在嵌套循环的情况下），例如：</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for country in countries %&#125;</span><br><span class="line">    &lt;table&gt;</span><br><span class="line">    &#123;% for city in country.city_list %&#125;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;Country #&#123;&#123; forloop.parentloop.counter &#125;&#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;City #&#123;&#123; forloop.counter &#125;&#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123; city &#125;&#125;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 <p>对于自己定义的forloop变量的处理有些复杂，所以只要记住不要定义一个叫做forloop的变量！！！</p>
 <h3 id="ifequal-ifnotequal"><a href="#ifequal-ifnotequal" class="headerlink" title="ifequal/ifnotequal"></a>ifequal/ifnotequal</h3>
