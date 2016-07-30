@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="同源策略来源：http://blog.csdn.net/shimiso/article/details/21830313">
 <meta property="og:image" content="http://blog.zhangruipeng.me/hexo-theme-icarus/gallery/shoes.jpg">
-<meta property="og:updated_time" content="2016-07-22T08:27:04.000Z">
+<meta property="og:updated_time" content="2016-07-29T08:34:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Same Origin Policy">
 <meta name="twitter:description" content="同源策略来源：http://blog.csdn.net/shimiso/article/details/21830313">
@@ -274,7 +274,7 @@
 <p>Document对象的domain属性存放着装载文档的服务器的主机名，可以设置它。例如来自blog.csdn.net和来自bbs.csdn.net的页面，都将documents.domain设置为csdn.net，则来自两个子域名的脚本即可相互访问。出于安全的考虑，不能设置为其他主domain，比如<a href="http://www.csdn.net不能设置为sina.com" target="_blank" rel="external">http://www.csdn.net不能设置为sina.com</a></p>
 <h2 id="Ajax跨域"><a href="#Ajax跨域" class="headerlink" title="Ajax跨域"></a>Ajax跨域</h2><p>Ajax(XMLHttpRequest)请求受到同源策略的限制</p>
 <p>Ajax通过XMLHttpRequest能够与远程的服务器进行信息交互，另外XMLHttpRequest是一个纯粹的javascript对象，这样的交互过程是在后台进行的，用户不易察觉，因此XMLHttpRequest实际已经突破了原有的javascript的安全限制，举个例子：假设某网站引用了其他站点的javascript，这个站点被compromise并在javascript中加入获取用户输入并通过ajax提交给其他站点，这样就可以源源不断收集信息。或者某网站因为存在漏洞导致XSS注入了javascript脚本，这个脚本就可以通过ajax提交给其他站点，这样就可以源源不断收集信息。如果我们又想利用XMLHttpRequest的无刷新异步交互能力，又不愿意公然突破javascript的安全策略，可以选择的方案就是给XMLHTTP加上严格的同源限制。这样的安全策略类似于Applet的安全策略，Iframe的限制仅仅是不能访问跨域HTMLDOM中的数据，而XMLHTTP则根本上限制了跨域请求的提交。随着Ajax技术和网络服务器的发展，对跨域的要求也越来越强烈，下面介绍Ajax的跨域技术</p>
-<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP技术试剂盒Ajax没有关系，我们知道&lt;script&gt;标签可以加载跨域的javascript脚本，并且被加载的脚本和当前文档属于同一个域，因此在文档中可以调用/访问脚本中的数据和函数。如果javascript脚本中的数据是动态生成的，那么只要在文档中动态创建&lt;script&gt;标签就可以实现和服务端的数据交互。</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP技术实际和Ajax没有关系，我们知道&lt;script&gt;标签可以加载跨域的javascript脚本，并且被加载的脚本和当前文档属于同一个域，因此在文档中可以调用/访问脚本中的数据和函数。如果javascript脚本中的数据是动态生成的，那么只要在文档中动态创建&lt;script&gt;标签就可以实现和服务端的数据交互。</p>
 <p>JSONP就是利用&lt;script&gt;标签的跨域能力实现跨域数据的访问，请求动态生成的JavaScript脚本同时带一个callback函数名作为参数。其中callback函数本地文档的JavaScript函数，服务器端动态生成的脚本会产生数据，并在代码中以产生的数据为参数调用callback函数。当这段脚本加载到本地文档时，callback函数就被调用。</p>
 <p>第一个站点的测试页面（<a href="http://localhost:8080/test.html）：" target="_blank" rel="external">http://localhost:8080/test.html）：</a> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://localhost:8081/test_data.js&quot;&gt; </span><br><span class="line">    &lt;script&gt;  </span><br><span class="line">        function test_handler(data) &#123;  </span><br><span class="line">            console.log(data);  </span><br><span class="line">        &#125;  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>

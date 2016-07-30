@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f62qlp6ml0j21es0jwn9r.jpg">
-<meta property="og:updated_time" content="2016-07-22T08:25:31.000Z">
+<meta property="og:updated_time" content="2016-07-30T11:32:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Buffer Overflow">
 <meta name="twitter:description" content="缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。">
@@ -260,10 +260,46 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#缓冲区溢出漏洞"><span class="toc-number">1.</span> <span class="toc-text">缓冲区溢出漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#栈溢出"><span class="toc-number">1.1.</span> <span class="toc-text">栈溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆溢出"><span class="toc-number">1.2.</span> <span class="toc-text">堆溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“一位偏移”漏洞"><span class="toc-number">1.3.</span> <span class="toc-text">“一位偏移”漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找缓冲区溢出漏洞"><span class="toc-number">1.4.</span> <span class="toc-text">查找缓冲区溢出漏洞</span></a></li></ol></li></ol>
                 </div>
             
             <p>缓冲区溢出是一种非常普遍，非常危险的漏洞，在各种操作系统，应用软件中广泛存在。利用缓冲区溢出攻击，可以导致程序运行失败、系统宕机、重新启动等后果。更为严重的是，可以利用它执行非授权指令，甚至可以取得系统特权，进而进行各种非法操作。<br><a id="more"></a></p>
+<h1 id="缓冲区溢出漏洞"><a href="#缓冲区溢出漏洞" class="headerlink" title="缓冲区溢出漏洞"></a>缓冲区溢出漏洞</h1><p>如果应用程序将用户可控制的数据复制到一个不足以容纳它们的内存缓存区中，就会出现缓冲区溢出漏洞。由于目标缓冲区溢出，导致临近的内存被用户数据重写。攻击者可以根据漏洞的特点利用它在服务器上运行任意代码或执行其它未授权操作。</p>
+<h2 id="栈溢出"><a href="#栈溢出" class="headerlink" title="栈溢出"></a>栈溢出</h2><p>如果应用程序在没有确定大小固定的缓冲区的容量是否足够大之前，就使用一个无限制的复制操作（如C语言中的strcpy函数）将一个大小可变的缓冲区复制到这个大小固定的缓冲区中，往往就会造成缓冲区溢出，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool CheckLogin(char* username, char* password)</span><br><span class="line">&#123;</span><br><span class="line">    char _username[32];</span><br><span class="line">    strcpy(_username, username);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果username超过32个字符，_username缓冲区就会溢出</p>
+<p>在成功利用栈缓冲区溢出的攻击中，攻击者通常能够重写栈上已保存的返回地址</p>
+<h2 id="堆溢出"><a href="#堆溢出" class="headerlink" title="堆溢出"></a>堆溢出</h2><p>从本质上讲，堆缓冲区溢出也是由前面描述的相同危险操作造成的，唯一的不同在于这是溢出的目标缓冲区在堆上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bool CheckLogin(char* username, char* password)</span><br><span class="line">&#123;</span><br><span class="line">    char* _username = (char*) malloc(32);</span><br><span class="line">    strcpy(_username, username);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>堆以一个双向链表的形式执行：在内存中，每个块的前面是一个控制结构，其中包含块的大小、一个指向堆上前一个块的指针以及一个指向堆上后一个块的指针。当堆缓冲区溢出时，邻近的堆块的控制结构被用户所控制的数据重写</p>
+<p>与栈溢出漏洞相比，利用这种漏洞更困难，但是，一种常见的利用方法是在被重写的堆控制结构中写入专门的值，以在将来某个时刻重写任何一个关键的指针。以下是这种方法的原理：</p>
+<ul>
+<li>被重写的堆块从内存中释放，此时堆管理器需要根据这个堆块更新堆块链表</li>
+<li>堆管理器更新此堆块的后一个堆块的反向链接指针，前一个堆块的正向链接指针</li>
+<li>这个堆块被重写过，于是指针就链接到了攻击者想到达的地址</li>
+</ul>
+<h2 id="“一位偏移”漏洞"><a href="#“一位偏移”漏洞" class="headerlink" title="“一位偏移”漏洞"></a>“一位偏移”漏洞</h2><p>如果编程错误使得攻击者可以在一个被分配的缓冲区之后写入一个字节（或少数几字节），就会发生一种特殊的溢出漏洞，例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bool CheckLogin(char* username, char* password)</span><br><span class="line">&#123;</span><br><span class="line">   char _username[32];</span><br><span class="line">   int i;</span><br><span class="line">   for (i=0;username[i]&amp;&amp;i&lt;32;i++)</span><br><span class="line">       _username[i]=username[i];</span><br><span class="line">   _username[i] = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段代码在栈上分配一个缓冲区，执行一项计数缓冲区复制操作，然后以空字节结束目标字符串。如果username刚好有32B或更多，那么用于结束字符串的空字节将写在缓冲区之外，如果栈上邻近的数据是调用帧（calling frame）的已保存的帧指针（saved frame pointer），那么低字节设为零可能会导致它指向_username缓冲区，因而指向攻击者控制的数据</p>
+<p>如果开发者忽略在字符串缓冲区中为一个空字节终止符预留空间，在堆内存中也会引发问题，如下代码本意是修复堆溢出漏洞：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bool CheckLogin(char* username, char* password)</span><br><span class="line">&#123;</span><br><span class="line">    char* _username[32];</span><br><span class="line">    strncpy(_username, username, 32);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这时，如果用户名比预留的缓冲区更长，那么将没有空间留给空字节，这会导致一些语言（如C）无法结束这个字符串直到它遇到内存中的下一个空字节为止</p>
+<h2 id="查找缓冲区溢出漏洞"><a href="#查找缓冲区溢出漏洞" class="headerlink" title="查找缓冲区溢出漏洞"></a>查找缓冲区溢出漏洞</h2><p>向一个确定的目标发送较长的字符串并监控反常结果是查找缓冲区溢出漏洞的基本方法。有时候一些细微的漏洞只有通过发送一个特殊长度或者在较小的长度范围内的超长字符串才能检测出来</p>
+<ul>
+<li>向每一个目标数据提交一系列稍大于常用缓冲区大小的长字符串，如：1100，4200，33000</li>
+<li>一次针对一个数据实施攻击，最大程度覆盖应用程序中的所有代码路径</li>
+<li>可以使用burp intruder中的字符块有效载荷来源自动生成各种大小的有效载荷</li>
+<li>监控应用程序的响应，确定所有反常现象，例如：<ul>
+<li>HTTP500状态码或错误消息，这时其他畸形（而非超长）输入不会产生相同的结果</li>
+<li>内容详细的消息，表示某个本地组件发生故障</li>
+<li>服务器收到一个局部或畸形响应</li>
+<li>服务器的TCP连接未返回响应，突然关闭</li>
+<li>整个Web应用程序停止响应</li>
+</ul>
+</li>
+<li>注意，如果一个堆溢出被触发，这可能会在将来而非立即导致系统崩溃，因此，必须进行试验，确定一种或几种造成堆“腐化”的测试字符串</li>
+<li>“一位偏移”漏洞可能不会造成系统崩溃，但可能会导致反常行为，例如返回意外的数据</li>
+</ul>
 
         
         </div>
