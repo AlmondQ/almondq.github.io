@@ -3,20 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Functions and Functional Programming | 加油！少年</title>
+    <title>Go Django III Models | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Python的函数与函数式编程">
+    <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Functions and Functional Programming">
-<meta property="og:url" content="/2016/06/13/Functions-and-Functional-Programming/index.html">
+<meta property="og:title" content="Go Django III Models">
+<meta property="og:url" content="/2016/08/12/Go-Django-III-Models/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description" content="Python的函数与函数式编程">
-<meta property="og:image" content="http://t11.baidu.com/it/u=1093933381,2803769818&fm=58">
-<meta property="og:updated_time" content="2016-07-22T08:26:06.000Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-08-12T07:13:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Functions and Functional Programming">
-<meta name="twitter:description" content="Python的函数与函数式编程">
-<meta name="twitter:image" content="http://t11.baidu.com/it/u=1093933381,2803769818&fm=58">
+<meta name="twitter:title" content="Go Django III Models">
+<meta name="twitter:description">
     
 
     
@@ -207,7 +205,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-Functions-and-Functional-Programming" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Go-Django-III-Models" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,7 +214,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Functions and Functional Programming
+            Go Django III Models
         </h1>
     
 
@@ -225,24 +223,14 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/06/13/Functions-and-Functional-Programming/">
-            <time datetime="2016-06-13T02:02:40.000Z" itemprop="datePublished">2016-06-13</time>
+        <a href="/2016/08/12/Go-Django-III-Models/">
+            <time datetime="2016-08-12T07:13:29.000Z" itemprop="datePublished">2016-08-12</time>
         </a>
     </div>
 
 
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a>
-    </div>
-
                         
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Python/">Python</a>
-    </div>
-
                     </div>
                 
             </header>
@@ -250,31 +238,7 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-                <div id="toc" class="toc-article">
-                <strong class="toc-title">文章目录</strong>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#装饰器"><span class="toc-number">1.</span> <span class="toc-text">装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可变长度参数"><span class="toc-number">2.</span> <span class="toc-text">可变长度参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#非关键字可变长参数（元祖）"><span class="toc-number">2.0.1.</span> <span class="toc-text">非关键字可变长参数（元祖）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键字变量参数（字典）"><span class="toc-number">2.0.2.</span> <span class="toc-text">关键字变量参数（字典）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数式编程"><span class="toc-number">3.</span> <span class="toc-text">函数式编程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#匿名函数与lambda"><span class="toc-number">3.0.1.</span> <span class="toc-text">匿名函数与lambda</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包"><span class="toc-number">4.</span> <span class="toc-text">闭包</span></a></li></ol>
-                </div>
             
-            <p>Python的函数与函数式编程<br><a id="more"></a></p>
-<h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器实际就是函数，接受函数对象，对该对象进行包装。当包装一个函数的时候，最终会调用它。比如在执行函数之前运行些预备代码，或者在执行之后做些清理工作。例如：</p>
-<ul>
-<li>引入日志</li>
-<li>增加计时逻辑来检测性能</li>
-<li>给函数加入事务的能力</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from time import ctime, sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def deco(func):</span><br><span class="line">    def tsfun():</span><br><span class="line">        print &quot;[%s] %s called&quot; % (ctime(), func.__name__)</span><br><span class="line">        return func()</span><br><span class="line">    return tsfun</span><br><span class="line"></span><br><span class="line">@deco</span><br><span class="line">def foo():</span><br><span class="line">    print &quot;foo self&quot;</span><br><span class="line"></span><br><span class="line">foo()</span><br><span class="line">sleep(4)</span><br><span class="line"></span><br><span class="line">for i in range(2):</span><br><span class="line">    sleep(1)</span><br><span class="line">    foo()</span><br></pre></td></tr></table></figure>
-<p>输出结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[Tue Jun 14 13:25:43 2016] foo called</span><br><span class="line">foo self</span><br><span class="line">[Tue Jun 14 13:25:48 2016] foo called</span><br><span class="line">foo self</span><br><span class="line">[Tue Jun 14 13:25:49 2016] foo called</span><br><span class="line">foo self</span><br></pre></td></tr></table></figure>
-<p>deco函数返回一个装饰了func函数的函数</p>
-<h2 id="可变长度参数"><a href="#可变长度参数" class="headerlink" title="可变长度参数"></a>可变长度参数</h2><h4 id="非关键字可变长参数（元祖）"><a href="#非关键字可变长参数（元祖）" class="headerlink" title="非关键字可变长参数（元祖）"></a>非关键字可变长参数（元祖）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def tupleVarArgs(arg1, arg2=&apos;default&apos;, *theRest):</span><br><span class="line">    code</span><br></pre></td></tr></table></figure>
-<h4 id="关键字变量参数（字典）"><a href="#关键字变量参数（字典）" class="headerlink" title="关键字变量参数（字典）"></a>关键字变量参数（字典）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def dictVarArgs(arg1, arg2=&apos;default&apos;, *tuples, **theRest):</span><br><span class="line">    code</span><br></pre></td></tr></table></figure>
-<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><h4 id="匿名函数与lambda"><a href="#匿名函数与lambda" class="headerlink" title="匿名函数与lambda"></a>匿名函数与lambda</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">test = lambda x, y =2: x + y</span><br><span class="line"></span><br><span class="line">print test(3)</span><br></pre></td></tr></table></figure>
-<p>结果为5</p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>如果一个内部函数对外部函数的变量进行了引用那么就称为闭包</p>
-<p>闭包对于安装计算、隐藏状态和在函数对象和作用域中随意地切换是很有用的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def func():</span><br><span class="line">    fs = []</span><br><span class="line">    for i in range(1, 4):</span><br><span class="line">        def g(j):</span><br><span class="line">            def k():</span><br><span class="line">                return j * j</span><br><span class="line">            return k</span><br><span class="line">        fs.append(g(i))</span><br><span class="line">    return fs</span><br><span class="line"></span><br><span class="line">g1, g2, g3 = func()</span><br><span class="line"></span><br><span class="line">print g1(), g2(), g3()</span><br></pre></td></tr></table></figure>
-<p>结果：1，4，9</p>
-
         
         </div>
         <footer class="article-footer">
@@ -337,7 +301,7 @@
 
             
     
-        <a href="/2016/06/13/Functions-and-Functional-Programming/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/06/13/Functions-and-Functional-Programming/">评论</a>
+        <a href="/2016/08/12/Go-Django-III-Models/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/08/12/Go-Django-III-Models/">评论</a>
     
 
         </footer>
@@ -346,19 +310,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/06/15/OOP-in-Python/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    OOP in Python
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/05/31/Some-Modules-in-Python/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/08/11/Metasploitable2/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Some Modules in Python</div>
+            <div class="article-nav-title">Metasploitable2</div>
         </a>
     
 </nav>
@@ -558,9 +513,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = '/2016/06/13/Functions-and-Functional-Programming/';
+            this.page.url = '/2016/08/12/Go-Django-III-Models/';
         
-        this.page.identifier = 'Functions-and-Functional-Programming';
+        this.page.identifier = 'Go-Django-III-Models';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
