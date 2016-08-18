@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: metasploit | 加油！少年</title>
+    <title>Python Web Programming | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="加油！少年">
-<meta property="og:url" content="/tags/metasploit/index.html">
+    <meta name="description" content="处理Web网页时需要的一些模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Web Programming">
+<meta property="og:url" content="/2016/06/18/Python-Web-Programming/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description">
+<meta property="og:description" content="处理Web网页时需要的一些模块">
+<meta property="og:image" content="http://t11.baidu.com/it/u=1093933381,2803769818&fm=58">
+<meta property="og:updated_time" content="2016-08-18T08:14:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加油！少年">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Python Web Programming">
+<meta name="twitter:description" content="处理Web网页时需要的一些模块">
+<meta name="twitter:image" content="http://t11.baidu.com/it/u=1093933381,2803769818&fm=58">
     
 
     
@@ -204,50 +207,170 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#metasploit</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-Python-Web-Programming" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/08/11/Metasploitable2/">Metasploitable2</a>
+        <h1 class="article-title" itemprop="name">
+            Python Web Programming
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/08/11/Metasploitable2/">
-            <time datetime="2016-08-11T06:08:20.000Z" itemprop="datePublished">2016-08-11</time>
+        <a href="/2016/06/18/Python-Web-Programming/">
+            <time datetime="2016-06-18T02:26:52.000Z" itemprop="datePublished">2016-06-18</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/metasploit/">metasploit</a>, <a class="tag-link" href="/tags/pentest/">pentest</a>
+        <a class="tag-link" href="/tags/Python/">Python</a>
     </div>
 
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#urlparse"><span class="toc-number">1.</span> <span class="toc-text">urlparse</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#urllib2"><span class="toc-number">2.</span> <span class="toc-text">urllib2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些例子"><span class="toc-number">2.1.</span> <span class="toc-text">一些例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-验证"><span class="toc-number">2.1.1.</span> <span class="toc-text">HTTP 验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加HTTP头"><span class="toc-number">2.1.2.</span> <span class="toc-text">添加HTTP头</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Beautiful-Soup"><span class="toc-number">3.</span> <span class="toc-text">Beautiful Soup</span></a></li></ol>
                 </div>
-            </div>
+            
+            <p>处理Web网页时需要的一些模块<br><a id="more"></a></p>
+<h1 id="urlparse"><a href="#urlparse" class="headerlink" title="urlparse"></a>urlparse</h1><p>urlparse模块对url进行解析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from urlparse import urlparse</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print urlparse(&quot;https://www.youtube.com/results?sp=CAM%253D&amp;q=metasploitable+2&quot;)</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ParseResult(scheme=&apos;https&apos;, netloc=&apos;www.youtube.com&apos;, path=&apos;/results&apos;, params=&apos;&apos;, query=&apos;sp=CAM%253D&amp;q=metasploitable+2&apos;, fragment=&apos;&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="urllib2"><a href="#urllib2" class="headerlink" title="urllib2"></a>urllib2</h1><p>urllib2模块处理打开url的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import urllib2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = urllib2.urlopen(&quot;http://cuiqingcai.com/1319.html&quot;)</span><br><span class="line">print f.getcode() # 状态码</span><br><span class="line">print f.geturl() # 实际得到网页所属的url</span><br><span class="line">print f.info() # 得到meta information</span><br><span class="line">print f.read() # 网页内容</span><br></pre></td></tr></table></figure>
+<h2 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h2><h3 id="HTTP-验证"><a href="#HTTP-验证" class="headerlink" title="HTTP 验证"></a>HTTP 验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import urllib2</span><br><span class="line"># Create an OpenerDirector with support for Basic HTTP Authentication...</span><br><span class="line">auth_handler = urllib2.HTTPBasicAuthHandler()</span><br><span class="line">auth_handler.add_password(realm=&apos;PDQ Application&apos;,</span><br><span class="line">                          uri=&apos;https://mahler:8092/site-updates.py&apos;,</span><br><span class="line">                          user=&apos;klem&apos;,</span><br><span class="line">                          passwd=&apos;kadidd!ehopper&apos;)</span><br><span class="line">opener = urllib2.build_opener(auth_handler)</span><br><span class="line"># ...and install it globally so it can be used with urlopen.</span><br><span class="line">urllib2.install_opener(opener)</span><br><span class="line">urllib2.urlopen(&apos;http://www.example.com/login.html&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="添加HTTP头"><a href="#添加HTTP头" class="headerlink" title="添加HTTP头"></a>添加HTTP头</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import urllib2</span><br><span class="line">req = urllib2.Request(&apos;http://www.example.com/&apos;)</span><br><span class="line">req.add_header(&apos;Referer&apos;, &apos;http://www.python.org/&apos;)</span><br><span class="line"># Customize the default User-Agent header value:</span><br><span class="line">req.add_header(&apos;User-Agent&apos;, &apos;urllib-example/0.1 (Contact: . . .)&apos;)</span><br><span class="line">r = urllib2.urlopen(req)</span><br></pre></td></tr></table></figure>
+<h1 id="Beautiful-Soup"><a href="#Beautiful-Soup" class="headerlink" title="Beautiful Soup"></a>Beautiful Soup</h1><p>Beautiful Soup库用来解析网页</p>
+<p>参考：<a href="http://cuiqingcai.com/1319.html" target="_blank" rel="external">http://cuiqingcai.com/1319.html</a></p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+    <div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_qzone">QQ空间</a>
+    <a class="jiathis_button_tsina">新浪微博</a>
+    <a class="jiathis_button_tqq">腾讯微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    <a class="jiathis_counter_style"></a>
 </div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<style>
+    .jiathis_style div:first-child:not(.jiadiv_01) {
+        width: auto !important;
+        border: none !important;
+    }
+    .jiathis_style .jiadiv_01 {
+        margin: 10px 0;
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .jiathis_style .jiadiv_01 div:first-child {
+        display: none;
+    }
+    .jiathis_style .jiadiv_02 {
+        padding: 7px 0 !important;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle {
+        width: 85px;
+        border: none;
+        height: auto;
+        margin: 3px 10px;
+        padding: 6px 10px;
+        border-radius: 4px;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:hover {
+        border: none;
+    }
+    .jiathis_style .jiadiv_02 .jiatitle:nth-child(even) {
+        margin-left: 0;
+    }
+    .jiathis_style .jtico:hover {
+        opacity: 1;
+    }
+    .jiathis_style .ckepopBottom,
+    .jiathis_style .centerBottom {
+        width: auto !important;
+        padding: 5px;
+        background: #f7f7f7;
+    }
+</style>
+
+
+
+</div>
+
+            
+    
+        <a href="/2016/06/18/Python-Web-Programming/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/06/18/Python-Web-Programming/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/07/05/Web-For-Pentester/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Web For Pentester
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/06/15/OOP-in-Python/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">OOP in Python</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -427,11 +550,13 @@
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = '/2016/06/18/Python-Web-Programming/';
+        
+        this.page.identifier = 'Python-Web-Programming';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'almondq' + '.disqus.com/count.js';
+        s.src = '//' + 'almondq' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
