@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Bypass XSS protection | 加油！少年</title>
+    <title>Scapy | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="XSS各种过滤，净化，XSS filter的绕过">
+    <meta name="description" content="Scapy是一个可以实现发送、嗅探和分析、伪造网络包的模块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bypass XSS protection">
-<meta property="og:url" content="/2016/07/22/Bypass-XSS-protection/index.html">
+<meta property="og:title" content="Scapy">
+<meta property="og:url" content="/2016/08/18/Scapy/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description" content="XSS各种过滤，净化，XSS filter的绕过">
-<meta property="og:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f6ps2j5o3nj20qo07zjtx.jpg">
-<meta property="og:updated_time" content="2016-08-11T06:14:22.000Z">
+<meta property="og:description" content="Scapy是一个可以实现发送、嗅探和分析、伪造网络包的模块">
+<meta property="og:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f6xz5bvccyj21am0fgwgz.jpg">
+<meta property="og:updated_time" content="2016-08-19T08:36:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bypass XSS protection">
-<meta name="twitter:description" content="XSS各种过滤，净化，XSS filter的绕过">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f6ps2j5o3nj20qo07zjtx.jpg">
+<meta name="twitter:title" content="Scapy">
+<meta name="twitter:description" content="Scapy是一个可以实现发送、嗅探和分析、伪造网络包的模块">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f6xz5bvccyj21am0fgwgz.jpg">
     
 
     
@@ -207,12 +207,12 @@
 </aside>
 
             
-            <section id="main"><article id="post-Bypass-XSS-protection" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Scapy" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             
 	
-		<img src="http://ww4.sinaimg.cn/mw1024/d4008a20gw1f6ps2j5o3nj20qo07zjtx.jpg" class="article-banner" />
+		<img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f6xz5bvccyj21am0fgwgz.jpg" class="article-banner" />
 	
 
 
@@ -224,7 +224,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Bypass XSS protection
+            Scapy
         </h1>
     
 
@@ -233,8 +233,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/07/22/Bypass-XSS-protection/">
-            <time datetime="2016-07-22T08:01:41.000Z" itemprop="datePublished">2016-07-22</time>
+        <a href="/2016/08/18/Scapy/">
+            <time datetime="2016-08-18T08:19:03.000Z" itemprop="datePublished">2016-08-18</time>
         </a>
     </div>
 
@@ -248,7 +248,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Web/">Web</a>
+        <a class="tag-link" href="/tags/Python/">Python</a>
     </div>
 
                     </div>
@@ -260,11 +260,25 @@
             
                 <div id="toc" class="toc-article">
                 <strong class="toc-title">文章目录</strong>
-                    
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#构造、发送packet"><span class="toc-number">1.</span> <span class="toc-text">构造、发送packet</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#构造"><span class="toc-number">1.1.</span> <span class="toc-text">构造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送"><span class="toc-number">1.2.</span> <span class="toc-text">发送</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#嗅探"><span class="toc-number">2.</span> <span class="toc-text">嗅探</span></a></li></ol>
                 </div>
             
-            <p>XSS各种过滤，净化，XSS filter的绕过<br><a id="more"></a></p>
-
+            <p>Scapy是一个可以实现发送、嗅探和分析、伪造网络包的模块<br><a id="more"></a></p>
+<h1 id="构造、发送packet"><a href="#构造、发送packet" class="headerlink" title="构造、发送packet"></a>构造、发送packet</h1><h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p><img src="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f6yu4mee1kj20um0lqwl2.jpg" alt=""></p>
+<h2 id="发送"><a href="#发送" class="headerlink" title="发送"></a>发送</h2><p>send()方法在layer3发送包，sendp()方法在layer2发送包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; send(IP(dst=&quot;1.2.3.4&quot;)/ICMP())</span><br><span class="line">.</span><br><span class="line">Sent 1 packets.</span><br><span class="line">&gt;&gt;&gt; sendp(Ether()/IP(dst=&quot;1.2.3.4&quot;, ttl=(1,4)), iface=&quot;en0&quot;)</span><br><span class="line">....</span><br><span class="line">Sent 4 packets.</span><br><span class="line">&gt;&gt;&gt; sendp(&quot;I&apos;m traveling on Ethernet&quot;, iface=&quot;en0&quot;, loop=1, inter=0.2)</span><br><span class="line">...............................................................^C</span><br><span class="line">Sent 70 packets.</span><br><span class="line">&gt;&gt;&gt; sendp(rdpcap(&quot;/Users/liqing/PycharmProjects/scapy_sniff/test.pcap&quot;)) # tcpreplay</span><br><span class="line">.....</span><br><span class="line">Sent 5 packets.</span><br></pre></td></tr></table></figure>
+<h1 id="嗅探"><a href="#嗅探" class="headerlink" title="嗅探"></a>嗅探</h1><pre><code>sniff(filter=&quot;&quot;, iface=&quot;any&quot;, prn=function, count=N)
+</code></pre><p>filter参数允许对Scapy嗅探的数据包指定一个BPF（Wireshark类型）的过滤器，也可以留空以嗅探所有数据包。例如，如果需要嗅探所有的HTTP数据包，可以使用tcp port 80的BPF过滤。iface参数设置嗅探器所要嗅探的网卡，如果留空，则对所有网卡进行嗅探。prn参数制定嗅探到符合过滤器条件的数据包时所调用的回调函数，这个回调函数以接收到的数据包对象作为唯一的参数。count参数制定需要嗅探的数据包的个数，如果留空，嗅探无限个。</p>
+<p>通过一个例子练习一下sniff功能，sniff_email.py:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># encoding: utf-8</span><br><span class="line"></span><br><span class="line">from scapy.all import *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 数据包回调函数</span><br><span class="line">def packet_callback(packet):</span><br><span class="line">    print packet.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 开启嗅探器</span><br><span class="line">sniff(prn=packet_callback, count=1)</span><br></pre></td></tr></table></figure>
+<p>运行sniff_email.py之后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">WARNING: No route found for IPv6 destination :: (no default route?)</span><br><span class="line">###[ Ethernet ]###</span><br><span class="line">  dst       = 64:e5:99:91:76:b0</span><br><span class="line">  src       = d0:a6:37:ee:e4:9f</span><br><span class="line">  type      = 0x800</span><br><span class="line">###[ IP ]###</span><br><span class="line">     version   = 4L</span><br><span class="line">     ihl       = 5L</span><br><span class="line">     tos       = 0x0</span><br><span class="line">     len       = 40</span><br><span class="line">     id        = 26232</span><br><span class="line">     flags     = DF</span><br><span class="line">     frag      = 0L</span><br><span class="line">     ttl       = 64</span><br><span class="line">     proto     = tcp</span><br><span class="line">     chksum    = 0xd71c</span><br><span class="line">     src       = 192.168.0.17</span><br><span class="line">     dst       = 180.149.135.236</span><br><span class="line">     \options   \</span><br><span class="line">###[ TCP ]###</span><br><span class="line">        sport     = 51652</span><br><span class="line">        dport     = http</span><br><span class="line">        seq       = 4248135341</span><br><span class="line">        ack       = 2126365496</span><br><span class="line">        dataofs   = 5L</span><br><span class="line">        reserved  = 0L</span><br><span class="line">        flags     = FA</span><br><span class="line">        window    = 8192</span><br><span class="line">        chksum    = 0x22aa</span><br><span class="line">        urgptr    = 0</span><br><span class="line">        options   = &#123;&#125;</span><br><span class="line">None</span><br><span class="line">WARNING: __del__: don&apos;t know how to close the file descriptor. Bugs ahead ! Please report this bug.</span><br></pre></td></tr></table></figure>
+<p>下面修改回调函数和过滤器参数以窃取email信息</p>
+<p><em>注意</em>: 上面的warning通过开发者的建议brew install <a href="https://raw.githubusercontent.com/secdev/scapy/master/.travis/pylibpcap.rb解决了" target="_blank" rel="external">https://raw.githubusercontent.com/secdev/scapy/master/.travis/pylibpcap.rb解决了</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># encoding: utf-8</span><br><span class="line"></span><br><span class="line">from scapy.all import *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 数据包回调函数</span><br><span class="line">def packet_callback(packet):</span><br><span class="line">    if packet[TCP].payload:</span><br><span class="line">        mail_packet= str(packet[TCP].payload)</span><br><span class="line">        print &apos;[*] Server: %s&apos; % packet[IP].dst</span><br><span class="line">        print &apos;[*] %s&apos; % mail_packet</span><br><span class="line"></span><br><span class="line"># 开启嗅探器</span><br><span class="line">packet = sniff(filter=&apos;tcp port 110 or tcp port 25 or tcp port 143&apos;, prn=packet_callback, store=0)</span><br></pre></td></tr></table></figure>
+<p>过滤器使得只对常见电子邮件端口110(POP3), 25(SMTP), 143(IMAP)进行嗅探。store参数为0时将不会在内存中保存原始的数据包，如果需要长时间嗅探这个参数就很有必要。</p>
+<pre><code>我自己运行此程序时，尝试用网页登陆网易邮箱，结果显而是不成功的，因为端口不对啊不对啊！但是自己亲眼看了一下SSL的handshake也挺满足的
+</code></pre>
         
         </div>
         <footer class="article-footer">
@@ -327,7 +341,7 @@
 
             
     
-        <a href="/2016/07/22/Bypass-XSS-protection/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/07/22/Bypass-XSS-protection/">评论</a>
+        <a href="/2016/08/18/Scapy/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="/2016/08/18/Scapy/">评论</a>
     
 
         </footer>
@@ -336,19 +350,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2016/07/23/Go-Django-II-Templates/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    Go Django II Templates
-                
-            </div>
-        </a>
     
-    
-        <a href="/2016/07/21/Buffer-Overflow/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2016/08/12/Go-Django-III-Models/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Buffer Overflow</div>
+            <div class="article-nav-title">Go Django III Models</div>
         </a>
     
 </nav>
@@ -548,9 +553,9 @@
     <script>
     var disqus_config = function () {
         
-            this.page.url = '/2016/07/22/Bypass-XSS-protection/';
+            this.page.url = '/2016/08/18/Scapy/';
         
-        this.page.identifier = 'Bypass-XSS-protection';
+        this.page.identifier = 'Scapy';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
