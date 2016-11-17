@@ -5,16 +5,18 @@
     
     <title>SSH | 加油！少年</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议">
+    <meta name="description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH">
 <meta property="og:url" content="/2016/09/08/SSH/index.html">
 <meta property="og:site_name" content="加油！少年">
-<meta property="og:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议">
-<meta property="og:updated_time" content="2016-09-08T07:30:16.000Z">
+<meta property="og:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
+<meta property="og:updated_time" content="2016-11-17T08:59:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH">
-<meta name="twitter:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议">
+<meta name="twitter:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg">
     
 
     
@@ -157,7 +159,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                7
+                8
                 <span>标签</span>
             </div>
         </div>
@@ -208,6 +210,14 @@
             <section id="main"><article id="post-SSH" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            
+	
+		<img src="http://ww2.sinaimg.cn/mw1024/d4008a20gw1f5uda8g5z7j20ke03ojrn.jpg" class="article-banner" />
+	
+
+
+
+        
         
         
             <header class="article-header">
@@ -224,13 +234,23 @@
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2016/09/08/SSH/">
-            <time datetime="2016-09-08T08:24:29.000Z" itemprop="datePublished">2016-09-08</time>
+            <time datetime="2016-09-08T07:24:29.000Z" itemprop="datePublished">2016-09-08</time>
         </a>
     </div>
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/SSH/">SSH</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -238,7 +258,28 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>SSH(Secure Shell)是一个创建在应用层上的安全协议<br><a id="more"></a></p>
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">文章目录</strong>
+                    
+                </div>
+            
+            <p>SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机<br><a id="more"></a><br>关于reverse ssh tunnel的解释，<a href="http://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work" target="_blank" rel="external">http://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work</a> 这个回答里面解释的很清楚，主要记录一下自己的理解</p>
+<p>把ssh当做一个管道，管道里又分-L和-R两个小管道。每个管道都有开端和末端，ssh连接开端在客户端，末端在ssh服务器</p>
+<p>本地转发-L表示要把localhost(client)的port转发到remote side的端口</p>
+<pre><code>ssh -L &lt;local port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;
+</code></pre><p>远程转发-R表示要把remotehost(server)的端口转发到local side的端口</p>
+<pre><code>ssh -R &lt;local port&gt;:&lt;remote host&gt;:&lt;remote port&gt; &lt;SSH hostname&gt;
+</code></pre><p>其他参数</p>
+<ul>
+<li>-f 告诉ssh当认证完成之后在background运行，这样就不用一直发包来维持连接</li>
+<li>-N 告诉ssh只想建立一个连接，不想运行任何指令，这样做可以节省资源</li>
+<li>-T 告诉ssh要disable伪终端，这样做是有必要的因为并不想建立一个交互shell</li>
+</ul>
+<p>看了<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html这个之后一直很不理解localhost是指什么，看了答案以后的理解是localhost是从数据的出口角度考虑的，比如要将remote" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html这个之后一直很不理解localhost是指什么，看了答案以后的理解是localhost是从数据的出口角度考虑的，比如要将remote</a> host的端口转发到local side，那localhost就是指local side。反之，如果把local side的端口转发到remote host，那么localhost就是指remotehost</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L sourcePort:forwardToHost:onPort connectToHost</span><br></pre></td></tr></table></figure>
+<p>means: connect with ssh to connectToHost means: connect with ssh to connectToHost, and forward all connection attempts to the local sourcePort to port onPort on the machine called forwardToHost, which can be reached from the connectToHost machine.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R sourcePort:forwardToHost:onPort connectToHost</span><br></pre></td></tr></table></figure>
+<p>means: connect with ssh to connectToHost, and forward all connection attempts to the remote sourcePort to port onPort on the machine called forwardToHost, which can be reached from your local machine.</p>
 
         
         </div>
@@ -351,16 +392,16 @@
                             <a href="/2016/09/08/SSH/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://ww1.sinaimg.cn/mw1024/d4008a20gw1f5udbubuf9j206i03e3yg.jpg)" alt="SSH" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
                             <p class="item-title"><a href="/2016/09/08/SSH/" class="title">SSH</a></p>
-                            <p class="item-date"><time datetime="2016-09-08T08:24:29.000Z" itemprop="datePublished">2016-09-08</time></p>
+                            <p class="item-date"><time datetime="2016-09-08T07:24:29.000Z" itemprop="datePublished">2016-09-08</time></p>
                         </div>
                     </li>
                 
@@ -379,7 +420,7 @@
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
                             <p class="item-title"><a href="/2016/08/18/Scapy/" class="title">Scapy</a></p>
-                            <p class="item-date"><time datetime="2016-08-18T09:19:03.000Z" itemprop="datePublished">2016-08-18</time></p>
+                            <p class="item-date"><time datetime="2016-08-18T08:19:03.000Z" itemprop="datePublished">2016-08-18</time></p>
                         </div>
                     </li>
                 
@@ -398,7 +439,7 @@
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
                             <p class="item-title"><a href="/2016/08/12/Go-Django-III-Models/" class="title">Go Django III Models</a></p>
-                            <p class="item-date"><time datetime="2016-08-12T08:13:29.000Z" itemprop="datePublished">2016-08-12</time></p>
+                            <p class="item-date"><time datetime="2016-08-12T07:13:29.000Z" itemprop="datePublished">2016-08-12</time></p>
                         </div>
                     </li>
                 
@@ -417,7 +458,7 @@
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
                             <p class="item-title"><a href="/2016/08/11/Metasploitable2/" class="title">Metasploitable2</a></p>
-                            <p class="item-date"><time datetime="2016-08-11T07:08:20.000Z" itemprop="datePublished">2016-08-11</time></p>
+                            <p class="item-date"><time datetime="2016-08-11T06:08:20.000Z" itemprop="datePublished">2016-08-11</time></p>
                         </div>
                     </li>
                 
@@ -436,7 +477,7 @@
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Journey-of-Study/">Journey of Study</a></p>
                             <p class="item-title"><a href="/2016/07/23/Go-Django-II-Templates/" class="title">Go Django II Templates</a></p>
-                            <p class="item-date"><time datetime="2016-07-23T11:36:26.000Z" itemprop="datePublished">2016-07-23</time></p>
+                            <p class="item-date"><time datetime="2016-07-23T10:36:26.000Z" itemprop="datePublished">2016-07-23</time></p>
                         </div>
                     </li>
                 
@@ -449,7 +490,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Journey-of-Study/">Journey of Study</a><span class="category-list-count">17</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Journey-of-Study/">Journey of Study</a><span class="category-list-count">18</span></li></ul>
         </div>
     </div>
 
@@ -467,7 +508,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computersecurity/">computersecurity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metasploit/">metasploit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web/">Web</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computersecurity/">computersecurity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metasploit/">metasploit</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pentest/">pentest</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -476,7 +517,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Django/" style="font-size: 15px;">Django</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/Web/" style="font-size: 17.5px;">Web</a> <a href="/tags/computersecurity/" style="font-size: 10px;">computersecurity</a> <a href="/tags/metasploit/" style="font-size: 10px;">metasploit</a> <a href="/tags/pentest/" style="font-size: 12.5px;">pentest</a>
+            <a href="/tags/Django/" style="font-size: 15px;">Django</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/Web/" style="font-size: 17.5px;">Web</a> <a href="/tags/computersecurity/" style="font-size: 10px;">computersecurity</a> <a href="/tags/metasploit/" style="font-size: 10px;">metasploit</a> <a href="/tags/pentest/" style="font-size: 12.5px;">pentest</a>
         </div>
     </div>
 
