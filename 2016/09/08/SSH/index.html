@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="加油！少年">
 <meta property="og:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw1024/d4008a20gw1f9v7rdj96gj217w0fy45o.jpg">
-<meta property="og:updated_time" content="2016-11-17T09:05:28.000Z">
+<meta property="og:updated_time" content="2016-11-18T04:12:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH">
 <meta name="twitter:description" content="SSH(Secure Shell)是一个创建在应用层上的安全协议，这篇文章主要是学习一下reverse ssh tunnel，以便在内网进行反向连接控制受攻击的主机">
@@ -275,7 +275,7 @@
 <li>-N 告诉ssh只想建立一个连接，不想运行任何指令，这样做可以节省资源</li>
 <li>-T 告诉ssh要disable伪终端，这样做是有必要的因为并不想建立一个交互shell</li>
 </ul>
-<p>看了<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html这个之后一直很不理解localhost是指什么，看了答案以后的理解是localhost是从数据的出口角度考虑的，比如要将remote" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html这个之后一直很不理解localhost是指什么，看了答案以后的理解是localhost是从数据的出口角度考虑的，比如要将remote</a> host的端口转发到local side，那localhost就是指local side。反之，如果把local side的端口转发到remote host，那么localhost就是指remotehost</p>
+<p>看了<a href="http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/index.html</a> 这个之后一直很不理解localhost是指什么，看了答案以后的理解是localhost是从数据的出口角度考虑的，比如要将remote host的端口转发到local side，那localhost就是指local side。反之，如果把local side的端口转发到remote host，那么localhost就是指remotehost</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L sourcePort:forwardToHost:onPort connectToHost</span><br></pre></td></tr></table></figure>
 <p>means: connect with ssh to connectToHost means: connect with ssh to connectToHost, and forward all connection attempts to the local sourcePort to port onPort on the machine called forwardToHost, which can be reached from the connectToHost machine.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R sourcePort:forwardToHost:onPort connectToHost</span><br></pre></td></tr></table></figure>
